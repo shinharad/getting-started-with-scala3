@@ -1,0 +1,10 @@
+.DS_Store
+.vscode/
+.bloop/
+.bsp/
+.dotty-ide*
+.idea/
+.metals/
+*.worksheet.sc
+metals.sbt
+target/
