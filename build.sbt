@@ -16,7 +16,14 @@ lazy val step01 =
   project
     .in(file("step01"))
     .settings(commonSettings)
+    .settings(
+      scalacOptions ++= Seq(
+        // Scala 3 Syntax Rewriting
+        // "-rewrite", "-indent"
+        // "-rewrite", "-new-syntax"
+      )
+    )
 
 lazy val commonSettings = Seq(
-    libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % "test"
+  libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % "test"
 )
