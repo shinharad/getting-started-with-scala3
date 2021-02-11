@@ -9,12 +9,12 @@ lazy val root =
   project
     .in(file("."))
     .aggregate(
-      no01
+      step01
     )
 
-lazy val no01 =
+lazy val step01 =
   project
-    .in(file("no01"))
+    .in(file("step01"))
     .settings(commonSettings)
 
 lazy val commonSettings = Seq(
