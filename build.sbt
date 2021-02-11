@@ -19,8 +19,13 @@ lazy val step01 =
     .settings(
       scalacOptions ++= Seq(
         // Scala 3 Syntax Rewriting
+
         // "-rewrite", "-indent"
         // "-rewrite", "-new-syntax"
+
+        // M3 だとエラーになる
+        // "-rewrite", "-no-indent"
+        // "-rewrite", "-old-syntax"
       )
     )
 
