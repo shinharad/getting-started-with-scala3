@@ -1,5 +1,4 @@
-package com.github.shinharad
-package gettingStartedWithScala3
+package com.github.shinharad.gettingStartedWithScala3
 package optionalBraces
 
 // Indentation Rules

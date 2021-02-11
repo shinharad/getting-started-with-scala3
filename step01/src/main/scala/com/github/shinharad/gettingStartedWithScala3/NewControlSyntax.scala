@@ -1,5 +1,4 @@
-package com.github.shinharad
-package gettingStartedWithScala3
+package com.github.shinharad.gettingStartedWithScala3
 package newControlSyntax
 
 @main def no1 =
@@ -55,7 +54,7 @@ package newControlSyntax
 @main def no5 =
   println("-" * 20)
 
-  val xs = List(1, 2, -1, 3, -3, 4, 5)
+  val xs = List(1, 2, 3)
   val ys = List(3, 4, 6)
 
   for

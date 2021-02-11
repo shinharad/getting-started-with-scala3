@@ -1,5 +1,4 @@
-package com.github.shinharad
-package gettingStartedWithScala3
+package com.github.shinharad.gettingStartedWithScala3
 package scala3SyntaxRewriting
 
 // scalacOptions を変更すると、
