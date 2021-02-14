@@ -47,4 +47,4 @@ Scala3 (Dotty) の公式サイトです。
 
 [Scala 3 book](https://docs.scala-lang.org/scala3/book/introduction.html) は、これから Scala の言語仕様を Scala3 で学びたい場合に読むと良さそうです。また、TASTy について知りたい方は、[An Overview of TASTy](https://docs.scala-lang.org/scala3/guides/tasty-overview.html) を読むと良さそう。
 
-こちらは、公式サイトと内容が重複する部分があったり、内容が詳細すぎるので補助的に見ていこうかなと思ってます。（もしかしたら見ないかも）
+こちらは、公式サイトと内容が重複する部分があったり、内容が詳細すぎるので補助的に見ていこうかなと思ってます。

@@ -9,7 +9,8 @@ lazy val root =
   project
     .in(file("."))
     .aggregate(
-      step01
+      step01,
+      step02,
     )
 
 lazy val step01 =
@@ -28,6 +29,11 @@ lazy val step01 =
         // "-rewrite", "-old-syntax"
       )
     )
+
+lazy val step02 =
+  project
+    .in(file("step02"))
+    .settings(commonSettings)
 
 lazy val commonSettings = Seq(
   libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % "test"
