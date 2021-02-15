@@ -58,7 +58,8 @@ object HappyBirth:
     happyBirthday(age, name, others: _*)
 
 //---
-// Scala2 系みたいに `App` を `extends` して書くこともできるが、 Scala3 的には `@main` を推奨している
-
+// Scala2 系で使用できた App は、今のところ限定的な形で存在しているが、
+// DelayedInit による意図しない挙動や、コマンドライン引数をサポートしていないため、将来的には廃止される予定
+// Scala2 と Scala3 の間でクロスビルドする必要がある場合は、代わりに def main(args: Array[String]): Unit を使用する
 object happyBirthday3 extends App:
   println("hello")
