@@ -38,9 +38,6 @@ def no2 =
   infix type or[X, Y]
   val x: String or Int = ???
 
-  type or2[X, Y]
-  val y: String or2 Int = ???
-
 // two parameters はコンパイルエラーになるはずが、そうならない...
 trait Infix:
 
@@ -66,15 +63,35 @@ def no4 =
   val x: Int = ???
   val xs: List[Int] = ???
 
-  // M3 ではコンパイルエラーになる...
-  // def condition =
-  //   x > 0
-  //   ||
-  //   xs.exists(_ > 0)
-  //   || xs.isEmpty
+  // infix 演算子を行頭に書く
+  def condition1 =
+    x > 0
+    ||
+    xs.exists(_ > 0)
+    || xs.isEmpty
 
-  // 今までの書き方だとコンパイルが通る
+  // 今までの書き方もコンパイルが通る
   def condition =
     x > 0 ||
     xs.exists(_ > 0) ||
     xs.isEmpty
+
+def no5 =
+
+  // Scala3 では ??? を infix 演算子として扱うのでこれはコンパイルエラー
+  // println("hello")
+  // ???
+  // ??? match { case 0 => 1 }
+
+  // それを望まない場合は、
+
+  // 前に ; を入れるとか
+  println("hello")
+  ;???
+  ??? match { case 0 => 1 }
+
+  // 前に空行を入れるとか
+  println("hello")
+
+  ???
+  ??? match { case 0 => 1 }

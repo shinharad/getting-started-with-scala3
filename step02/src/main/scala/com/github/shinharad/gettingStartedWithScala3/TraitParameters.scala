@@ -13,7 +13,7 @@ class C extends Greeting("Bob"):
 // C は既に Greeting を extends してるので、別の Greeting を extends することはできない
 // Bob か Bill か分からん、という曖昧な状態になってしまう
 
-// class D extends C, Greeting("Bill")
+// class D extends C, Greeting("Bill") // error: parameter passed twice
 
 //---
 // Greeting の パラメータは未指定のまま extends すると、
@@ -22,14 +22,10 @@ trait FormalGreeting extends Greeting:
   override def msg = s"How do you do, $name"
 
 // 具象化するにしてもパラメータが未解決なので、Greeting を extends しないとダメだよと怒られる
-// class E extends FormalGreeting
+// class E extends FormalGreeting // error: missing arguments for `Greeting`.
 
 // パラメータを設定した Greeting を extends してあげるとコンパイルが通る
 class E extends Greeting("Bob"), FormalGreeting
-
-// もしくは override で
-class E2 extends FormalGreeting:
-  override val name: String = "Bob"
 
 // 色々応用できそう
  
@@ -52,7 +48,7 @@ class E2 extends FormalGreeting:
 //---
 // メンバーが重複していなければOK
 
-trait Greeting2(val namename: String):
+trait Greeting3(val namename: String):
   def msgmsg = s"How are you, $namename"
 
-class G extends Greeting("Bob"), Greeting2("Bill")
+class H extends Greeting("Bob"), Greeting3("Bill")

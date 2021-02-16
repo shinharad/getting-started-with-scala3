@@ -112,7 +112,8 @@ https://dotty.epfl.ch/docs/reference/changed-features/operators.html
  
 ### Syntax Change
 
-- `infix` 演算子を複数行で書く場合に、行末ではなく行頭に書けるようになった
+- `infix` 演算子を複数行で書く場合に、行末ではなく行頭に書けるようになった（A leading infix operator）
+- この構文を動作させるために、ルールが変更され、A leading infix operator の前にセミコロンを推論しないようになった
 
 
 ## Extension Methods

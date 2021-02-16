@@ -1,4 +1,4 @@
-ThisBuild / scalaVersion := "3.0.0-M3"
+ThisBuild / scalaVersion := "3.0.0-RC1"
 ThisBuild / version      := "0.0.1-SNAPSHOT"
 
 ThisBuild / scalacOptions ++= Seq(
@@ -23,8 +23,6 @@ lazy val step01 =
 
         // "-rewrite", "-indent"
         // "-rewrite", "-new-syntax"
-
-        // M3 だとエラーになる
         // "-rewrite", "-no-indent"
         // "-rewrite", "-old-syntax"
       )
