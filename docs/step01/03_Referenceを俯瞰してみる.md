@@ -147,7 +147,7 @@ https://dotty.epfl.ch/docs/Other%20Changed%20Features/
 ** Programmatic Structural Types
 **[#38c0c4] Rules for Operators
 ** Wildcard Arguments in Types
-** Imports
+**[#38c0c4] Imports
 ** Changes in Type Checking
 ** Changes in Type Inference
 ** Changes in Implicit Resolution

@@ -1,7 +1,7 @@
 package com.github.shinharad.gettingStartedWithScala3
 package extensionMethods
 
-import scala.util.chaining._
+import scala.util.chaining.*
 
 case class Circle(x: Double, y: Double, radius: Double)
 

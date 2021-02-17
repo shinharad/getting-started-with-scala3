@@ -1,7 +1,7 @@
 package com.github.shinharad.gettingStartedWithScala3
 package mainMethods
 
-import scala.util.chaining._
+import scala.util.chaining.*
 
 /*
 これで実行する
