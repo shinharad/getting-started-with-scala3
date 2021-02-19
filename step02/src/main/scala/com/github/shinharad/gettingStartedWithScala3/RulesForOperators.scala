@@ -76,7 +76,7 @@ def no4 =
     xs.exists(_ > 0) ||
     xs.isEmpty
 
-def no5 =
+def no5() =
 
   // Scala3 では ??? を infix 演算子として扱うのでこれはコンパイルエラー
   // println("hello")

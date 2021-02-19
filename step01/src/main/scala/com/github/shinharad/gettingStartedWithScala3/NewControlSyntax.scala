@@ -1,7 +1,7 @@
 package com.github.shinharad.gettingStartedWithScala3
 package newControlSyntax
 
-@main def no1 =
+@main def no1(): Unit =
   println("-" * 20)
 
   val x = 10
@@ -16,7 +16,7 @@ package newControlSyntax
   println(r)
   println("-" * 20)
 
-@main def no2 =
+@main def no2(): Unit =
   println("-" * 20)
 
   val x = 10
@@ -27,7 +27,7 @@ package newControlSyntax
   println("-" * 20)
 
 // while
-@main def no3 =
+@main def no3(): Unit =
   println("-" * 20)
 
   var x = 10
@@ -39,7 +39,7 @@ package newControlSyntax
   println("-" * 20)
 
 // for
-@main def no4 =
+@main def no4(): Unit =
   println("-" * 20)
 
   val xs = List(1, 2, -1, 3, -3, 4, 5)
@@ -51,7 +51,7 @@ package newControlSyntax
   println(r)
   println("-" * 20)
 
-@main def no5 =
+@main def no5(): Unit =
   println("-" * 20)
 
   val xs = List(1, 2, 3)
@@ -66,7 +66,7 @@ package newControlSyntax
   println("-" * 20)
 
 // try
-@main def no6 =
+@main def no6(): Unit =
   println("-" * 20)
 
   val x = 10

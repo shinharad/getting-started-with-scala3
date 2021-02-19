@@ -8,7 +8,7 @@ case class Circle(x: Double, y: Double, radius: Double)
 extension (c: Circle)
   def circumference: Double = c.radius * math.Pi * 2
 
-@main def no1() =
+@main def no1(): Unit =
   val circle = Circle(0, 0, 1)
 
   // infix `.` で呼び出すことができる
@@ -39,7 +39,7 @@ extension (x: Number)
 <extension> infix def min(x: Number)(y: Number): Number = ...
 */
 
-def no2() =
+def no2: Number =
 
   "ab" < "c"
   Elem(1) +: List(Elem(2), Elem(3))

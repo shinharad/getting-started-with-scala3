@@ -17,7 +17,7 @@ import scala.util.chaining.*
 > runMain com.github.shinharad.gettingStartedWithScala3.mainMethods.happyBirthday sixty Fred
 */
 
-@main def happyBirthday(age: Int, name: String, others: String*) =
+@main def happyBirthday(age: Int, name: String, others: String*): Unit =
   println("-" * 50)
 
   val suffix =
@@ -54,7 +54,7 @@ final class happyBirthday:
 // object の中で書くこともできる
 
 object HappyBirth:
-  @main def happyBirthday2(age: Int, name: String, others: String*) =
+  @main def happyBirthday2(age: Int, name: String, others: String*): Unit =
     happyBirthday(age, name, others: _*)
 
 //---
