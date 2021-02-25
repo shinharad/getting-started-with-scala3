@@ -22,6 +22,9 @@ lazy val step01 =
       scalacOptions ++= Seq(
         // Scala 3 Syntax Rewriting
 
+        // 1行ずつコメントアウトを外すことで、
+        // Scala3SyntaxRewriting.scala の内容が書き換わることを確認してみてください
+
         // "-rewrite", "-indent"
         // "-rewrite", "-new-syntax"
         // "-rewrite", "-no-indent"
