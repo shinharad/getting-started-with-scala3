@@ -17,7 +17,7 @@ def no1_ok(): Unit =
     println(1)
     println(2)
   }
-  println("done")  // error: indented too far to the left
+  println("done")
 
 // Optional Braces
 
@@ -32,7 +32,7 @@ def no2_ok: Int =
   val x = 10
   if x < 0 then
      -x
-  else   // error: `else` does not align correctly
+  else
      x
 
 // Optional Braces Around Template Bodies
@@ -65,7 +65,8 @@ def no4(): Unit =
   def f(x: Int, y: Int => Int): Int = ???
   val x = 10
 
-  {
+  // インデントは中括弧 {...} だけでなく、括弧 [....] や括弧 (....) も自由に混在させることができる
+  { 
     val z = f(x: Int, y =>
       x * (
         y + 1

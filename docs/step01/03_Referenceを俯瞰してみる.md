@@ -184,7 +184,7 @@ https://dotty.epfl.ch/docs/Dropped%20Features/
 **[#38c0c4] Dropped: XML Literals
 **[#38c0c4] Dropped: Symbol Literals
 **[#38c0c4] Dropped: Auto-Application
-** Dropped: Weak Conformance
+**[#38c0c4] Dropped: Weak Conformance
 **[#38c0c4] Deprecated: Nonlocal Returns
 **[#38c0c4] Dropped: private[this] and protected[this]
 **[#38c0c4] Dropped: wildcard initializer
