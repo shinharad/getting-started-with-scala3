@@ -65,7 +65,7 @@ https://dotty.epfl.ch/docs/Enums/
 * Enums
 **[#38c0c4] Enumerations
 **[#38c0c4] Algebraic Data Types
-**[#38c0c4] Translation of Enums and ADTs
+** Translation of Enums and ADTs
 @endmindmap
 ```
 

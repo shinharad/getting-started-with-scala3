@@ -11,6 +11,7 @@ lazy val root =
     .aggregate(
       step01,
       step02,
+      step03
     )
 
 lazy val step01 =
@@ -31,6 +32,11 @@ lazy val step01 =
 lazy val step02 =
   project
     .in(file("step02"))
+    .settings(commonSettings)
+
+lazy val step03 =
+  project
+    .in(file("step03"))
     .settings(commonSettings)
 
 lazy val commonSettings = Seq(
