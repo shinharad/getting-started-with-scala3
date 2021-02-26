@@ -12,7 +12,7 @@
 
 ## 概要
 
-*** TO BE FILLED IN ***
+次に、Opaque Type Aliases を見てみます。この Opaque Type Aliases は、個人的にかなり嬉しい機能追加だと思ってます！
 
 ## ドキュメント参照先
 
