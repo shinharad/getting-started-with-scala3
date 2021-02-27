@@ -96,27 +96,59 @@ def no4(): Unit =
   f(new D)
 
 //---
-// Scala2 では、with を使って Compound Types （複合型）で表現していたが、可換的ではなかった
+// Scala2 では、with を使って Compound Types （複合型）で表現していた
+// ただし、Compound Types は、Intersection Types とは異なり、
+// 同一メンバで異なる型が存在する場合は、Linearization のルールでどちらかの型に推論されてしまう
 
 def no5(): Unit =
 
-  trait A:
+  //---
+  // 以下は Scala2 での話
+
+  trait A {
     def foo: String
-
-  trait B:
+  }
+  trait B {
     def foo: Int
-  
-  // 順序を逆にしたものは等価にならない
-  // A with B != B with A
+  }
 
-  // TODO 見直す
-  // Scala2 では Linearization のルールにより、foo は String 型になっていた
-  // （ただし、Scala3 では with を & に置き換えるので、String & Int になる）
-  // trait C extends A with B:
-  //   override def foo: String
+  def f(x: A with B): Unit = {
+    // Linearization のルールで Int 型になる（String with Int とはならない）
+    val a: Int = x.foo
+  }
+
+  def g(x: B with A): Unit = {
+    // Linearization のルールで String 型になる（Int with String とはならない）
+    val a: String = x.foo
+  }
+
+  //---
+  // ここから Scala3 の話
+
+  // Scala3 では with を & に置き換えるので、
+  // この場合は Intersection Types になる
+
+  trait C:
+    def foo: String
+  trait D:
+    def foo: Int
+
+  def ff(x: C with D): Unit =
+    val a: String with Int = x.foo
+    val b: Int with String = x.foo // 可換的なのでこれもOK
+
+    val c: String & Int = x.foo
+    val d: Int & String = x.foo
+
+  def gg(x: D with C): Unit =
+    val a: Int with String = x.foo
+    val b: String with Int = x.foo // 可換的なのでこれもOK
+
+    val c: Int & String = x.foo
+    val d: String & Int = x.foo
 
 //---
-// Stackable Modifications としての with は今まで通りの Linearization のルールに従う
+// Stackable Modifications としての with は今まで通り Linearization のルールに従う
 
 @main def no6(): Unit =
   class Animal:
