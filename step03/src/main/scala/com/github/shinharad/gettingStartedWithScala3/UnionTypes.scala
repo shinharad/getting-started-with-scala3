@@ -37,7 +37,7 @@ def lookupEmail(email: String): Unit = println("call lookupEmail")
   val email = Email("abc@xxx.xxx")
 
   // これは明示してないので、Object & Product になる
-  // （UserName と Password の least upper bound である、Object & Product）
+  // （UserName と Email の least upper bound である、Object & Product）
   val result1 = if true then name else email
 
   // これはコンパイルエラー
