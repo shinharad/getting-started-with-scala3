@@ -6,18 +6,22 @@ Scala3 のドキュメントの散策は、このような流れで進めたい�
 
 最初に Scala3 を書くための環境構築をします。次に、Scala3 の公式ドキュメントを俯瞰し、最後にインデントベースのシンタックスと新しい制御構造について触れます。
 
-[Step1へ](step01)
-
 ### Step2
 
 前半は Scala3 で追加された「地味に嬉しい系の機能追加」について、後半は Scala3 で廃止または非推奨になった機能について取り上げていきます。
 
-[Step2へ](step02)
-
 ### Step3
 
-前半は、Enums や ADT が新しいシンタックスが追加されたことで簡潔に書けるようになったことや、新しく追加された Intersection Types、Union Types、Opaque Type Aliases で型の表現がより豊かになったことで、設計の幅が広がることを確認します。後半は、Scala2 系と Scala3 の互換性について触れます。
+Enums や Algebraic Data Types (ADT) で新しいシンタックスが追加されたことで、今までの冗長な記述が簡潔に書けるようになったことや、新しく追加された Intersection Types、Union Types、Opaque Type Aliases で型の表現がより豊かになったことで、設計の幅が広がることを確認します。
 
 ### Step4
 
-**:construction: 考え中**
+Scala2 と Scala3 の互換性で、モジュール間の依存関係や移行ツール、マイグレーションモードについて触れていきます。
+
+### Step5
+
+Step1 では、序盤で見ておきたいものを抽出しましたが、まだ取り上げていないものがいくつか残っています。この Step では、今まで取り上げていない残りの部分について見ていきたいと思います。具体的には、Reference からは Imports、Export Clauses、Open Classes、Explicit Nulls。Migration Guide からは、Porting an sbt Project、Porting the scalacOptions。その他、TASTy についても触れたいと思います。（仮）
+
+### Step6
+
+（考え中）

@@ -148,7 +148,7 @@ enum JColor extends java.lang.Enum[JColor] { case Red, Green, Blue }
 
   JColor.Red.compareTo(JColor.Green)
     .tap(println)
-    .pipe(r => assert(r == -1))
+    .tap(r => assert(r == -1))
 
   println("-" * 50)
 

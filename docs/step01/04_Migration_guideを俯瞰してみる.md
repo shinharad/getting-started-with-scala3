@@ -67,7 +67,6 @@ Reference と内容が重複してるので今回は対象外とします。
 @startmindmap
 * Incompatibilities
 ** Incompatibility Table
-***_ 3.0.0-M1 をベースにしてるので注意
 ** Syntactic Changes
 ** Dropped Features
 ** Contextual Abstractions
