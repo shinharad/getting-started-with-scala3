@@ -12,7 +12,7 @@ Scala3 のドキュメントの散策は、このような流れで進めたい�
 
 ### Step3
 
-Enums や Algebraic Data Types (ADT) で新しいシンタックスが追加されたことで、今までの冗長な記述が簡潔に書けるようになったことや、新しく追加された Intersection Types、Union Types、Opaque Type Aliases で型の表現がより豊かになったことで、設計の幅が広がることを確認します。
+Enums や Algebraic Data Types (ADTs) で新しいシンタックスが追加されたことで、今までの冗長な記述が簡潔に書けるようになったことや、新しく追加された Intersection Types、Union Types、Opaque Type Aliases で型の表現がより豊かになったことで、設計の幅が広がることを確認します。
 
 ### Step4
 

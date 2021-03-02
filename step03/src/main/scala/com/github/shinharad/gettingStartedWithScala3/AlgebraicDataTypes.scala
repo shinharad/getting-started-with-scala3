@@ -1,7 +1,7 @@
 package com.github.shinharad.gettingStartedWithScala3
 package algebraicDataTypes
 
-// Enums を使用して、Algebraic Data Types（ADT、代数的データ型）を表現できる
+// Enums を使用して、Algebraic Data Types（ADTs、代数的データ型）を表現できる
 
 //---
 // Option 型を Enums で表現する
@@ -57,7 +57,7 @@ def no4: Unit =
   val o1: Option.Some[Int] = new Option.Some(2)
 
 //---
-// Enums と同様、ADT は独自のメソッドを定義することができる
+// Enums と同様、ADTs は独自のメソッドを定義することができる
 
 def no5: Unit =
   enum Option[+T]:
@@ -75,7 +75,7 @@ def no5: Unit =
   Option(123).isDefined
 
 //---
-// ADT は、Enums と混在させることができる
+// ADTs は、Enums と混在させることができる
 
 // 以下は、3つの Enums (Red, Green, Blue) を持つか、
 // またはパラメータ化された case を持つ Color か
@@ -86,7 +86,7 @@ enum Color(val rgb: Int):
   case Mix(mix: Int) extends Color(mix)
 
 //---
-// ADT の case の型パラメータは、親である enum の変位指定を引き継ぐ
+// ADTs の case の型パラメータは、親である enum の変位指定を引き継ぐ
 
 def no6_ng: Unit =
 

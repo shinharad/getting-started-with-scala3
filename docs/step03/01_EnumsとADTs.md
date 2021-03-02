@@ -1,4 +1,4 @@
-# EnumsとADT {ignore=true}
+# EnumsとADTs {ignore=true}
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
@@ -13,7 +13,7 @@
 
 ## 概要
 
-Scala3 では、Enumerations や Algebraic Data Types (代数的データ型) を定義するための専用のシンタックスが追加されました。Step3 はまずそこから見ていきましょう。（本リポジトリの対応するサンプルコードも併せて参照してください）
+Scala3 では、Enumerations や Algebraic Data Types (ADTs, 代数的データ型) を定義するための専用のシンタックスが追加されました。Step3 はまずそこから見ていきましょう。（本リポジトリの対応するサンプルコードも併せて参照してください）
 
 ## ドキュメント参照先
 
@@ -44,8 +44,8 @@ https://dotty.epfl.ch/docs/reference/enums/enums.html
 
 https://dotty.epfl.ch/docs/reference/enums/adts.html
 
-- `enum` で、Algebraic Data Types （ADT、代数的データ型）を表現できる
+- `enum` で、Algebraic Data Types （ADTs、代数的データ型）を表現できる
 - `enum` の型パラメータの変位指定が covariant（共変）の場合は、コンパイラの型推論により列挙した型の `extends` を省略できるが、変位指定が covariant 以外の場合は明示的に書く必要がある
-- Enums と同様、ADT は独自のメソッドを定義することができる 
-- ADT は、Enums と混在させることができる
-- ADT の `case` の型パラメータは、親である `enum` の変位指定を引き継ぐ
+- Enums と同様、ADTs は独自のメソッドを定義することができる 
+- ADTs は、Enums と混在させることができる
+- ADTs の `case` の型パラメータは、親である `enum` の変位指定を引き継ぐ
