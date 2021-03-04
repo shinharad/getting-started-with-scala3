@@ -66,7 +66,7 @@ Reference と内容が重複してるので今回は対象外とします。
 ```plantuml
 @startmindmap
 * Incompatibilities
-** Incompatibility Table
+**[#38c0c4] Incompatibility Table
 ** Syntactic Changes
 ** Dropped Features
 ** Contextual Abstractions

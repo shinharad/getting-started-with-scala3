@@ -36,7 +36,7 @@ Scala3 で新しく追加された機能の中から、「今まで冗長だっ�
 - [Parameter Untupling](https://dotty.epfl.ch/docs/reference/other-new-features/parameter-untupling.html)
 - [Vararg Splices](https://dotty.epfl.ch/docs/reference/changed-features/vararg-splices.html)
 - [Rules for Operators](https://dotty.epfl.ch/docs/reference/changed-features/operators.html)
-- [Extension Methods](https://dotty.epfl.ch/docs/reference/contextual/extension-methods.html) (一部のみ)
+- [Extension Methods](https://dotty.epfl.ch/docs/reference/contextual/extension-methods.html)
 
 ## Main Methods
 
@@ -125,3 +125,5 @@ Generic Extensions 以降はまだ紹介してない機能が含まれるので�
 
 - これまで `implicit class` で実現していた拡張メソッドに専用の構文が追加された
 - Extension Methods は、infix `.` で呼び出すことができる
+
+**:construction: 加筆する予定です :construction:**

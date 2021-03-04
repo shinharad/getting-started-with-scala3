@@ -22,7 +22,7 @@
 
 ## 概要
 
-Scala 2.13 と Scala 3.0 の互換性について
+Scala 2.13 と Scala 3.0 の互換性について、Source Level、Compile Time、Runtime、Metaprogramming の観点で確認します。また、それぞれのバージョンの依存関係についても、公式ドキュメントに分かりやすい例が記載されているので見ていきたいと思います。
 
 ## ドキュメント参照先
 
@@ -33,15 +33,18 @@ Scala 2.13 と Scala 3.0 の互換性について
 
 ## Source Level
 
-- Scala 2.13 の大部分は、Scala 3.0 でも互換性がある。が、すべてではない
+- Scala 2.13 の大部分は、Scala 3.0 でも互換性があるが、すべてではない
 - いくつかの構文は単純化されたり、制限されたり、完全に削除されたりしている
 - これらの決定は正当な理由があってなされたものであり、適切な回避策が可能であることを考慮されたもの
+- いずれにしても、すべての非互換性に対応したクロスコンパイルソリューションがあるため、移行は簡単かつスムーズに行える
+  - 非互換性については、この後の Incompatibility Table で確認します
+- Scala 2.13 のソースコードは、マイグレーションモードや各種ツールを使うことで、Scala3 のソースコードへ簡単に変換することができる
 
 ## Compile Time
 
 - コンパイラが、型やメソッドのシグネチャなどの情報をクラスファイルから読み取る際のフォーマットが、Scala2 と Scala3 で異なる
-  - Scala2 では、シグネチャは Pickle format で格納される
-  - Scala3 では、シグネチャのレイアウトよりも多くの機能を持つ TASTy format で格納される
+  - Scala2 では、シグネチャは Pickle format で格納されている
+  - Scala3 では、シグネチャのレイアウトよりも多くの機能を持つ TASTy format で格納されている
 - Scala3 コンパイラは、Scala 2.13 の Pickle format と TASTy format の両方を読み取ることができる
 - Scala 2.13.4 では、Scala 3.0 ライブラリの利用を可能にする TASTy reader が追加されていて、従来のすべての機能に加え、以下の新機能もサポートする
   - Enums
@@ -59,7 +62,7 @@ Scala 2.13 と Scala 3.0 の互換性について
   (Scala 2.13.4)-->(Scala 2.13.4 アーティファクト)
   ```
 
-**:warning: TASTy reader は、Scala 3.0 のすべての機能をサポートしているわけではないので、注意が必要**
+**:warning: TASTy reader は、Scala3 のすべての機能をサポートしているわけではないので、注意が必要**
 
 
 ## Runtime
@@ -68,7 +71,7 @@ Scala 2.13 と Scala 3.0 の互換性について
 - ABI は、Scala のコードをバイトコード、または Scala.js の IR (Intermediate Representation) で表現したもので、実行時の動作に大きく左右する
   - Scala.js の IR は、略して "SJSIR" と呼ぶ
   - 詳しくは [Scala.js IR](http://lampwww.epfl.ch/~doeraene/thesis/sjsir-semantics/) を参照
-- 推論された型と暗黙の解決策が同じであれば、コードは同じバイトコードを生成し、最終的には実行時の動作も同じになる
+- 推論された型と implicit の解決策が同じであれば、コードは同じバイトコードを生成し、最終的には実行時の動作も同じになる
 - ABI を共有することで、
   - Scala 2.13 と Scala 3.0 のクラスファイルを同じ JVM クラスローダで読み込むことができる
   - Scala 2.13 と Scala 3.0 の sjsir ファイルを Scala.js リンカでリンクすることができる
@@ -81,18 +84,17 @@ Scala 2.13 と Scala 3.0 の互換性について
 
 ## Examples
 
-ここからは、参照先の図やコードを併せて見ていきましょう
+ここからは、以下のリンク先の図やコードを一緒に見ていきましょう。
 
 https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility.html#examples
 
 ### Scala 3.0 モジュールは Scala 2.13 のアーティファクトに依存することができる
 
-- そもそも Scala 3.0 の Standard Library は Scala 2.13 ライブラリ
-- Scala 2.13 でコンパイルしたものをそのまま使用しているものすらある
+- そもそも Scala 3.0 の Standard Library は Scala 2.13 ライブラリで、Scala 2.13 でコンパイルしたものをそのまま使用しているものすらある
 
 ### Scala 2.13 モジュールは Scala 3.0 のアーティファクトに依存することができる
 
-- Scala 2.13.4 は、コンパイラオプションの `-Ytasty-reader` で TASTy reader を有効にすることで、Scala 3.0 ライブラリに依存できる
+- Scala 2.13.4 は、コンパイラオプションの `-Ytasty-reader` で TASTy reader を有効にすることで、Scala 3.0 ライブラリに依存することができる
 
 ### Scala 3.0 モジュールは Scala 2.13 のマクロに依存できない
 

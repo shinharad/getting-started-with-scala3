@@ -26,18 +26,20 @@ Scala 2.13 のコードベースを Scala 3.0 へ移植していく際のマイ�
 
 ## Migration mode
 
-- `source:3.0-migration` オプションは、エラーの代わりに警告を表示することで、 ほとんどの機能が削除されてもコンパイラは寛容になる
+- コンパイラオプションの `source:3.0-migration` は、エラーの代わりに警告を表示することで、Scala 2.13 の非推奨や削除された機能を使っていたとしてもコンパイラは寛容になってくれる
 - これを、Scala 3 Migration Mode と呼んでいる
 
 ## Automatic rewrites
 
-- マイグレーションモード `-source:3.0-migration` と `-rewrite` オプションを指定してコンパイルすると、ほとんどすべての警告はコンパイラによって自動的に解決してくれる
+- Migration Mode の `-source:3.0-migration` と `-rewrite` オプションを指定してコンパイルすると、ほとんどすべての警告はコンパイラによって自動的に解決してくれる
 - `-rewrite` は、Step1 で確認したとおり、コードを自動的に書き換えてくれる機能
-- コンパイルエラーになった場合は、`-rewrite` が適用されない
+- Migration Mode でコンパイルエラーになった場合は、`-rewrite` が適用されない
+
+:bulb: 本リポジトリの step04 プロジェクトでは、Scala3 で予約語となっている `given` や `enum` をクラス名や変数名にしていた場合に、どのような警告が表示され、どのように書き換えられるかを試すことができます。
 
 ## Error explanations
 
-- マイグレーションモード `-source:3.0-migration` は、すべての機能を処理できるわけではなくて、場合によっては、 Scala 2.13 と Scala 3.0 の非互換性のためにエラーが残ることもある
+- Migration Modeの `-source:3.0-migration` は、すべての機能を処理できるわけではなくて、場合によっては、 Scala 2.13 と Scala 3.0 の非互換性のためにエラーが残ることもある
 - この場合は、`-source:3.0-migration` を `-explain` や `-explain-types` と組み合わせて指定することで、エラーの詳細を知ることができる
   - `-explain` : エラーの詳細を表示する
   - `-explain-types` 型エラーを詳細に表示する

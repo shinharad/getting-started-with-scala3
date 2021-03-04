@@ -30,9 +30,9 @@ Scala 2.13 から Scala 3.0 への移行をサポートするいくつかのツ�
 ## The Scala 3 compiler
 
 - Scala3 コンパイラ自体が強力な移行ツールとなっている
-- Scala 2.13 のコードをコンパイルするのに最適なマイグレーションモードを備えている
-- 必要に応じて、コードを書き換えてくれる（Step1で確認しましたね）
-- このツールを使用してコミュニティではすでにかなりの数のライブラリが移行されている
+- Scala 2.13 のコードをコンパイルするのに最適なマイグレーションモードを備えていて、必要に応じてコードを書き換えてくれる
+  - 詳細は、次の Scala 3 Migration Mode で確認します
+- このツールを使用して、コミュニティではすでにかなりの数のライブラリが移行されている
   - [Scala 3 Community Build](https://github.com/lampepfl/dotty/tree/master/community-build/community-projects)
 
 ## Scalafix
@@ -51,7 +51,7 @@ https://scalacenter.github.io/scalafix/
 
 ## Metals and other IDEs
 
-- Visual Studio Code には独自の Scala 3.0 Language Server プラグインがあり、sbt-dotty プラグインの `sbt launchIDE` タスクを実行することで簡単に設定することができます。
+- Visual Studio Code には独自の Scala 3.0 Language Server プラグインがあり、sbt-dotty プラグインの `sbt launchIDE` タスクで設定できる
 
 ## Scaladex
 
