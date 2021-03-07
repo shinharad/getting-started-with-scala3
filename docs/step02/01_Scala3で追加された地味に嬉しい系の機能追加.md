@@ -120,10 +120,12 @@ https://dotty.epfl.ch/docs/reference/changed-features/operators.html
 
 https://dotty.epfl.ch/docs/reference/contextual/extension-methods.html
 
-現段階では、Operators まで確認することにします。
-Generic Extensions 以降はまだ紹介してない機能が含まれるので追々見ていこうかなと。
-
 - これまで `implicit class` で実現していた拡張メソッドに専用の構文が追加された
-- Extension Methods は、infix `.` で呼び出すことができる
+- extension methods は、通常のメソッド呼び出しと同じ様に、infix `.` で呼び出すことができる
+- `<` や `+:` など、演算子の定義としても使える
+- extension methods を参照可能にするためには4つの方法がある
+  1. スコープ内で定義しているか、それを継承、インポートしている
+  2. 参照先のスコープ内で型クラスのインスタンスが定義されている
+  3. extension method `m` を `r.m` で参照する場合、`r` の暗黙のスコープで定義されている
+  4. extension method `m` を `r.m` で参照する場合、型クラスのインスタンスが `r` の暗黙のスコープで定義されている
 
-**:construction: 加筆する予定です :construction:**
