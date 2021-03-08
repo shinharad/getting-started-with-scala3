@@ -1,7 +1,7 @@
 package com.github.shinharad.gettingStartedWithScala3
 package parameterUntupling
 
-def parameterUntupling =
+def parameterUntupling(): Unit =
   val xs: List[(Int, Int)] = ???
 
   // 今までは
@@ -15,3 +15,5 @@ def parameterUntupling =
   }
 
   xs map (_ + _)
+
+  ()

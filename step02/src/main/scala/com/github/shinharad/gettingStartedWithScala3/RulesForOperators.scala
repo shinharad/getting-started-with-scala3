@@ -18,7 +18,7 @@ trait MultiSet[T]:
   @targetName("intersection")
   def *(other: MultiSet[T]): MultiSet[T]
 
-def no1 =
+def no1: Unit =
   val s1, s2: MultiSet[Int] = ???
 
   s1 union s2         // OK
@@ -34,7 +34,7 @@ def no1 =
   s1.*(s2)            // also OK, but unusual
 
 // 型にも使用できる
-def no2 =
+def no2: Unit =
   infix type or[X, Y]
   val x: String or Int = ???
 
@@ -52,14 +52,14 @@ trait Infix:
 //---
 // Syntax Change
 
-// infix 演算子が、複数行式の行頭に現れるようになった
+// infix 演算子を複数行の行頭で書けるようになった
 
-def no3 =
+def no3: Unit =
   val str = "hello"
     ++ " world"
     ++ "!"
 
-def no4 =
+def no4: Unit =
   val x: Int = ???
   val xs: List[Int] = ???
 
@@ -76,7 +76,7 @@ def no4 =
     xs.exists(_ > 0) ||
     xs.isEmpty
 
-def no5() =
+def no5(): Int =
 
   // Scala3 では ??? を infix 演算子として扱うのでこれはコンパイルエラー
   // println("hello")

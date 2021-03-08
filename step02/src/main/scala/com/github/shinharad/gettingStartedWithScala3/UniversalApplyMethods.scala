@@ -7,7 +7,7 @@ package universalApplyMethods
 class StringBuilder(s: String):
   def this() = this("")
 
-def no1() =
+def no1(): Unit =
   val sb1 = new StringBuilder("abc")
   // val sb2 = StringBuilder("abc") // compile error
   val sb2 = new StringBuilder()
@@ -23,7 +23,7 @@ class StringBuilder2(s: String):
   inline def apply(): StringBuilder2 = new StringBuilder2()
 
 // その結果、new を書かなくてもインスタンスが生成できるようになる
-def no2() =
+def no2(): Unit =
   val sb1 = StringBuilder2("abc")
   val sb2 = StringBuilder2()
 
@@ -42,6 +42,6 @@ object StringBuilder3:
   def apply(s: String): StringBuilder3 = new StringBuilder3(s)
   def apply(): StringBuilder3 = new StringBuilder3()
 
-def no3() =
+def no3(): Unit =
   val sb1 = StringBuilder3("abc")
   val sb2 = StringBuilder3()

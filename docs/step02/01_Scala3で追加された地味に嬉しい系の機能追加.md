@@ -22,7 +22,7 @@
 
 ## 概要
 
-Scala3 で新しく追加された機能の中から、「今まで冗長だった記述が短くなる！地味に嬉しい！」という機能を集めてみました。本リポジトリの対応するサンプルコードと併せて見ていきましょう。
+Scala3 で新しく追加された機能の中から「今まで冗長だった記述が短くなる！地味に嬉しい！」という機能を集めてみました。本リポジトリの対応するサンプルコードと併せて見ていきましょう。
 
 
 ## ドキュメント参照先
@@ -62,9 +62,9 @@ https://dotty.epfl.ch/docs/reference/changed-features/match-syntax.html
 
 https://dotty.epfl.ch/docs/reference/other-new-features/trait-parameters.html
 
-- class のパラメータと同じように trait にもパラメータを持たせられるようになった
-- trait への引数は、trait が初期化される直前に評価される
-- 同一 trait の extends など、曖昧な定義をするとコンパイルエラー
+- `class` のパラメータと同じように `trait` にもパラメータを持たせられるようになった
+- `trait` への引数は、`trait` が初期化される直前に評価される
+- 同一 `trait` の `extends` など、曖昧な定義をするとコンパイルエラー
 
 ## Universal Apply Methods
 
@@ -113,7 +113,7 @@ https://dotty.epfl.ch/docs/reference/changed-features/operators.html
 ### Syntax Change
 
 - `infix` 演算子を複数行で書く場合に、行末ではなく行頭に書けるようになった（A leading infix operator）
-- この構文を動作させるために、ルールが変更され、A leading infix operator の前にセミコロンを推論しないようになった
+- この構文を動作させるために、ルールが変更され、行頭の `infix` 演算子の前のセミコロンを推論しないようになった
 
 
 ## Extension Methods

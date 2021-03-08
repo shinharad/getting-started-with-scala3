@@ -4,7 +4,7 @@ package matchExpressions
 //---
 // マッチ式を連鎖させることができる
 // brasesは省略可能
-def no1 =
+def no1: Int =
   val xs: List[Int] = ???
 
   xs match {
@@ -24,7 +24,7 @@ def no1 =
 
 //---
 // ピリオドの後に書くことができる
-def no2 =
+def no2: String =
   val xs: List[Int] = ???
 
   if xs.match
@@ -35,7 +35,7 @@ def no2 =
 
 //---
 // `x: T match { ... }` はサポートされなくなったので、`(x: T) match { ... }` と書く
-def no3 =
+def no3: Int =
   val x: Int = ???
 
   // NG

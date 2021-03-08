@@ -8,7 +8,7 @@ val no1 = List(1.0, math.sqrt(3.0), 0, -3.3) // : List[Double]
 // しかし、Scala2 では weak conformance の対象に Char も含まれていたため、
 // 以下も List[Double] として型付けされていた
 // これは、意図した使い方ではなかった
-def no2 = 
+def no2: List[Double] = 
   val n: Int = 3
   val c: Char = 'X' // Char が Double に変換されていた
   val d: Double = math.sqrt(3.0)

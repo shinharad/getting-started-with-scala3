@@ -1,11 +1,16 @@
 package com.github.shinharad.gettingStartedWithScala3
 package traitParameters
 
+import scala.util.chaining.*
+
 trait Greeting(val name: String):
   def msg = s"How are you, $name"
 
 class C extends Greeting("Bob"):
   println(msg)
+
+@main def no1(): Unit =
+  new C
 
 //---
 // 曖昧な定義はコンパイルエラー
@@ -26,6 +31,10 @@ trait FormalGreeting extends Greeting:
 
 // パラメータを設定した Greeting を extends してあげるとコンパイルが通る
 class E extends Greeting("Bob"), FormalGreeting
+
+@main def no2(): Unit =
+  (new E).msg
+    .tap(println)
 
 // 色々応用できそう
  
@@ -52,3 +61,8 @@ trait Greeting3(val namename: String):
   def msgmsg = s"How are you, $namename"
 
 class H extends Greeting("Bob"), Greeting3("Bill")
+
+@main def no3(): Unit =
+  (new H)
+    .tap(x => println(x.msgmsg))
+    .tap(x => println(x.msg))
