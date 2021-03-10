@@ -15,7 +15,7 @@
 
 ## 概要
 
-Scala 2.13 のコードベースを Scala 3.0 へ移植していく際のマイグレーションモードについて確認しましょう。
+Scala 2.13 のコードベースを Scala 3.0 へ移行していく際の Migration Mode について確認しましょう。
 
 ## ドキュメント参照先
 
@@ -32,15 +32,13 @@ Scala 2.13 のコードベースを Scala 3.0 へ移植していく際のマイ�
 ## Automatic rewrites
 
 - Migration Mode の `-source:3.0-migration` と `-rewrite` オプションを指定してコンパイルすると、ほとんどすべての警告はコンパイラによって自動的に解決してくれる
-- `-rewrite` は、Step1 で確認したとおり、コードを自動的に書き換えてくれる機能
+- `-rewrite` は、Step1 で確認したとおり、コードを自動的に書き換えてくれるコンパイラオプション
 - Migration Mode でコンパイルエラーになった場合は、`-rewrite` が適用されない
-
-:bulb: 本リポジトリの step04 プロジェクトでは、Scala3 で予約語となっている `given` や `enum` をクラス名や変数名にしていた場合に、どのような警告が表示され、どのように書き換えられるかを試すことができます。
 
 ## Error explanations
 
 - Migration Modeの `-source:3.0-migration` は、すべての機能を処理できるわけではなくて、場合によっては、 Scala 2.13 と Scala 3.0 の非互換性のためにエラーが残ることもある
-- この場合は、`-source:3.0-migration` を `-explain` や `-explain-types` と組み合わせて指定することで、エラーの詳細を知ることができる
+- その場合は、`-source:3.0-migration` を `-explain` や `-explain-types` と組み合わせて指定することで、エラーの詳細を知ることができる
   - `-explain` : エラーの詳細を表示する
   - `-explain-types` 型エラーを詳細に表示する
-- `-explain` や `-explain-types` は、移行モードに限定されるものではなくて、Scala3 の学習やコーディングを支援してくれる
+- `-explain` や `-explain-types` は、移行モードに限定されるものではなくて、Scala3 の学習やコーディングを支援してくれるコンパイラオプション

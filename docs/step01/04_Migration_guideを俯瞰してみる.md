@@ -61,16 +61,14 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/tutorials/sbt-migrati
 
 https://scalacenter.github.io/scala-3-migration-guide/docs/incompatibilities/table.html
 
-Reference と内容が重複してるので今回は対象外とします。
-
 ```plantuml
 @startmindmap
 * Incompatibilities
 **[#38c0c4] Incompatibility Table
-** Syntactic Changes
-** Dropped Features
+**[#38c0c4] Syntactic Changes
+**[#38c0c4] Dropped Features
 ** Contextual Abstractions
-** Other Changed Features
+**[#38c0c4] Other Changed Features
 @endmindmap
 ```
 

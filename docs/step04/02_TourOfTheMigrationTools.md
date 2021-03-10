@@ -30,8 +30,8 @@ Scala 2.13 から Scala 3.0 への移行をサポートするいくつかのツ�
 ## The Scala 3 compiler
 
 - Scala3 コンパイラ自体が強力な移行ツールとなっている
-- Scala 2.13 のコードをコンパイルするのに最適なマイグレーションモードを備えていて、必要に応じてコードを書き換えてくれる
-  - 詳細は、次の Scala 3 Migration Mode で確認します
+- Scala 3 Migration Mode を備えていて、必要に応じて Scala 2.13 のコードを Scala3 のコードへ書き換えてくれる
+  - 詳細は、この後の Scala 3 Migration Mode で確認する
 - このツールを使用して、コミュニティではすでにかなりの数のライブラリが移行されている
   - [Scala 3 Community Build](https://github.com/lampepfl/dotty/tree/master/community-build/community-projects)
 

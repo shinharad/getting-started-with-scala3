@@ -2,9 +2,6 @@ ThisBuild / scalaVersion := "3.0.0-RC1"
 ThisBuild / version      := "0.0.1-SNAPSHOT"
 
 ThisBuild / scalacOptions ++= Seq(
-  "-explain",
-  "-explain-types"
-
   // TODO
 )
 
@@ -52,14 +49,19 @@ lazy val step04 =
     .settings(commonSettings)
     .settings(
       scalacOptions ++= Seq(
-        // 以下のコンパイラオプションを有効にすることで、
-        // MigrationMode.scala のエラーが警告になったり、自動的に書き換わります
+        // Scala 3.0 Migration mode
 
-        // このコメントアウトを外すと、
-        // マイグレーションモードとして Scala3 でのコンパイルエラーが警告に変わります
+        // 以下のコンパイラオプションを有効にすることで、
+        // Scala 2.13 と Scala 3.0 の非互換性に関する詳細なエラーを表示したり、
+        // コードが自動的に書き換わります
+
+        // 以下を有効にすると詳細なエラーが表示されます
+        // "-explain",
+
+        // 以下を有効にすると、非互換性のエラーが警告に変わります
         // "-source:3.0-migration"
 
-        // このコメントアウトを外すと、MigrationMode.scala が書き換わります
+        // 以下を有効にすると、非互換性の警告箇所が自動的に書き換わります
         // "-source:3.0-migration", "-rewrite"
       )
     )

@@ -22,7 +22,7 @@
 
 ## 概要
 
-Scala 2.13 と Scala 3.0 の互換性について、Source Level、Compile Time、Runtime、Metaprogramming の観点で確認します。また、それぞれのバージョンの依存関係についても、公式ドキュメントに分かりやすい例が記載されているので見ていきたいと思います。
+Scala 2.13 と Scala 3.0 の互換性について、Source Level、Compile Time、Runtime、Metaprogramming の観点で確認します。また、それぞれのバージョンの依存関係についても、公式ドキュメントに分かりやすい例が記載されているので併せて見ていきたいと思います。
 
 ## ドキュメント参照先
 
@@ -37,8 +37,8 @@ Scala 2.13 と Scala 3.0 の互換性について、Source Level、Compile Time�
 - いくつかの構文は単純化されたり、制限されたり、完全に削除されたりしている
 - これらの決定は正当な理由があってなされたものであり、適切な回避策が可能であることを考慮されたもの
 - いずれにしても、すべての非互換性に対応したクロスコンパイルソリューションがあるため、移行は簡単かつスムーズに行える
-  - 非互換性については、この後の Incompatibility Table で確認します
-- Scala 2.13 のソースコードは、マイグレーションモードや各種ツールを使うことで、Scala3 のソースコードへ簡単に変換することができる
+  - 非互換性については、この後の Incompatibility Table で確認する
+- Scala 2.13 のソースコードは、Scala 3 Migration Mode や各種ツールを使うことで、Scala3 のソースコードへ簡単に変換することができる
 
 ## Compile Time
 
@@ -46,7 +46,7 @@ Scala 2.13 と Scala 3.0 の互換性について、Source Level、Compile Time�
   - Scala2 では、シグネチャは Pickle format で格納されている
   - Scala3 では、シグネチャのレイアウトよりも多くの機能を持つ TASTy format で格納されている
 - Scala3 コンパイラは、Scala 2.13 の Pickle format と TASTy format の両方を読み取ることができる
-- Scala 2.13.4 では、Scala 3.0 ライブラリの利用を可能にする TASTy reader が追加されていて、従来のすべての機能に加え、以下の新機能もサポートする
+- Scala 2.13.4 では、Scala 3.0 ライブラリの利用を可能にする TASTy reader が追加されていて、従来のすべての機能に加え、以下の新機能もサポートしている
   - Enums
   - Intersection types
   - Higher-kinded type lambdas
@@ -62,7 +62,7 @@ Scala 2.13 と Scala 3.0 の互換性について、Source Level、Compile Time�
   (Scala 2.13.4)-->(Scala 2.13.4 アーティファクト)
   ```
 
-**:warning: TASTy reader は、Scala3 のすべての機能をサポートしているわけではないので、注意が必要**
+**:warning: TASTy reader は、Scala3 のすべての機能をサポートしているわけではないので注意が必要**
 
 
 ## Runtime
