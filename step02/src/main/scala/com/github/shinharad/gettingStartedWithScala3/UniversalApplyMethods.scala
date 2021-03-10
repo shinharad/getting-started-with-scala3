@@ -2,46 +2,58 @@ package com.github.shinharad.gettingStartedWithScala3
 package universalApplyMethods
 
 //---
-// 今までの定義では new を書く必要があった
+// インスタンス生成で new が不要になった
 
-class StringBuilder(s: String):
-  def this() = this("")
+class StringBuilder1(s: String):
+   def this() = this("")
 
 def no1(): Unit =
-  val sb1 = new StringBuilder("abc")
-  // val sb2 = StringBuilder("abc") // compile error
-  val sb2 = new StringBuilder()
-  // val sb2 = StringBuilder() // compile error
+
+  // 今まではインスタンスの生成に new を書いていたが
+  val sb1 = new StringBuilder1("abc")
+  val sb2 = new StringBuilder1()
+
+  // Scala3 では、new が不要になった
+  val sb3 = StringBuilder1("abc")
+  val sb4 = StringBuilder1()
+
+  /*
+  これは、コンパニオンオブジェクトにこういうイメージの apply メソッドが自動的に追加されるため
+  constructor proxies と呼ばれてる
+  object StringBuilder1:
+    inline def apply(s: String): StringBuilder = new StringBuilder(s)
+    inline def apply(): StringBuilder = new StringBuilder()
+  */
 
 //---
-// inline def apply を定義すると、コンパニオンオブジェクトに apply メソッドが暗黙的に追加される
-// これは、constructor proxies と呼ばれてる
+// Javaのクラスも new が不要になった
 
-class StringBuilder2(s: String):
-  def this() = this("")
-  inline def apply(s: String): StringBuilder2 = new StringBuilder2(s)
-  inline def apply(): StringBuilder2 = new StringBuilder2()
-
-// その結果、new を書かなくてもインスタンスが生成できるようになる
 def no2(): Unit =
-  val sb1 = StringBuilder2("abc")
-  val sb2 = StringBuilder2()
+  val list1 = java.util.ArrayList[String]()
+  val map1 = java.util.HashMap[String, String]()
+
+  // Scala2 ではこうだった
+  val list2 = new java.util.ArrayList[String]()
+  val map2 = new java.util.HashMap[String, String]()
 
 //---
-// もしも、コンパニオンオブジェクトに apply が明示的に定義されていたら？
+// 既にコンパニオンオブジェクトに apply が実装されていた場合は、自動追加されない
 
-// コンパニオンオブジェクトで既に apply が定義されてる場合は、暗黙的に追加されない
-class StringBuilder3(s: String):
-  def this() = this("")
-  inline def apply(s: String): StringBuilder3 = new StringBuilder3(s)
-  inline def apply(): StringBuilder3 = new StringBuilder3()
+class C(name: String)
+object C
 
-object StringBuilder3:
-  // 暗黙的に追加されないので、
-  // どちらか一方をコメントアウトするとコンパイルエラーになる
-  def apply(s: String): StringBuilder3 = new StringBuilder3(s)
-  def apply(): StringBuilder3 = new StringBuilder3()
+class D(name: String)
+object D:
+  def apply(name: String, age: Int): D = new D(name)
 
 def no3(): Unit =
-  val sb1 = StringBuilder3("abc")
-  val sb2 = StringBuilder3()
+
+  // コンパニオンオブジェクトが存在していても apply は自動的に追加される
+  val c = C("abc")
+
+  // コンパニオンオブジェクトに apply が実装されていたら自動追加はされない
+
+  // 以下はコンパイルエラー
+  // val d1 = D("abc")
+
+  val d2 = new D("abc")

@@ -70,16 +70,11 @@ https://dotty.epfl.ch/docs/reference/other-new-features/trait-parameters.html
 
 https://dotty.epfl.ch/docs/reference/other-new-features/creator-applications.html
 
-- 元々 `case class` はコンパニオンオブジェクトに `apply` メソッドが暗黙的に追加されるので、`new` を書く必要はないが、Scala3 ではこのスキームをすべての具象クラスに一般化した
-- `class` に `inline def apply` を書くと、コンパニオンオブジェクトに `apply` メソッドが暗黙的に追加される
+- 元々 `case class` はコンパニオンオブジェクトに `apply` メソッドが暗黙的に追加されるので、インスタンス生成時に `new` を書く必要はなかったが、Scala3 ではこのスキームをすべての具象クラスに一般化した
+- `class` を定義すると、コンパニオンオブジェクトに対して、コンストラクタに対応した `apply` メソッドが自動的に追加される（constructor proxy と呼ばれている）
+  - その結果、`class` のインスタンス生成時でも `new` が不要になった
+- Javaのクラスも `new` を書かずにインスタンス生成できるようになった
 - `new` を省略することで実装の詳細が隠され、コードがより読みやすくなる
-
-```
-[個人メモ]
-new の省略といえば、これまでもコンパニオンオブジェクトに apply を書けば case class じゃなくても省略することはできました。
-それに加え、ファクトリはコンパニオンオブジェクトで明示的に書きたいとも思うのですが、
-それを class に inline def apply を明示的に書くことによるメリットがどれくらいあるか、考えたいなと。
-```
 
 ## Parameter Untupling
 
