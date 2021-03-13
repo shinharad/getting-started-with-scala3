@@ -6,12 +6,12 @@ import scala.util.chaining.*
 //---
 // 実装例その1
 
-// - 以下は、Logarithms（対数）を抽象化したもので、実態は Double
-// - Double であるという事実は、Logarithms が定義しているスコープ内でのみ知られている
+// - 以下は、Logarithm（対数）を抽象化したもので、実態は Double
+// - Double であるという事実は、MyMath のスコープ内でのみ知られている
 // - スコープ内では Logarithm は型エイリアスとして扱われるが、
 //   スコープ外からは opaque（不透明）なので、Logarithm は抽象型として見られ、
 //   実態が Double であることを認識することはできない
-object Logarithms:
+object MyMath:
 
   // 必ず何らかのスコープ内で定義する
   opaque type Logarithm = Double
@@ -30,10 +30,10 @@ object Logarithms:
     def + (y: Logarithm): Logarithm = Logarithm(math.exp(x) + math.exp(y))
     def * (y: Logarithm): Logarithm = x + y
 
-end Logarithms
+end MyMath
 
 @main def no1(): Unit =
-  import Logarithms.Logarithm
+  import MyMath.Logarithm
 
   println("-" * 50)
 
@@ -156,7 +156,7 @@ end Access
 //
 // Opaque Type Aliases は、class と一緒に使用することもできる
 
-class LogarithmsClass:
+class MyMathClass:
 
    opaque type Logarithm = Double
 
@@ -172,8 +172,8 @@ class LogarithmsClass:
 
   // 異なるインスタンスの Opaque Type のメンバーは異なるものとして扱われる
 
-  val l1 = new LogarithmsClass
-  val l2 = new LogarithmsClass
+  val l1 = new MyMathClass
+  val l2 = new MyMathClass
   val x = l1(1.5)
   val y = l1(2.6)
   val z = l2(3.1)
