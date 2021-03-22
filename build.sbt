@@ -12,7 +12,10 @@ lazy val root =
       step01,
       step02,
       step03,
-      step04
+      step04,
+      `step05-import-export`,
+      `step05-open-class`,
+      `step05-explicit-nulls`
     )
 
 lazy val step01 =
@@ -63,6 +66,33 @@ lazy val step04 =
 
         // 以下を有効にすると、非互換性の警告箇所が自動的に書き換わります
         // "-source:3.0-migration", "-rewrite"
+      )
+    )
+
+lazy val `step05-import-export` =
+  project
+    .in(file("step05/import-export"))
+    .settings(commonSettings)
+
+lazy val `step05-open-class` =
+  project
+    .in(file("step05/open-class"))
+    .settings(commonSettings)
+    .settings(
+      scalacOptions ++= Seq(
+        "-source", "future"
+      )
+    )
+
+lazy val `step05-explicit-nulls` =
+  project
+    .in(file("step05/explicit-nulls"))
+    .settings(commonSettings)
+    .settings(
+      scalacOptions ++= Seq(
+        "-Yexplicit-nulls",
+        "-Ycheck-init",  // TODO "-Ysafe-init" にリネームされる予定 https://github.com/lampepfl/dotty/pull/11670
+        // "-language:unsafeNulls"
       )
     )
 
