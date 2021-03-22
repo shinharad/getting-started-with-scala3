@@ -7,6 +7,9 @@
 - [概要](#概要)
 - [ドキュメント参照先](#ドキュメント参照先)
 - [Incompatibility Table](#incompatibility-table-1)
+  - [Syntactic Changes](#syntactic-changes)
+  - [Dropped Features](#dropped-features)
+  - [Other Changed Features](#other-changed-features)
 
 <!-- /code_chunk_output -->
 
@@ -48,3 +51,23 @@ Incompatibility Table は、Scala 2.13 と Scala 3.0 のそれぞれの非互換
 
 本リポジトリの step04 のプロジェクトには、非互換なソースコードがコメントアウトの状態で書いてあります。それらのコメントアウトを一つずつ外し、`build.sbt` のコンパイラオプションを切り替えることで、エラーが警告になったり、rewrite が発動したりを確認することができます。
 
+### Syntactic Changes
+
+- :memo: [01_RestrictedKeywords.scala](/step04/src/main/scala/com/github/shinharad/gettingStartedWithScala3/01_syntacticChanges/01_RestrictedKeywords.scala)
+- :memo: [02_ProcedureSyntax.scala](/step04/src/main/scala/com/github/shinharad/gettingStartedWithScala3/01_syntacticChanges/02_ProcedureSyntax.scala)
+- :memo: [03_ParenthesesAroundLambdaParameter.scala](/step04/src/main/scala/com/github/shinharad/gettingStartedWithScala3/01_syntacticChanges/03_ParenthesesAroundLambdaParameter.scala)
+- :memo: [04_OpenBraceIndentationForPassingAnArgument.scala](/step04/src/main/scala/com/github/shinharad/gettingStartedWithScala3/01_syntacticChanges/04_OpenBraceIndentationForPassingAnArgument.scala)
+- :memo: [05_WrongIndentation.scala](/step04/src/main/scala/com/github/shinharad/gettingStartedWithScala3/01_syntacticChanges/05_WrongIndentation.scala)
+- :memo: [06__AsATypeParameter.scala](/step04/src/main/scala/com/github/shinharad/gettingStartedWithScala3/01_syntacticChanges/06__AsATypeParameter.scala)
+- :memo: [07_+and-AsTypeParameter.scala](/step04/src/main/scala/com/github/shinharad/gettingStartedWithScala3/01_syntacticChanges/07_+and-AsTypeParameter.scala)
+
+### Dropped Features
+
+- :memo: [01_SymbolLiterals.scala](/step04/src/main/scala/com/github/shinharad/gettingStartedWithScala3/02_droppedFeatures/01_SymbolLiterals.scala)
+- :memo: [02_DoWhileConstruct.scala](/step04/src/main/scala/com/github/shinharad/gettingStartedWithScala3/02_droppedFeatures/02_DoWhileConstruct.scala)
+- :memo: [03_AutoApplication.scala](/step04/src/main/scala/com/github/shinharad/gettingStartedWithScala3/02_droppedFeatures/03_AutoApplication.scala)
+- :memo: [04_ValueEtaExpansion.scala](/step04/src/main/scala/com/github/shinharad/gettingStartedWithScala3/02_droppedFeatures/04_ValueEtaExpansion.scala)
+
+### Other Changed Features
+
+- :memo: [01_InheritanceShadowing.scala](/step04/src/main/scala/com/github/shinharad/gettingStartedWithScala3/03_otherChangedFeatures/01_InheritanceShadowing.scala)

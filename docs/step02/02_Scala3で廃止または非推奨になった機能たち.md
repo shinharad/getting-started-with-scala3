@@ -72,6 +72,8 @@ https://dotty.epfl.ch/docs/reference/dropped-features/do-while.html
   - `do <body> while <cond>` の代わりに `while ({ <body> ; <cond> }) ()` を使う
 - 詳細は、本リポジトリ内の対応するコードを参照
 
+:memo: [DroppedDoWhile.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/DroppedDoWhile.scala)
+
 ## Dropped: Procedure Syntax
 
 https://dotty.epfl.ch/docs/reference/dropped-features/procedure-syntax.html
@@ -81,12 +83,16 @@ https://dotty.epfl.ch/docs/reference/dropped-features/procedure-syntax.html
   - `def f() = { ... }`
   - `def f(): Unit = { ... }`
 
+:memo: [DroppedProcedureSyntax.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/DroppedProcedureSyntax.scala)
+
 ## Dropped: Package Objects
 
 https://dotty.epfl.ch/docs/reference/dropped-features/package-objects.html
 
 - Scala3 では、あらゆる種類の定義をトップレベルで記述できるようになったため、Package objects は不要となった
 - Scala3.0 ではまだ利用可能だが、その後非推奨となり削除される予定
+
+:memo: [DroppedPackageObjects.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/DroppedPackageObjects.scala)
 
 ## Dropped: Early Initializers
 
@@ -105,6 +111,8 @@ https://dotty.epfl.ch/docs/reference/dropped-features/class-shadowing.html
   - オーバーライドしているように見えるが、実際には Scala2 のクラスはオーバーライドできない
 - Scala3 では、内部操作を一貫させ物事をきれいに保つために、このような場合は別名を付ける必要がある。同じ名前はコンパイルエラー
 
+:memo: [DroppedClassShadowing.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/DroppedClassShadowing.scala)
+
 ## Dropped: Limit 22
 
 https://dotty.epfl.ch/docs/reference/dropped-features/limit22.html
@@ -115,6 +123,8 @@ https://dotty.epfl.ch/docs/reference/dropped-features/limit22.html
 - どちらも配列を使って実装されている
   - [FunctionXXL.scala](https://github.com/lampepfl/dotty/blob/master/library/src/scala/runtime/FunctionXXL.scala)
   - [TupleXXL.scala](https://github.com/lampepfl/dotty/blob/master/library/src/scala/runtime/TupleXXL.scala)
+
+:memo: [DroppedLimit22.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/DroppedLimit22.scala)
 
 ## Dropped: XML Literals
 
@@ -129,6 +139,8 @@ https://dotty.epfl.ch/docs/reference/dropped-features/symlits.html
 
 - `scala.Symbol` は将来的に非推奨となり削除される予定
 - `scala.Symbol` はまだ存在するので一応使用することはできるが、代わりにプレーンな文字列 `"xyz"` の使用が推奨されている
+
+:memo: [DroppedSymbolLiterals.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/DroppedSymbolLiterals.scala)
 
 ## Dropped: Auto-Application
 
@@ -146,6 +158,7 @@ https://dotty.epfl.ch/docs/reference/dropped-features/auto-apply.html
   - Scala2 がすべてのメソッドの参照に対してこの自由を認めているのに対し、Scala3 では、Scala3 で定義されていない外部メソッドの参照に限定している
   - 後方互換性を考慮して、Scala3 では、Scala2 で定義された nullary method に対して、オーバーライドしたメソッドも含めて `()` を自動的に挿入している
 
+:memo: [DroppedAutoApplication.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/DroppedAutoApplication.scala)
 
 ## Dropped: Weak Conformance
 
@@ -158,6 +171,8 @@ https://dotty.epfl.ch/docs/reference/dropped-features/weak-conformance.html
 - そこで Scala3 では、weak conformance を `Int` リテラルに限定した
   - つまり、`(Double, Double, Int, Double)` は `List[Double]` になるのは変わらないが、 `(Int, Char, Double)` は、least upper bound である `AnyVal` に変換されるので、`List[AnyVal]` に型付けされる
 
+:memo: [DroppedWeakConformance.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/DroppedWeakConformance.scala)
+
 ## Deprecated: Nonlocal Returns
 
 https://dotty.epfl.ch/docs/reference/dropped-features/nonlocal-returns.html
@@ -169,6 +184,7 @@ https://dotty.epfl.ch/docs/reference/dropped-features/nonlocal-returns.html
   - Exception Handler がすべての `Exception` を `catch` していると、`NonLocalReturnException` を傍受できてしまう
 - 代替は、`scala.util.control.NonLocalReturns` で提供されている
 
+:memo: [DeprecatedNonlocalReturns.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/DeprecatedNonlocalReturns.scala)
 
 ## Dropped: private[this] and protected[this]
 
@@ -193,3 +209,5 @@ https://dotty.epfl.ch/docs/reference/dropped-features/wildcard-init.html
 - `_` は、初期化されていないフィールドを示すために使用されていたが、削除された
 - その代わりに `scala.compiletime.uninitialized` を使う
   - 例) `var x: String = uninitialized`
+
+:memo: [DroppedWildcardInitializer.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/DroppedWildcardInitializer.scala)

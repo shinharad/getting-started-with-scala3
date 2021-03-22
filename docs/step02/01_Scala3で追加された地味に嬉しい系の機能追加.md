@@ -49,6 +49,8 @@ https://dotty.epfl.ch/docs/reference/changed-features/main-functions.html
   - 任意の数のパラメータを持つことができる
 -  Scala2 系みたいに `extends App` で書くこともできるが、 Scala3 的には `@main` を推奨している
 
+:memo: [MainMethods.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/MainMethods.scala)
+
 ## Match Expressions
 
 https://dotty.epfl.ch/docs/reference/changed-features/match-syntax.html
@@ -58,6 +60,8 @@ https://dotty.epfl.ch/docs/reference/changed-features/match-syntax.html
 2. `match` 式をピリオドの後に書くことができるようになった
 3. `match` 式の被検査体（scrutinee）は、`InfixExpr` でなければならない。そのため、 `x: T match { ... }` はサポートされなくなったので、`(x: T) match { ... }` と書く
 
+:memo: [MatchExpressions.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/MatchExpressions.scala)
+
 ## Trait Parameters
 
 https://dotty.epfl.ch/docs/reference/other-new-features/trait-parameters.html
@@ -65,6 +69,8 @@ https://dotty.epfl.ch/docs/reference/other-new-features/trait-parameters.html
 - `class` のパラメータと同じように `trait` にもパラメータを持たせられるようになった
 - `trait` への引数は、`trait` が初期化される直前に評価される
 - 同一 `trait` の `extends` など、曖昧な定義をするとコンパイルエラー
+
+:memo: [TraitParameters.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/TraitParameters.scala) / [TraitParameters2.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/TraitParameters2.scala)
 
 ## Universal Apply Methods
 
@@ -76,11 +82,15 @@ https://dotty.epfl.ch/docs/reference/other-new-features/creator-applications.htm
 - Javaのクラスも `new` を書かずにインスタンス生成できるようになった
 - `new` を省略することで実装の詳細が隠され、コードがより読みやすくなる
 
+:memo: [UniversalApplyMethods.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/UniversalApplyMethods.scala)
+
 ## Parameter Untupling
 
 https://dotty.epfl.ch/docs/reference/other-new-features/parameter-untupling.html
 
 - タプルのリストを `map` する際、これまでは、パターンパッチで分解（`case (x, y) =>`） しなければならなかったが、それが不要になった（`(x, y) =>`)
+
+:memo: [ParameterUntupling.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/ParameterUntupling.scala)
 
 ## Vararg Splices
 
@@ -88,6 +98,8 @@ https://dotty.epfl.ch/docs/reference/changed-features/vararg-splices.html
 
 - vararg splices の構文が変更になった
 - 今までは、`: _*` と書いていたけど、 `*` のみで良くなった
+
+:memo: [VarargSplices.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/VarargSplices.scala)
 
 ## Rules for Operators
 
@@ -110,6 +122,7 @@ https://dotty.epfl.ch/docs/reference/changed-features/operators.html
 - `infix` 演算子を複数行で書く場合に、行末ではなく行頭に書けるようになった（A leading infix operator）
 - この構文を動作させるために、ルールが変更され、行頭の `infix` 演算子の前のセミコロンを推論しないようになった
 
+:memo: [RulesForOperators.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/RulesForOperators.scala)
 
 ## Extension Methods
 
@@ -124,3 +137,4 @@ https://dotty.epfl.ch/docs/reference/contextual/extension-methods.html
   3. extension method `m` を `r.m` で参照する場合、`r` の暗黙のスコープで定義されている
   4. extension method `m` を `r.m` で参照する場合、型クラスのインスタンスが `r` の暗黙のスコープで定義されている
 
+:memo: [ExtensionMethods.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/ExtensionMethods.scala)

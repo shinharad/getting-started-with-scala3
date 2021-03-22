@@ -40,6 +40,8 @@ https://dotty.epfl.ch/docs/reference/enums/enums.html
 - Enums には独自のメソッドを定義できる
 - Scala で定義した Enums は、 `java.lang.Enum` を継承することで、Java の Enums として使用することができる
 
+:memo: [Enumerations.scala](/step03/src/main/scala/com/github/shinharad/gettingStartedWithScala3/Enumerations.scala)
+
 ## Algebraic Data Types
 
 https://dotty.epfl.ch/docs/reference/enums/adts.html
@@ -49,3 +51,5 @@ https://dotty.epfl.ch/docs/reference/enums/adts.html
 - Enums と同様、ADTs は独自のメソッドを定義することができる 
 - ADTs は、Enums と混在させることができる
 - ADTs の `case` の型パラメータは、親である `enum` の変位指定を引き継ぐ
+
+:memo: [AlgebraicDataTypes.scala](/step03/src/main/scala/com/github/shinharad/gettingStartedWithScala3/AlgebraicDataTypes.scala)

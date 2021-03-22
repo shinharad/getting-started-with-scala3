@@ -32,6 +32,8 @@ https://dotty.epfl.ch/docs/reference/new-types/intersection-types.html
 - `A` と `B` に同一のメンバが存在する場合、`A & B` のメンバの型は、それぞれのメンバの型の Intersection Types になる
 - `&` 演算子は可換的で、`A & B` と `B & A` は等価
 
+:memo: [IntersectionTypes.scala](/step03/src/main/scala/com/github/shinharad/gettingStartedWithScala3/IntersectionTypes.scala)
+
 ## Union Types
 
 https://dotty.epfl.ch/docs/reference/new-types/union-types.html
@@ -39,3 +41,5 @@ https://dotty.epfl.ch/docs/reference/new-types/union-types.html
 - `|` 演算子で、Union Types（合併型）を作成できるようになった
 - `A | B` は、`A` 型か `B` 型のどちらかという意味になる
 - `|` 演算子は可換的で、`A | B` と `B | A` は等価
+
+:memo: [UnionTypes.scala](/step03/src/main/scala/com/github/shinharad/gettingStartedWithScala3/UnionTypes.scala)
