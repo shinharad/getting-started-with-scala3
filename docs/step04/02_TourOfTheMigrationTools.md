@@ -7,6 +7,8 @@
 - [概要](#概要)
 - [ドキュメント参照先](#ドキュメント参照先)
 - [The Scala 3 compiler](#the-scala-3-compiler)
+- [The Scala 2 compiler](#the-scala-2-compiler)
+- [Scala3-migrate](#scala3-migrate)
 - [Scalafix](#scalafix)
 - [sbt and other build tools](#sbt-and-other-build-tools)
 - [Metals and other IDEs](#metals-and-other-ides)
@@ -34,6 +36,30 @@ Scala 2.13 から Scala 3.0 への移行をサポートするいくつかのツ�
   - 詳細は、この後の Scala 3 Migration Mode で確認する
 - このツールを使用して、コミュニティではすでにかなりの数のライブラリが移行されている
   - [Scala 3 Community Build](https://github.com/lampepfl/dotty/tree/master/community-build/community-projects)
+
+## The Scala 2 compiler
+
+- Scala2 コンパイラで、コンパイラオプション `-Xsource:3` を設定すると、いくつかの Scala3 のシンタックスと動作を有効にできる
+- `-Xsource:3` は、早期の移行を促すためのもの
+- ほとんどの非推奨なシンタックスはエラーを出力する
+
+## Scala3-migrate
+
+https://github.com/scalacenter/scala3-migrate
+
+Scala3-migrate は、Scala3 への移行を容易にするためのsbtプラグインで、次のようなインクリメンタルなアプローチを提案している。
+
+- ライブラリの依存関係の移行（`migrate-libs`）
+  - Coursier を使って、すべてのライブラリの依存関係について、Scala 3 で利用可能なバージョンであるかをチェックする
+- コンパイラオプション（scalacOptions）の移行（`migrate-scalacOptions`）
+  - Scala2 のコンパイラオプションは、Scala3 ではそのまま使えるものもあれば、削除されたり、リネームされたりしている
+  - この機能を使うと、プロジェクトのコンパイラオプションをどのように進化させるのかを見つけることができる
+- シンタックスの移行（`migrate-syntax`）
+  - Scalafix のルールを適用することで、いくつかの非互換性を修正する
+- コードの移行（`migrate`）
+  - Scala3 には新しい型推論アルゴリズムが導入され、Scala2 コンパイラが推論した型とは異なる型を推論する可能性がある
+  - Scala3 コンパイラがコードの意味を変えずに動作させるために、明示的にアノテーションを行う最小の型のセットを見つけようとする
+
 
 ## Scalafix
 
