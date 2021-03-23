@@ -57,7 +57,7 @@ https://dotty.epfl.ch/docs/reference/other-new-features/export.html
 - `export` 句は、パッケージオブジェクトからトップレベル定義への移行によってできたギャップを埋めるためのものでもある
   - パッケージオブジェクトがあるクラスを継承している場合、そのパッケージオブジェクトをトップレベル定義へ移行する際に、継承の代わりに `export` 句を付けてトップレベルに定義する
   
-:memo: [ExportClauses.scala](/step05/import-export/src/main/scala/com/github/shinharad/gettingStartedWithScala3/ExportClauses.scala) / [ExportClausesMigration.scala](/step05/import-export/src/main/scala/com/github/shinharad/gettingStartedWithScala3/ExportClausesMigration.scala)
+:memo: [ExportClauses.scala](/step05/import-export/src/main/scala/com/github/shinharad/gettingStartedWithScala3/ExportClauses.scala) / [PackageObjectMigrationWithExportClauses.scala](/step05/import-export/src/main/scala/com/github/shinharad/gettingStartedWithScala3/PackageObjectMigrationWithExportClauses.scala)
 
 ## Open Classes
 
