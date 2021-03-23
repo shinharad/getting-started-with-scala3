@@ -133,6 +133,7 @@ https://dotty.epfl.ch/docs/Other%20New%20Features/
 **[#38c0c4] Optional Braces
 **[#38c0c4] Explicit Nulls
 ** Safe Initialization
+** TypeTest
 @endmindmap
 ```
 
@@ -152,7 +153,7 @@ https://dotty.epfl.ch/docs/Other%20Changed%20Features/
 ** Changes in Type Inference
 ** Changes in Implicit Resolution
 ** Implicit Conversions
-** Changes in Overload Resolution
+**[#38c0c4] Changes in Overload Resolution
 **[#38c0c4] Match Expressions
 **[#38c0c4] Vararg Splices
 ** Pattern Bindings

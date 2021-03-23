@@ -9,13 +9,14 @@
 - [Imports](#imports)
 - [Export Clauses](#export-clauses)
 - [Open Classes](#open-classes)
+- [Changes in Overload Resolution](#changes-in-overload-resolution)
 - [Explicit Nulls](#explicit-nulls)
 
 <!-- /code_chunk_output -->
 
 ## 概要
 
-Step1では、序盤で見ておきたいものを抽出しましたが、ここでは Reference でまだ取り上げていない、Imports、Export Clauses、Open Classes、Explicit Nulls について見ていきたいと思います。
+Step1では、序盤で見ておきたいものを抽出しましたが、ここでは Reference でまだ取り上げていない、Imports、Export Clauses、Open Classes、Changes in Overload Resolution、Explicit Nulls について見ていきたいと思います。
 
 ## ドキュメント参照先
 
@@ -24,6 +25,7 @@ Step1では、序盤で見ておきたいものを抽出しましたが、ここ
 - [Imports](https://dotty.epfl.ch/docs/reference/changed-features/imports.html)
 - [Export Clauses](https://dotty.epfl.ch/docs/reference/other-new-features/export.html)
 - [Open Classes](https://dotty.epfl.ch/docs/reference/other-new-features/open-classes.html)
+- [Changes in Overload Resolution](https://dotty.epfl.ch/docs/reference/changed-features/overload-resolution.html)
 - [Explicit Nulls](https://dotty.epfl.ch/docs/reference/other-new-features/explicit-nulls.html)
 
 
@@ -56,7 +58,7 @@ https://dotty.epfl.ch/docs/reference/other-new-features/export.html
   - パッケージオブジェクトがあるクラスを継承している場合、そのパッケージオブジェクトをトップレベル定義へ移行する際に、継承の代わりに `export` 句を付けてトップレベルに定義する
   
 :memo: [ExportClauses.scala](/step05/import-export/src/main/scala/com/github/shinharad/gettingStartedWithScala3/ExportClauses.scala) / [ExportClausesMigration.scala](/step05/import-export/src/main/scala/com/github/shinharad/gettingStartedWithScala3/ExportClausesMigration.scala)
-  
+
 ## Open Classes
 
 https://dotty.epfl.ch/docs/reference/other-new-features/open-classes.html
@@ -75,6 +77,11 @@ https://dotty.epfl.ch/docs/reference/other-new-features/open-classes.html
   - アドホックに拡張することを許容する（ただし自己責任で） => 何も付けない
 
 :memo: [OpenClassWriter.scala](/step05/open-class/src/main/scala/com/github/shinharad/gettingStartedWithScala3/OpenClassWriter.scala) / [OpenClassEncryptedWriter.scala](/step05/open-class/src/main/scala/com/github/shinharad/gettingStartedWithScala3/OpenClassEncryptedWriter.scala)
+
+## Changes in Overload Resolution
+
+*** TO BE FILLED IN ***
+
 
 ## Explicit Nulls
 
