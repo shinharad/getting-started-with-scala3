@@ -6,4 +6,8 @@ public class JavaClass {
     return "";
   }
 
+  public String unsafeMethod() {
+    return null;
+  }
+
 }
