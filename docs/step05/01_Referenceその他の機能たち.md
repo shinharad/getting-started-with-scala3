@@ -10,6 +10,8 @@
 - [Export Clauses](#export-clauses)
 - [Open Classes](#open-classes)
 - [Changes in Overload Resolution](#changes-in-overload-resolution)
+  - [Looking Beyond the First Argument List](#looking-beyond-the-first-argument-list)
+  - [Parameter Types of Function Values](#parameter-types-of-function-values)
 - [Explicit Nulls](#explicit-nulls)
 
 <!-- /code_chunk_output -->
@@ -80,8 +82,25 @@ https://dotty.epfl.ch/docs/reference/other-new-features/open-classes.html
 
 ## Changes in Overload Resolution
 
-*** TO BE FILLED IN ***
+https://dotty.epfl.ch/docs/reference/changed-features/overload-resolution.html
 
+### Looking Beyond the First Argument List
+
+- Scala3 のオーバーロードは、複数の引数リストが存在する場合、最初の引数リストだけでなく、すべての引数リストの型を考慮するようになった
+  ```scala
+  def f(x: Int)(y: String): Int = 0
+  def f(x: Int)(y: Int): Int = 0
+  ```
+
+### Parameter Types of Function Values
+
+- Scala3 では、オーバーロードされた最初の引数リストに、欠損したパラメータ型（missing parameter types）を持つ関数値を渡せるようになった
+  ```scala
+  def f(x: Int, f2: Int => Int) = f2(x)
+  def f(x: String, f2: String => String) = f2(x)
+  f("a", _.toUpperCase)
+  f(2, _ * 2)
+  ```
 
 ## Explicit Nulls
 
