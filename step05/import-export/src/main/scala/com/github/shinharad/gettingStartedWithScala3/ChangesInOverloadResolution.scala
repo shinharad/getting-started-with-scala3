@@ -16,9 +16,9 @@ object No1:
   /*
   f(3)("")
   ^
-  <pastie>:5: error: ambiguous reference to overloaded definition,
-  both method f in object A of type (x: Int)(y: Int): Int
-  and  method f in object A of type (x: Int)(y: String): Int
+  <pastie>error: ambiguous reference to overloaded definition,
+  both method f in object No1 of type (x: Int)(y: Int): Int
+  and  method f in object No1 of type (x: Int)(y: String): Int
   match argument types (Int)
   */
 
