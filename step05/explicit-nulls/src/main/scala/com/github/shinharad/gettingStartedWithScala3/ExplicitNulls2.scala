@@ -164,8 +164,6 @@ def no6_2(): Unit =
 // 多くの nullable な値を扱うのは時として困難になるので、language feature として `unsafeNulls` が提供されている
 // unsafeNulls スコープの中では、すべての `T | Null` は `T` として使用することができる。
 
-// （※現状は unsafeNulls が機能していないっぽく、以下のコードはコンパイルが通らない）
-
 def no7_1(): Unit =
   def f(x: String): String = ???
   def nullOf[T >: Null]: T = null
@@ -175,29 +173,29 @@ def no7_1(): Unit =
   val s: String | Null = ???
 
   // nullable を non-null に設定する
-  // val a: String = s
+  val a: String = s
 
   // nullable を non-null として扱える
-  // val b1 = s.trim
-  // val b2 = b1.length
+  val b1 = s.trim
+  val b2 = b1.length
 
   // nullable を non-null な引数に渡せる
-  // f(s).trim
+  f(s).trim
 
   // non-null に null を渡せる
-  // val c: String = null
+  val c: String = null
 
   val d1: Array[String] = ???
 
   // non-null の型パラメータを nullable な型パラメータの変数に設定できる
-  // val d2: Array[String | Null] = d1
+  val d2: Array[String | Null] = d1
 
   // Arrayの要素に null を設定したとしても non-null な型パラメータとして扱える
-  // val d3: Array[String] = Array(null)
+  val d3: Array[String] = Array(null)
 
   // Null は Any のサブタイプだが、AnyRef として使用できるので、
   // このような安全でない上限型境界を指定できる
-  // class C[T >: Null <: String] // define a type bound with unsafe conflict bound
+  class C[T >: Null <: String] // define a type bound with unsafe conflict bound
 
   // Null は Any のサブタイプだが、AnyRef として使用できるので、任意の参照型を渡せる
   // val n = nullOf[String]

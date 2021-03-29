@@ -1,4 +1,4 @@
-ThisBuild / scalaVersion := "3.0.0-RC1"
+ThisBuild / scalaVersion := "3.0.0-RC2"
 ThisBuild / version      := "0.0.1-SNAPSHOT"
 
 ThisBuild / scalacOptions ++= Seq(
@@ -91,7 +91,7 @@ lazy val `step05-explicit-nulls` =
     .settings(
       scalacOptions ++= Seq(
         "-Yexplicit-nulls",
-        "-Ycheck-init",  // TODO "-Ysafe-init" にリネームされる予定 https://github.com/lampepfl/dotty/pull/11670
+        "-Ysafe-init",
         // "-language:unsafeNulls"
       )
     )
