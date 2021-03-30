@@ -14,6 +14,5 @@ def parameterUntupling(): Unit =
     (x, y) => x + y
   }
 
+  // 省略してこんな感じに書ける
   xs map (_ + _)
-
-  ()

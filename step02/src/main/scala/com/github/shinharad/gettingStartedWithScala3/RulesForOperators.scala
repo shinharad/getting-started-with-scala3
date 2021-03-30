@@ -33,7 +33,7 @@ def no1: Unit =
   s1 `*` s2           // also OK, but unusual
   s1.*(s2)            // also OK, but unusual
 
-// 型にも使用できる
+// typeでも使用できる
 def no2: Unit =
   infix type or[X, Y]
   val x: String or Int = ???
@@ -46,52 +46,53 @@ trait Infix:
   infix def op3(x: Int, y: Int): Int    // error: two parameters
 
   extension (x: Infix)
-    infix def op4(y: Int): Int          // ok
+    infix def op4(y: Int): Int            // ok
     infix def op5(y1: Int, y2: Int): Int  // error: two parameters
 
 //---
 // Syntax Change
 
 // infix 演算子を複数行の行頭で書けるようになった
-
 def no3: Unit =
+  val x: Int = ???
+  val xs: List[Int] = ???
+
   val str = "hello"
     ++ " world"
     ++ "!"
 
-def no4: Unit =
-  val x: Int = ???
-  val xs: List[Int] = ???
-
-  // infix 演算子を行頭に書く
-  def condition1 =
+  def condition =
     x > 0
     ||
     xs.exists(_ > 0)
     || xs.isEmpty
 
-  // 今までの書き方もコンパイルが通る
-  def condition =
+  // これまで通り、infix 演算子を行末に書いても一応コンパイルは通る
+  val str2 = "hello" ++
+    " world" ++
+    "!"
+
+  def condition2 =
     x > 0 ||
     xs.exists(_ > 0) ||
     xs.isEmpty
 
-def no5(): Int =
+// 行頭に infix 演算子を書く場合、その後の式の前にスペースを少なくとも1つ入れる必要がある
+def no4(): Int =
+  val freezing = true
+  val boiling = true
 
-  // Scala3 では ??? を infix 演算子として扱うのでこれはコンパイルエラー
-  // println("hello")
-  // ???
-  // ??? match { case 0 => 1 }
+  // `|` の後にスペースがあるので、これは1つのステートメントだけど
+    freezing
+  | boiling
 
-  // それを望まない場合は、
+  // これは、`!` の後にスペースが無いので、別々のステートメントとして扱われる
+  //   freezing
+  // !boiling
 
-  // 前に ; を入れるとか
+  // これは3つのステートメントとして扱われる
+  // `???` は構文的にはシンボリック演算子だけど、
+  // どちらの出現箇所にもスペースとその後ろの式が無い
   println("hello")
-  ;???
-  ??? match { case 0 => 1 }
-
-  // 前に空行を入れるとか
-  println("hello")
-
   ???
   ??? match { case 0 => 1 }

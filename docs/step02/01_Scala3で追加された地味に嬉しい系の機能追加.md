@@ -88,7 +88,17 @@ https://dotty.epfl.ch/docs/reference/other-new-features/creator-applications.htm
 
 https://dotty.epfl.ch/docs/reference/other-new-features/parameter-untupling.html
 
-- タプルのリストを `map` する際、これまでは、パターンパッチで分解（`case (x, y) =>`） しなければならなかったが、それが不要になった（`(x, y) =>`)
+- タプルのリストを `map` する際、これまでは、パターンパッチで分解しなければならなかったが、それが不要になった
+  ```scala
+  xs map {
+    (x, y) => x + y
+  }
+
+  // Scala2 まではこう書いていた
+  xs map {
+    case (x, y) => x + y
+  }
+  ```
 
 :memo: [ParameterUntupling.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/ParameterUntupling.scala)
 
@@ -119,8 +129,31 @@ https://dotty.epfl.ch/docs/reference/changed-features/operators.html
  
 ### Syntax Change
 
-- `infix` 演算子を複数行で書く場合に、行末ではなく行頭に書けるようになった（A leading infix operator）
-- この構文を動作させるために、ルールが変更され、行頭の `infix` 演算子の前のセミコロンを推論しないようになった
+- 複数行の場合に `infix` 演算子を行末ではなく行頭で書けるようになった
+  ```scala
+  val str = "hello"
+    ++ " world"
+    ++ "!"
+  ```
+- Scala2 のセミコロンによる推論では、`++ " world"` や `++ "!"` は、別々のステートメントとして扱われていた
+  ```scala
+  // Scala2 ではコンパイルエラー
+  val str = "hello"
+    ++ " world"
+    ++ "!"
+  ```
+- この構文を機能させるために、先頭に `infix` 演算子がある場合は、その前のセミコロンを推論しないようにルールが変わった
+- 行頭に `infix` 演算子を書く場合、その後の式の前にスペースを少なくとも1つ入れる必要がある
+  ```scala
+  // これは一つのステートメントとして扱われるけど、
+    freezing
+  | boiling
+
+  // これは別々のステートメントとして扱われる
+    freezing
+  !boiling
+  ```
+
 
 :memo: [RulesForOperators.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/RulesForOperators.scala)
 
@@ -129,10 +162,10 @@ https://dotty.epfl.ch/docs/reference/changed-features/operators.html
 https://dotty.epfl.ch/docs/reference/contextual/extension-methods.html
 
 - これまで `implicit class` で実現していた拡張メソッドに専用の構文が追加された
-- extension methods は、通常のメソッド呼び出しと同じ様に、infix `.` で呼び出すことができる
-- `<` や `+:` など、演算子の定義としても使える
+- extension methods は、通常のメソッドと同じように呼び出せる
+- extension methods は、シンボリック演算子（`<` や `+:` など）も定義できる
 - extension methods を参照可能にするためには4つの方法がある
-  1. スコープ内で定義しているか、それを継承、インポートしている
+  1. スコープ内で定義、またはそれを継承、インポートしている
   2. 参照先のスコープ内で型クラスのインスタンスが定義されている
   3. extension method `m` を `r.m` で参照する場合、`r` の暗黙のスコープで定義されている
   4. extension method `m` を `r.m` で参照する場合、型クラスのインスタンスが `r` の暗黙のスコープで定義されている
