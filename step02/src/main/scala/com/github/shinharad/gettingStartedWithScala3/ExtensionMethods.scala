@@ -189,7 +189,7 @@ def no7_3_4(): Unit =
 
   // 例えば、標準ライブラリの List のコンパニオンオブジェクトでは、
   // extension method として、flatten が、
-  // Ordering 型クラスのインスタンスが定義されている
+  // それと、Ordering 型クラスのインスタンスが定義されている
 
   /*
   class List[T]
@@ -224,4 +224,4 @@ def no7_3_4(): Unit =
     def foo(): Unit = println("b")
 
   // 呼び出そうとするとコンパイルエラー
-  // "x".foo()
+  // "x".foo() // foo is already defined as method foo
