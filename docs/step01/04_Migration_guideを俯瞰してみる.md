@@ -7,6 +7,7 @@
 
 - [概要](#概要)
 - [General](#general)
+- [Tooling](#tooling)
 - [Tutorials](#tutorials)
 - [Incompatibilities](#incompatibilities)
 - [Macros](#macros)
@@ -24,6 +25,7 @@ Scala3 のマイグレーションや Scala2 系との互換性を確認する�
 @startmindmap
 * Migration guide
 ** General
+** Tooling
 ** Tutorials
 ** Incompatibilities
 ** Macros
@@ -39,8 +41,19 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility.html
 @startmindmap
 * General
 **[#38c0c4] Compatibility Reference
+**[#38c0c4] Incompatibility Table
+** Metaprogramming
+@endmindmap
+```
+
+## Tooling
+
+```plantuml
+@startmindmap
+* General
 **[#38c0c4] Tour of the Migration Tools
-**[#38c0c4] Scala 3.0 Migration Mode
+**[#38c0c4] Scala 3 Migration Mode
+**[#38c0c4] Scala 3 Migrate Plugin
 **[#38c0c4] Scala 3 Syntax Rewriting
 @endmindmap
 ```
@@ -64,7 +77,6 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/incompatibilities/tab
 ```plantuml
 @startmindmap
 * Incompatibilities
-**[#38c0c4] Incompatibility Table
 **[#38c0c4] Syntactic Changes
 **[#38c0c4] Dropped Features
 ** Contextual Abstractions
@@ -82,7 +94,6 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/macros/macro-librarie
 @startmindmap
 * Macros
 ** Scala Macro Libraries
-** Metaprogramming in Scala 3
 ** Porting a Macro Library
 @endmindmap
 ```
@@ -99,4 +110,3 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/external-resources/mo
 ** Moving from Scala 2 to Scala 3
 @endmindmap
 ```
-

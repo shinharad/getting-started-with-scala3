@@ -28,7 +28,7 @@ Scala 2.13 と Scala 3 の互換性について、Source Level、Classpath Compa
 
 [Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide/) からこちらを参照します。
 
-- [Compatibility Reference](https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility.html)
+- [Compatibility Reference](https://scalacenter.github.io/scala-3-migration-guide/docs/general/compatibility.html)
 
 
 ## Source Level
@@ -100,7 +100,7 @@ Scala 2.13 と Scala 3 の互換性について、Source Level、Classpath Compa
 
 ここからは、以下のリンク先の図やコードを一緒に見ていきましょう。
 
-https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility.html#examples
+https://scalacenter.github.io/scala-3-migration-guide/docs/general/compatibility.html#examples
 
 ※以降は、sbt 1.5.0 以上が必須となります
 

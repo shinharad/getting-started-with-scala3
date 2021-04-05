@@ -17,13 +17,13 @@
 
 最後に Scala 2.13 と Scala 3.0 との非互換性について確認しましょう。
 
-ここで言う非互換性とは、Scala 2.13 ではコンパイルできても Scala 3.0 ではコンパイルできないコードのことを指します。コードベースを Scala 2.13 から Scala 3.0 へ移行するには、ソースコードの非互換性をすべて見つけ出して修正する必要があります。
+ここで言う非互換性とは、Scala 2.13 ではコンパイルできても Scala 3 ではコンパイルできないコードのことを指します。コードベースを Scala 2.13 から Scala 3 へ移行するには、ソースコードの非互換性をすべて見つけ出して修正する必要があります。
 
 ## ドキュメント参照先
 
 [Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide/) からこちらを参照します。
 
-- [Incompatibility Table](https://scalacenter.github.io/scala-3-migration-guide/docs/incompatibilities/table.html)
+- [Incompatibility Table](https://scalacenter.github.io/scala-3-migration-guide/docs/general/incompatibility-table.html)
 
 補足としてこちらも参照します。
 
@@ -33,17 +33,19 @@
 
 ## Incompatibility Table
 
-https://scalacenter.github.io/scala-3-migration-guide/docs/incompatibilities/table.html
+https://scalacenter.github.io/scala-3-migration-guide/docs/general/incompatibility-table.html
 
-Incompatibility Table は、Scala 2.13 と Scala 3.0 のそれぞれの非互換性について、どのような移行方法があるのかがまとめられています。
+Incompatibility Table は、Scala 2.13 と Scala 3 のそれぞれの非互換性について、どのような移行方法があるのかがまとめられています。
 
 観点としては、
 
-- Scala 2.13 で Deprecation だったかどうか
-- Scala 3.0 Migration Mode で自動的に書き換えられるか
-- Scalafix Rule で検出できるか
+- Scala 2.13 コンパイラが deprecation または feature の警告メッセージを出力するか
+- それに対する Scala3 migration のルールの有無
+- それを修正するための Scalafix ルールの有無
 
 また、まれに Scala 2.13 と Scala 3.0 で実行時の非互換性が発生することもあるので注意が必要です。
+
+**:construction: かなり頻繁に変わってるので今後内容が変わる予定です :construction:**
 
 ---
 

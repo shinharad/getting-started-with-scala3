@@ -6,48 +6,92 @@
 
 - [概要](#概要)
 - [ドキュメント参照先](#ドキュメント参照先)
-- [The Scala 3 compiler](#the-scala-3-compiler)
-- [The Scala 2 compiler](#the-scala-2-compiler)
-- [Scala3-migrate](#scala3-migrate)
-- [Scalafix](#scalafix)
-- [sbt and other build tools](#sbt-and-other-build-tools)
-- [Metals and other IDEs](#metals-and-other-ides)
-- [Scaladex](#scaladex)
+- [The Scala Compilers](#the-scala-compilers)
+  - [The Scala 2.13 compiler](#the-scala-213-compiler)
+  - [The Scala 3 compiler](#the-scala-3-compiler)
+- [Build tools](#build-tools)
+  - [sbt](#sbt)
+  - [Mill](#mill)
+- [Code editors and IDEs](#code-editors-and-ides)
+  - [Metals](#metals)
+  - [IntelliJ IDEA](#intellij-idea)
+- [Migration Tools](#migration-tools)
+  - [Scalafix](#scalafix)
+  - [Scala 3 migrate Plugin](#scala-3-migrate-plugin)
+  - [Scaladex](#scaladex)
 
 <!-- /code_chunk_output -->
 
 
 ## 概要
 
-Scala 2.13 から Scala 3.0 への移行をサポートするいくつかのツールを確認しておきましょう。
-
+Scala 2.13 から Scala3 への移行をサポートするいくつかのツールを確認しておきましょう。
 
 ## ドキュメント参照先
 
 [Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide/) からこちらを参照します。
 
-- [Tour of the Migration Tools](https://scalacenter.github.io/scala-3-migration-guide/docs/migration-tools.html)
+- [Tour of the Migration Tools](https://scalacenter.github.io/scala-3-migration-guide/docs/tooling/migration-tools.html)
 
 
-## The Scala 3 compiler
+## The Scala Compilers
 
-- Scala3 コンパイラ自体が強力な移行ツールとなっている
-- Scala 3 Migration Mode を備えていて、必要に応じて Scala 2.13 のコードを Scala3 のコードへ書き換えてくれる
-  - 詳細は、この後の Scala 3 Migration Mode で確認する
-- このツールを使用して、コミュニティではすでにかなりの数のライブラリが移行されている
-  - [Scala 3 Community Build](https://github.com/lampepfl/dotty/tree/master/community-build/community-projects)
+### The Scala 2.13 compiler
 
-## The Scala 2 compiler
-
-- Scala2 コンパイラで、コンパイラオプション `-Xsource:3` を設定すると、いくつかの Scala3 のシンタックスと動作を有効にできる
+- Scala 2.13 で、コンパイラオプション `-Xsource:3` を有効にすると、いくつかの Scala3 のシンタックスと動作を有効にできる
 - `-Xsource:3` は、早期の移行を促すためのもの
-- ほとんどの非推奨なシンタックスはエラーを出力する
 
-## Scala3-migrate
+### The Scala 3 compiler
+
+- Scala3 で、コンパイラオプション `-source:3.0-migration` を有効にすると、コンパイラは Scala 2.13 のシンタックスの一部を受け入れ、変更が必要な場合は警告メッセージを出力する
+- 更に `-rewrite` と組み合わせることで、コードを自動的に書き換えることができる
+  - 詳細は、この後の Scala 3 Migration Mode で確認する
+
+## Build tools
+
+### sbt
+
+- sbt 1.5 は、Scala3 をサポートしている
+- 一般的な task や setting、多くのプラグインは同じように動作する
+- 移行を助けるために、sbt 1.5 は新しい Scala3 のクロスバージョンを導入している
+
+```scala
+// build.sbt
+libraryDependency += ("org.foo" %% "foo" % "1.0.0").cross(CrossVersion.for3Use2_13)
+libraryDependency += ("org.bar" %% "bar" % "1.0.0").cross(CrossVersion.for2_13Use3)
+```
+
+### Mill
+
+- Mill 0.9.3 以上は Scala3 をサポートしている
+
+
+## Code editors and IDEs
+
+### Metals
+
+- Metals は、VS Code、Vim、Emacs、Sublime Text、Eclipse で動作する Scala language server
+- Metals は、Scala3 の非常に多くの機能をサポートしていて、新しい構文の変更や新機能のために、いくつかのマイナーな調整を行う予定
+
+### IntelliJ IDEA
+
+- IntelliJ の Scala plugin は、Scala3 を暫定的にサポートしていて、本格的なサポートは、JetBrains 社のチームが取り組んでいる
+
+## Migration Tools
+
+### Scalafix
+
+https://scalacenter.github.io/scalafix/
+
+- Scalafix は、Scala のリファクタリングツール
+- 非互換性は、対応する Scalafix のルールで解決できる
+- ルールは、sbt-scalafix plugin を使って適用することもできるし、後述するオールインワンの Scala 3 migrate Plugin を使うこともできる
+
+### Scala 3 migrate Plugin
 
 https://github.com/scalacenter/scala3-migrate
 
-Scala3-migrate は、Scala3 への移行を容易にするためのsbtプラグインで、次のようなインクリメンタルなアプローチを提案している。
+cala 3 migrate Plugin は、Scala3 への移行を容易にするための sbt plugin で、次のようなインクリメンタルなアプローチを提案している。
 
 - ライブラリの依存関係の移行（`migrate-libs`）
   - Coursier を使って、すべてのライブラリの依存関係について、Scala 3 で利用可能なバージョンであるかをチェックする
@@ -60,25 +104,6 @@ Scala3-migrate は、Scala3 への移行を容易にするためのsbtプラグ�
   - Scala3 には新しい型推論アルゴリズムが導入され、Scala2 コンパイラが推論した型とは異なる型を推論する可能性がある
   - Scala3 コンパイラがコードの意味を変えずに動作させるために、明示的にアノテーションを行う最小の型のセットを見つけようとする
 
-
-## Scalafix
-
-https://scalacenter.github.io/scalafix/
-
-- Scalafix は Scala のリファクタリングツールだが、Scala3 への移行時にコンパイラを支援する補助的なツールとして使える
-- Scalafix は、 Scala 2.13 で動作するため、移行前にコードを整備することができる
-- ルールを一つずつ適用していくことでインクリメンタルに進めることができる
-- コードにいくつかの型や implicit の値を追加することで、型推論や implicit の解決の問題を自動または半自動で解決するのには非常に便利
-
-## sbt and other build tools
-
-- [sbt-dotty](https://dotty.epfl.ch/docs/usage/getting-started.html) プラグインは、Scala 3.0 と Scala 2.13 とのクロスコンパイルをサポートしている
-- [Mill](https://com-lihaoyi.github.io/mill/) など他のビルドツールもクロスコンパイルをサポートしている
-
-## Metals and other IDEs
-
-- Visual Studio Code には独自の Scala 3.0 Language Server プラグインがあり、sbt-dotty プラグインの `sbt launchIDE` タスクで設定できる
-
-## Scaladex
+### Scaladex
 
 - [Scaladex](https://index.scala-lang.org/search?q=*&scalaVersions=scala3) では、Scala 3.0 をサポートするオープンソースライブラリを探すことができる
