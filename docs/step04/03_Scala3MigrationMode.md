@@ -21,7 +21,7 @@ Scala 2.13 のコードベースを Scala 3.0 へ移行していく際の Migrat
 
 [Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide/) からこちらを参照します。
 
-- [Scala 3.0 Migration Mode](https://scalacenter.github.io/scala-3-migration-guide/docs/tooling/scala-3-migration-mode.html)
+- [Scala 3 Migration Mode](https://scalacenter.github.io/scala-3-migration-guide/docs/tooling/scala-3-migration-mode.html)
 
 
 ## Migration mode
