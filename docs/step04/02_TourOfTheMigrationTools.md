@@ -91,7 +91,7 @@ https://scalacenter.github.io/scalafix/
 
 https://github.com/scalacenter/scala3-migrate
 
-cala 3 migrate Plugin は、Scala3 への移行を容易にするための sbt plugin で、次のようなインクリメンタルなアプローチを提案している。
+Scala 3 migrate Plugin は、Scala3 への移行を容易にするための sbt plugin で、次のようなインクリメンタルなアプローチを提案している。
 
 - ライブラリの依存関係の移行（`migrate-libs`）
   - Coursier を使って、すべてのライブラリの依存関係について、Scala 3 で利用可能なバージョンであるかをチェックする
