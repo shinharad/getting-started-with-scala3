@@ -1,5 +1,7 @@
 # Porting an sbt Project {ignore=true}
 
+**:construction: 内容が変わるはずなので保留中 :construction:**
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -9,7 +11,6 @@
 - [Porting an sbt Project](#porting-an-sbt-project-1)
 
 <!-- /code_chunk_output -->
-
 
 ## 概要
 

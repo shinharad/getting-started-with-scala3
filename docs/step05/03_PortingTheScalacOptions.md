@@ -1,5 +1,7 @@
 # Porting the scalacOptions {ignore=true}
 
+**:construction: 内容が変わるはずなので保留中 :construction:**
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
