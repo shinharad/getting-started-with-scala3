@@ -8,6 +8,7 @@
 - [ドキュメント参照先](#ドキュメント参照先)
 - [Imports](#imports)
 - [Export Clauses](#export-clauses)
+- [Pattern Bindings](#pattern-bindings)
 - [Open Classes](#open-classes)
 - [Changes in Overload Resolution](#changes-in-overload-resolution)
   - [Looking Beyond the First Argument List](#looking-beyond-the-first-argument-list)
@@ -26,6 +27,7 @@ Step1では、序盤で見ておきたいものを抽出しましたが、ここ
 
 - [Imports](https://dotty.epfl.ch/docs/reference/changed-features/imports.html)
 - [Export Clauses](https://dotty.epfl.ch/docs/reference/other-new-features/export.html)
+- [Pattern Bindings](https://dotty.epfl.ch/docs/reference/changed-features/pattern-bindings.html)
 - [Open Classes](https://dotty.epfl.ch/docs/reference/other-new-features/open-classes.html)
 - [Changes in Overload Resolution](https://dotty.epfl.ch/docs/reference/changed-features/overload-resolution.html)
 - [Explicit Nulls](https://dotty.epfl.ch/docs/reference/other-new-features/explicit-nulls.html)
@@ -60,6 +62,18 @@ https://dotty.epfl.ch/docs/reference/other-new-features/export.html
   - パッケージオブジェクトがあるクラスを継承している場合、そのパッケージオブジェクトをトップレベル定義へ移行する際に、継承の代わりに `export` 句を付けてトップレベルに定義する
   
 :memo: [ExportClauses.scala](/step05/import-export/src/main/scala/com/github/shinharad/gettingStartedWithScala3/ExportClauses.scala) / [PackageObjectMigrationWithExportClauses.scala](/step05/import-export/src/main/scala/com/github/shinharad/gettingStartedWithScala3/PackageObjectMigrationWithExportClauses.scala)
+
+## Pattern Bindings
+
+https://dotty.epfl.ch/docs/reference/changed-features/pattern-bindings.html
+
+- Scala2 では、`val` や `for` 式の pattern bindings は型チェックが緩く、潜在的に失敗する場合でもコンパイルは通るが、実行時に影響を与える可能性があった
+- Scala 3.1 からは、型チェックのルールが強化され、右辺の型がパターンの型に適合しない場合は、コンパイル時に警告メッセージを出力するようになった
+- ただ、時にはパターンの型が不適合であっても pattern bindings したい場合がある。その場合は `@unchecked` を付けることで警告メッセージを回避できる
+- Scala 3.0 では、コンパイラオプション `-source future` を設定することで、警告メッセージが出力されるようになる
+
+:memo: [PatternBindings.scala](/step05/open-class/src/main/scala/com/github/shinharad/gettingStartedWithScala3/PatternBindings.scala)
+
 
 ## Open Classes
 

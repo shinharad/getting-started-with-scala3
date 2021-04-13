@@ -156,7 +156,7 @@ https://dotty.epfl.ch/docs/Other%20Changed%20Features/
 **[#38c0c4] Changes in Overload Resolution
 **[#38c0c4] Match Expressions
 **[#38c0c4] Vararg Splices
-** Pattern Bindings
+**[#38c0c4] Pattern Bindings
 ** Option-less pattern matching
 ** Automatic Eta Expansion
 ** Changes in Compiler Plugins
