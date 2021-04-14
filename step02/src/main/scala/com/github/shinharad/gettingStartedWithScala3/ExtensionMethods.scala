@@ -126,21 +126,6 @@ def no5(): Unit =
       val limit = smallest(n).max
       xs.zipWithIndex.collect { case (x, i) if (x <= limit) => i }
 
-//---
-// 再帰的な呼び出しの場合
-
-def no6_extension(): Unit =
-  extension (s: String)
-    def position(ch: Char, n: Int): Int =
-      if n < s.length && s(n) != ch then position(ch, n + 1)
-      else n
-
-// コンパイラは内部的に通常のメソッド呼び出しとして解釈する
-def no6_rewrite(): Unit = 
-  def position(s: String)(ch: Char, n: Int): Int =
-    if n < s.length && s(n) != ch then position(s)(ch, n + 1)
-    else n
-
 //--
 // Translation of Calls to Extension Methods
 
@@ -178,14 +163,14 @@ trait SafeDiv:
       case _ => None
 
 // 2. 参照先のスコープ内で型クラスのインスタンスが定義されている
-def no7_2(): Unit =
+def no6_2(): Unit =
   given ops1: IntOps with {} // given ... with は、型クラスのインスタンスを定義している
 
   1.safeMod(2)
 
 // 3. extension method `m` を `r.m` で参照する場合、`r` の暗黙のスコープで定義されている
 // 4. extension method `m` を `r.m` で参照する場合、型クラスのインスタンスが `r` の暗黙のスコープで定義されている
-def no7_3_4(): Unit =
+def no6_3_4(): Unit =
 
   // 例えば、標準ライブラリの List のコンパニオンオブジェクトでは、
   // extension method として、flatten が、
@@ -212,6 +197,21 @@ def no7_3_4(): Unit =
   import math.Ordering.Implicits.given
   List(1, 2) < List(3)
 
+
+//---
+// 再帰的な呼び出しの場合
+
+def no7_extension(): Unit =
+  extension (s: String)
+    def position(ch: Char, n: Int): Int =
+      if n < s.length && s(n) != ch then position(ch, n + 1)
+      else n
+
+// コンパイラは内部的に通常のメソッド呼び出しとして解釈する
+def no7_rewrite(): Unit =
+  def position(s: String)(ch: Char, n: Int): Int =
+    if n < s.length && s(n) != ch then position(s)(ch, n + 1)
+    else n
 
 //---
 // 同一スコープ内で重複した定義ができるっぽいけど、呼び出そうとするとコンパイルエラー
