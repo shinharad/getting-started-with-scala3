@@ -50,7 +50,7 @@ def no2(): Unit =
   2 min 3
 
   // こう書くこともできる
-  <("a")("c")
+  <("ab")("c")
   +:(List(Elem(2), Elem(3)))(Elem(1))
   min(2)(3)
 
@@ -116,6 +116,17 @@ def no4_expand(): Unit =
 
   extension (ss: Seq[String])
     def longestString: String = ss.longestStrings.head
+
+// ちなみに longestString を先に定義するとコンパイルエラー
+def no4_expand_2(): Unit =
+  // コンパイルエラー
+  // extension (ss: Seq[String])
+  //   def longestString: String = ss.longestStrings.head
+
+  extension (ss: Seq[String])
+    def longestStrings: Seq[String] =
+      val maxLength = ss.map(_.length).max
+      ss.filter(_.length == maxLength)
 
 // Collective extensions は、型パラメータを取り、using 句を持つこともできる
 def no5(): Unit =
@@ -196,7 +207,6 @@ def no6_3_4(): Unit =
   // Ordering 型クラスのインスタンスも参照できるので、`<` も利用できる
   import math.Ordering.Implicits.given
   List(1, 2) < List(3)
-
 
 //---
 // 再帰的な呼び出しの場合
