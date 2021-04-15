@@ -39,10 +39,10 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility.html
 
 ```plantuml
 @startmindmap
-* General
+*[#fff] General
 **[#38c0c4] Compatibility Reference
 **[#38c0c4] Incompatibility Table
-** Metaprogramming
+**[#fff] Metaprogramming
 @endmindmap
 ```
 
@@ -50,7 +50,7 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility.html
 
 ```plantuml
 @startmindmap
-* General
+*[#fff] General
 **[#38c0c4] Tour of the Migration Tools
 **[#38c0c4] Scala 3 Migration Mode
 **[#38c0c4] Scala 3 Migrate Plugin
@@ -64,7 +64,7 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/tutorials/sbt-migrati
 
 ```plantuml
 @startmindmap
-* Tutorials
+*[#fff] Tutorials
 **[#38c0c4] Porting an sbt Project
 **[#38c0c4] Porting the scalacOptions
 @endmindmap
@@ -76,10 +76,10 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/incompatibilities/tab
 
 ```plantuml
 @startmindmap
-* Incompatibilities
+*[#fff] Incompatibilities
 **[#38c0c4] Syntactic Changes
 **[#38c0c4] Dropped Features
-** Contextual Abstractions
+**[#fff] Contextual Abstractions
 **[#38c0c4] Other Changed Features
 @endmindmap
 ```
@@ -92,9 +92,9 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/macros/macro-librarie
 
 ```plantuml
 @startmindmap
-* Macros
-** Scala Macro Libraries
-** Porting a Macro Library
+*[#fff] Macros
+**[#fff] Scala Macro Libraries
+**[#fff] Porting a Macro Library
 @endmindmap
 ```
 
@@ -106,7 +106,7 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/external-resources/mo
 
 ```plantuml
 @startmindmap
-* External Resources
-** Moving from Scala 2 to Scala 3
+*[#fff] External Resources
+**[#fff] Moving from Scala 2 to Scala 3
 @endmindmap
 ```

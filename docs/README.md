@@ -2,6 +2,8 @@
 
 Scala3 のドキュメントの散策は、このような流れで進めたいと思います。
 
+## Part 1
+
 ### Step1
 
 最初に Scala3 を書くための環境構築をします。次に、Scala3 の公式ドキュメントを俯瞰し、最後にインデントベースのシンタックスと新しい制御構造について触れます。
@@ -16,14 +18,18 @@ Enums や Algebraic Data Types (ADTs) で新しいシンタックスが追加さ
 
 ### Step4
 
-Step4 では、主に Scala2 と Scala3 の互換性・非互換性について取り上げます。ソースコードレベルやコンパイルタイム、ランタイム、メタプログラミング、モジュール間でどのような互換性・非互換性があるかを確認し、非互換性に対してどのようなツールを使用して Scala3 へ移行するのかを確認します。
+主に Scala2 と Scala3 の互換性・非互換性について取り上げます。ソースコードレベルやコンパイルタイム、ランタイム、メタプログラミング、モジュール間でどのような互換性・非互換性があるかを確認し、非互換性に対してどのようなツールを使用して Scala3 へ移行するのかを確認します。
 
 ### Step5
 
-**:construction: たぶん分割します :construction:**
+Step1 では、序盤で見ておきたいものを抽出しましたが、まだ取り上げていないものがいくつか残っています。この Step では、今まで取り上げていない残りの部分について見ていきたいと思います。具体的には、Reference からは Imports、Export Clauses、Open Classes、Explicit Nulls。Migration Guide からは、Porting an sbt Project、Porting the scalacOptions。その他、TASTy についても触れたいと思います。
 
-Step1 では、序盤で見ておきたいものを抽出しましたが、まだ取り上げていないものがいくつか残っています。この Step では、今まで取り上げていない残りの部分について見ていきたいと思います。具体的には、Reference からは Imports、Export Clauses、Open Classes、Explicit Nulls。Migration Guide からは、Porting an sbt Project、Porting the scalacOptions。その他、TASTy についても触れたいと思います。（仮）
+## Part 2
 
 ### Step6
 
-（考え中）
+まずは、中盤で確認する Scala3 の機能について、改めて Reference を俯瞰して決めたいと思います。その後、Scala2 の implicit の再定義である、Contextual Abstractions に触れたいと思います。（仮）
+
+### Step7
+
+:construction: 考え中 :construction:

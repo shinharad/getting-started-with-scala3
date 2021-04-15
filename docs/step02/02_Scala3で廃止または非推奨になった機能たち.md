@@ -8,6 +8,7 @@
 - [概要](#概要)
 - [ドキュメント参照先](#ドキュメント参照先)
 - [Dropped: Delayedinit](#dropped-delayedinit)
+- [Dropped: Scala 2 Macros](#dropped-scala-2-macros)
 - [Dropped: Do-While](#dropped-do-while)
 - [Dropped: Procedure Syntax](#dropped-procedure-syntax)
 - [Dropped: Package Objects](#dropped-package-objects)
@@ -35,6 +36,7 @@ Scala3 で廃止または非推奨になった機能を見てみましょう。
 [Reference](https://dotty.epfl.ch/docs/reference/overview.html) からこちらを参照します。
 
 - [Dropped: Delayedinit](https://dotty.epfl.ch/docs/reference/dropped-features/delayed-init.html)
+- [Dropped: Scala 2 Macros](https://dotty.epfl.ch/docs/reference/dropped-features/macros.html)
 - [Dropped: Do-While](https://dotty.epfl.ch/docs/reference/dropped-features/do-while.html)
 - [Dropped: Procedure Syntax](https://dotty.epfl.ch/docs/reference/dropped-features/procedure-syntax.html)
 - [Dropped: Package Objects](https://dotty.epfl.ch/docs/reference/dropped-features/package-objects.html)
@@ -63,6 +65,13 @@ https://dotty.epfl.ch/docs/reference/dropped-features/delayed-init.html
 - その結果、`App` は部分的に壊れたため、一部の JVM 言語では、初期化処理が正常に動作しなくなった
 - `App` は引き続き、メイン処理を簡潔に書くために使用できるが、ベンチマークの計測には使用しない方が良い
 - 今後は、`@main` か `def main(args: Array[String]): Unit` のどちらかを使用する
+
+## Dropped: Scala 2 Macros
+
+https://dotty.epfl.ch/docs/reference/dropped-features/macros.html
+
+- Scala2 までの実験的なマクロシステムは廃止された
+- 詳細はここでは触れないが、Scala3 のマクロとは互換性が無いので注意が必要
 
 ## Dropped: Do-While
 
@@ -132,6 +141,7 @@ https://dotty.epfl.ch/docs/reference/dropped-features/xml.html
 
 - XML リテラルはまだサポートされているが、近い将来には削除され、XML string interpolation に置き換えられる予定
   - `xml""" ... """`
+- `import dotty.xml.interpolator.*` を使用するということだが、詳細はまだ不明
 
 ## Dropped: Symbol Literals
 

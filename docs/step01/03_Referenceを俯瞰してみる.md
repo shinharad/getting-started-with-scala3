@@ -46,13 +46,13 @@ https://dotty.epfl.ch/docs/New%20Types/
 
 ```plantuml
 @startmindmap
-* New Types
+*[#fff] New Types
 **[#38c0c4] Intersection Types
 **[#38c0c4] Union Types
-** Type Lambdas
-** Match Types
-** Dependent Function Types
-** Polymorphic Function Types
+**[#fff] Type Lambdas
+**[#fff] Match Types
+**[#fff] Dependent Function Types
+**[#fff] Polymorphic Function Types
 @endmindmap
 ```
 
@@ -62,10 +62,10 @@ https://dotty.epfl.ch/docs/Enums/
 
 ```plantuml
 @startmindmap
-* Enums
+*[#fff] Enums
 **[#38c0c4] Enumerations
 **[#38c0c4] Algebraic Data Types
-** Translation of Enums and ADTs
+**[#fff] Translation of Enums and ADTs
 @endmindmap
 ```
 
@@ -78,19 +78,20 @@ implicit parameter や型クラスの新しい書き方などは今後見ると�
 
 ```plantuml
 @startmindmap
-* Contextual Abstractions
-** Given Instances
-** Using Clauses
-** Context Bounds
-** Importing Givens
+*[#fff] Contextual Abstractions
+**[#fff] Overview
+**[#fff] Given Instances
+**[#fff] Using Clauses
+**[#fff] Context Bounds
+**[#fff] Importing Givens
 **[#38c0c4] Extension Methods
-** Implementing Type classes
-** Type Class Derivation
-** Multiversal Equality
-** Context Functions
-** Implicit Conversions
-** By-Name Context Parameters
-** Relationship with Scala 2 Implicits
+**[#fff] Implementing Type classes
+**[#fff] Type Class Derivation
+**[#fff] Multiversal Equality
+**[#fff] Context Functions
+**[#fff] Implicit Conversions
+**[#fff] By-Name Context Parameters
+**[#fff] Relationship with Scala 2 Implicits
 @endmindmap
 ```
 
@@ -102,12 +103,12 @@ Metaprogramming は、必要に応じて見れば良いので、今回は除外�
 
 ```plantuml
 @startmindmap
-* Metaprogramming
-** Inline
-** Macros
-** Runtime Multi-Stage Programming
-** Reflection
-** TASTy Inspection
+*[#999] Metaprogramming
+**[#999] Inline
+**[#999] Macros
+**[#999] Runtime Multi-Stage Programming
+**[#999] Reflection
+**[#999] TASTy Inspection
 @endmindmap
 ```
 
@@ -117,23 +118,23 @@ https://dotty.epfl.ch/docs/Other%20New%20Features/
 
 ```plantuml
 @startmindmap
-* Other New Features
+*[#fff] Other New Features
 **[#38c0c4] Trait Parameters
-** Transparent Traits
+**[#fff] Transparent Traits
 **[#38c0c4] Universal Apply Methods
 **[#38c0c4] Export Clauses
 **[#38c0c4] Opaque Type Aliases
 **[#38c0c4] Open Classes
 **[#38c0c4] Parameter Untupling
-** Kind Polymorphism
-** The Matchable Trait
-** The @threadUnsafe annotation
-** The @targetName annotation
+**[#fff] Kind Polymorphism
+**[#fff] The Matchable Trait
+**[#fff] The @threadUnsafe annotation
+**[#fff] The @targetName annotation
 **[#38c0c4] New Control Syntax
 **[#38c0c4] Optional Braces
 **[#38c0c4] Explicit Nulls
-** Safe Initialization
-** TypeTest
+**[#fff] Safe Initialization
+**[#fff] TypeTest
 @endmindmap
 ```
 
@@ -143,24 +144,24 @@ https://dotty.epfl.ch/docs/Other%20Changed%20Features/
 
 ```plantuml
 @startmindmap
-* Other Changed Features
-** Numeric Literals
-** Programmatic Structural Types
+*[#fff] Other Changed Features
+**[#fff] Numeric Literals
+**[#fff] Programmatic Structural Types
 **[#38c0c4] Rules for Operators
-** Wildcard Arguments in Types
+**[#fff] Wildcard Arguments in Types
 **[#38c0c4] Imports
-** Changes in Type Checking
-** Changes in Type Inference
-** Changes in Implicit Resolution
-** Implicit Conversions
+**[#fff] Changes in Type Checking
+**[#fff] Changes in Type Inference
+**[#fff] Changes in Implicit Resolution
+**[#fff] Implicit Conversions
 **[#38c0c4] Changes in Overload Resolution
 **[#38c0c4] Match Expressions
 **[#38c0c4] Vararg Splices
 **[#38c0c4] Pattern Bindings
-** Option-less pattern matching
-** Automatic Eta Expansion
-** Changes in Compiler Plugins
-** Lazy Vals initialization
+**[#fff] Option-less pattern matching
+**[#fff] Automatic Eta Expansion
+**[#fff] Changes in Compiler Plugins
+**[#fff] Lazy Vals initialization
 **[#38c0c4] Main Methods
 @endmindmap
 ```
@@ -171,11 +172,11 @@ https://dotty.epfl.ch/docs/Dropped%20Features/
 
 ```plantuml
 @startmindmap
-* Dropped Features
+*[#fff] Dropped Features
 **[#38c0c4] Dropped: Delayedinit
-** Dropped: Scala 2 Macros
-** Dropped: Existential Types
-** Dropped: General Type Projection
+**[#38c0c4] Dropped: Scala 2 Macros
+**[#fff] Dropped: Existential Types
+**[#fff] Dropped: General Type Projection
 **[#38c0c4] Dropped: Do-While
 **[#38c0c4] Dropped: Procedure Syntax
 **[#38c0c4] Dropped: Package Objects
