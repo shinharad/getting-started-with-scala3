@@ -1,5 +1,7 @@
 # Tour of the Migration Tools {ignore=true}
 
+:construction: Scala 3 Migration guideの更新を反映予定 :construction:
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->

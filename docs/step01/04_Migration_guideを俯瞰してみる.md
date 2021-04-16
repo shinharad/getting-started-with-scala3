@@ -6,12 +6,12 @@
 <!-- code_chunk_output -->
 
 - [概要](#概要)
-- [General](#general)
+- [Compatibility Reference](#compatibility-reference)
 - [Tooling](#tooling)
 - [Tutorials](#tutorials)
 - [Incompatibilities](#incompatibilities)
-- [Macros](#macros)
-- [External Resources](#external-resources)
+- [Compiler Options](#compiler-options)
+- [Resources](#resources)
 
 <!-- /code_chunk_output -->
 
@@ -24,29 +24,33 @@ Scala3 のマイグレーションや Scala2 系との互換性を確認する�
 ```plantuml
 @startmindmap
 * Migration guide
-** General
+** Compatibility Reference
 ** Tooling
 ** Tutorials
 ** Incompatibilities
-** Macros
-** External Resources
+** Compiler Options
+** Resources
 @endmindmap
 ```
 
-## General
+## Compatibility Reference
 
-https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility.html
+https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/introduction.html
 
 ```plantuml
 @startmindmap
-*[#fff] General
-**[#38c0c4] Compatibility Reference
-**[#38c0c4] Incompatibility Table
-**[#fff] Metaprogramming
+*[#fff] Compatibility Reference
+**[#fff] Introduction
+**[#38c0c4] Source Level
+**[#38c0c4] Classpath Level
+**[#38c0c4] Runtime
+**[#38c0c4] Metaprogramming
 @endmindmap
 ```
 
 ## Tooling
+
+https://scalacenter.github.io/scala-3-migration-guide/docs/tooling/migration-tools.html
 
 ```plantuml
 @startmindmap
@@ -60,23 +64,26 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility.html
 
 ## Tutorials
 
-https://scalacenter.github.io/scala-3-migration-guide/docs/tutorials/sbt-migration.html
+https://scalacenter.github.io/scala-3-migration-guide/docs/tutorials/prerequisites.html
 
 ```plantuml
 @startmindmap
 *[#fff] Tutorials
-**[#38c0c4] Porting an sbt Project
-**[#38c0c4] Porting the scalacOptions
+**[#38c0c4] Project Prerequisites
+**[#38c0c4] sbt Migration Tutorial
+**[#38c0c4] Cross-Building a Macro Library
+**[#38c0c4] Mixing Scala 2.13 and Scala 3 Macros
 @endmindmap
 ```
 
 ## Incompatibilities
 
-https://scalacenter.github.io/scala-3-migration-guide/docs/incompatibilities/table.html
+https://scalacenter.github.io/scala-3-migration-guide/docs/incompatibilities/incompatibility-table.html
 
 ```plantuml
 @startmindmap
 *[#fff] Incompatibilities
+**[#38c0c4] Incompatibility Table
 **[#38c0c4] Syntactic Changes
 **[#38c0c4] Dropped Features
 **[#fff] Contextual Abstractions
@@ -84,29 +91,26 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/incompatibilities/tab
 @endmindmap
 ```
 
-## Macros
+## Compiler Options
 
-https://scalacenter.github.io/scala-3-migration-guide/docs/macros/macro-libraries.html
-
-必要に応じて見れば良いので、今回は除外します。
+https://scalacenter.github.io/scala-3-migration-guide/docs/compiler-options/compiler-options-table.html
 
 ```plantuml
 @startmindmap
-*[#fff] Macros
-**[#fff] Scala Macro Libraries
-**[#fff] Porting a Macro Library
+*[#fff] Compiler Options
+**[#38c0c4] Compiler Options Table
+**[#38c0c4] New Scala 3 compiler options
 @endmindmap
 ```
 
-## External Resources
+## Resources
 
-https://scalacenter.github.io/scala-3-migration-guide/docs/external-resources/moving-from-scala-2-to-scala-3.html
-
-リンク先の [Moving Forward from Scala 2 to Scala 3](https://github.com/lunatech-labs/lunatech-scala-2-to-scala3-course) が更新されてないので除外します。
+https://scalacenter.github.io/scala-3-migration-guide/docs/macros/macro-libraries.html
 
 ```plantuml
 @startmindmap
-*[#fff] External Resources
+*[#fff] Resources
+**[#38c0c4] Scala Macro Libraries
 **[#fff] Moving from Scala 2 to Scala 3
 @endmindmap
 ```

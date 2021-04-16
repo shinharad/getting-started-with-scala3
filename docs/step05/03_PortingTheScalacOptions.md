@@ -1,6 +1,6 @@
 # Porting the scalacOptions {ignore=true}
 
-**:construction: 内容が変わるはずなので保留中 :construction:**
+:construction: Scala 3 Migration guideの更新を反映予定 :construction:
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 

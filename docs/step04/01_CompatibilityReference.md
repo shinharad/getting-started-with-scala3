@@ -7,31 +7,38 @@
 - [概要](#概要)
 - [ドキュメント参照先](#ドキュメント参照先)
 - [Source Level](#source-level)
-- [Classpath Compatibility](#classpath-compatibility)
+- [Classpath Level](#classpath-level)
+  - [The Scala 3 Unpickler](#the-scala-3-unpickler)
+    - [Using a Scala 2.13 library in Scala 3](#using-a-scala-213-library-in-scala-3)
+  - [The Scala 2.13 TASTy Reader](#the-scala-213-tasty-reader)
+    - [Using a Scala 3 library in a Scala 2.13](#using-a-scala-3-library-in-a-scala-213)
+  - [Intercompatibility Overview](#intercompatibility-overview)
 - [Runtime](#runtime)
 - [Metaprogramming](#metaprogramming)
-- [Examples](#examples)
-  - [Scala 3 モジュールは Scala 2.13 のアーティファクトに依存することができる](#scala-3-モジュールは-scala-213-のアーティファクトに依存することができる)
-  - [Scala 2.13 モジュールは Scala 3 のアーティファクトに依存することができる](#scala-213-モジュールは-scala-3-のアーティファクトに依存することができる)
-  - [Scala 3 モジュールは Scala 2.13 のマクロに依存できない](#scala-3-モジュールは-scala-213-のマクロに依存できない)
-  - [Scala 2.13 モジュールは Scala 3 マクロに依存できない](#scala-213-モジュールは-scala-3-マクロに依存できない)
-  - [Scala 3 アーティファクトの共有マクロ API](#scala-3-アーティファクトの共有マクロ-api)
+  - [Macro Dependencies](#macro-dependencies)
+    - [A Scala 3 module cannot depend on a Scala 2.13 macro](#a-scala-3-module-cannot-depend-on-a-scala-213-macro)
+  - [A Scala 2.13 module cannot depend on a Scala 3 macro](#a-scala-213-module-cannot-depend-on-a-scala-3-macro)
+  - [Before Rewriting a Macro](#before-rewriting-a-macro)
+  - [Cross-building a Macro Library](#cross-building-a-macro-library)
 
 <!-- /code_chunk_output -->
 
 
 ## 概要
 
-Scala 2.13 と Scala 3 の互換性について、Source Level、Classpath Compatibility、Runtime、Metaprogramming の観点で確認します。また、それぞれのバージョンの依存関係についても、公式ドキュメントに分かりやすい例が記載されているので併せて見ていきたいと思います。
+Scala 2.13 と Scala 3 の互換性について、Source Level、Classpath Level、Runtime、Metaprogramming の観点で確認します。また、それぞれのバージョンの依存関係についても、公式ドキュメントに分かりやすい例が記載されているので併せて見ていきたいと思います。
 
 ## ドキュメント参照先
 
 [Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide/) からこちらを参照します。
 
-- [Compatibility Reference](https://scalacenter.github.io/scala-3-migration-guide/docs/general/compatibility.html)
-
+- [Source Level](https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/source.html)
+- [Classpath Level](https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/classpath.html)
+- [Runtime](https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/runtime.html)
 
 ## Source Level
+
+https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/source.html
 
 - Scala 2.13 の大部分は、Scala3 でも互換性があるが、すべてではない
 - いくつかの構文は単純化されたり、制限されたり、完全に削除されたりしている
@@ -40,45 +47,67 @@ Scala 2.13 と Scala 3 の互換性について、Source Level、Classpath Compa
   - 非互換性については、この後の Incompatibility Table で確認する
 - Scala 2.13 のソースコードは、Scala 3 Migration Mode や各種ツールを使うことで、Scala3 のソースコードへ変換することができる
 
-## Classpath Compatibility
+## Classpath Level
+
+https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/classpath.html
 
 - コンパイラが、型やメソッドのシグネチャなどの情報をクラスファイルから読み取る際のフォーマットが、Scala2 と Scala3 で異なる
   - Scala2 では、シグネチャは Pickle format で格納されている
   - Scala3 では、シグネチャのレイアウトよりも多くの機能を持つ TASTy format で格納されている
+
+### The Scala 3 Unpickler
+
 - Scala3 コンパイラは、Scala 2.13 の Pickle format と TASTy format の両方を読み取ることができる
-- TASTy reader
-  - Scala 2.13.5 では、Scala3 ライブラリの利用を可能にする TASTy reader が同梱されていて、従来の機能に加え、以下の新機能もサポートしている
-    - Enumerations
-    - Intersection types
-    - Opaque type aliases
-    - Type lambdas
-    - New syntax for contextual abstractions
-    - Inheritance of open classes and super traits
-    - Exported definitions
-  - 以下の機能は限定的にサポートしている
-    - Top level definitions
-    - Extension methods
-  - それ以外はサポートしていない
-    - Context functions
-    - Polymorphic function types
-    - Trait parameters
-    - @static annotation
-    - @alpha annotation
-    - Functions and Tuples larger than 22 parameters
-    - Reference to scala.Tuple and scala.*:
-    - Match types
-    - Union types
-    - Multiversal equality constraints unless explicit
-    - Inline functions (including Scala 3 macros)
-    - Subtype kind polymorphism (upper bound scala.AnyKind)
+
+#### Using a Scala 2.13 library in Scala 3
+
+- Scala 3 モジュールは Scala 2.13 のアーティファクトに依存することができる
+- これは、sbt 1.5.0 以上が必須となる
+- そもそも Scala 3 の Standard Library は Scala 2.13 ライブラリで、Scala 2.13 でコンパイルしたものをそのまま使用しているものすらある
+- ここはガイドを直接見た方が良さそう
+  - https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/classpath.html#using-a-scala-213-library-in-scala-3
+
+### The Scala 2.13 TASTy Reader
+
+- Scala 2.13.5 では、Scala3 ライブラリの利用を可能にする TASTy reader が同梱されていて、従来の機能に加え、以下の新機能もサポートしている
+  - Enumerations
+  - Intersection types
+  - Opaque type aliases
+  - Type lambdas
+  - Contextual Abstractions (new syntax)
+  - Open Classes (and inheritance of super traits)
+  - Export Clauses
+- 以下の機能は限定的にサポートしている
+  - Top level definitions
+  - Extension methods
+- それ以外はサポートしていない
+  - Context functions
+  - Polymorphic function types
+  - Trait parameters
+  - `@static` annotation
+  - `@alpha` annotation
+  - Functions and Tuples larger than 22 parameters
+  - Reference to `scala.Tuple` and `scala.*:`
+  - Match types
+  - Union types
+  - Multiversal Equality (unless explicit)
+  - Inline (including Scala 3 macros)
+  - Kind Polymorphism (the scala.AnyKind upper bound)
+
+#### Using a Scala 3 library in a Scala 2.13
+
+- 2.13.5 以降の Scala 2.13 モジュールは、`-Ytasty-reader` で Tasty reader を有効にすることで、Scala3 ライブラリに依存することができる。
+- ここもガイドを直接見た方が良さそう
+
+### Intercompatibility Overview
+
 - Scala 2.13.5 のモジュールが Scala 3.0.0-RC2 のモジュールに依存することもできるし、その逆も可能
 - 後方互換性と前方互換性があるので、移行は徐々に行える
 - 依存関係にあるものが Scala3 に完全に移植されていなくても、アプリケーションは Scala3 に移行できる
 
-**:warning: TASTy reader は、Scala3 のすべての機能をサポートしているわけではないので注意が必要**
-
-
 ## Runtime
+
+https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/runtime.html
 
 - Scala 2.13 と Scala3 は同じ ABI (Application Binary Interface) を共有する
 - ABI は、Scala のコードをバイトコード、または Scala.js の IR (Intermediate Representation) で表現したもので、実行時の動作に大きく左右する
@@ -89,42 +118,49 @@ Scala 2.13 と Scala 3 の互換性について、Source Level、Classpath Compa
   - Scala 2.13 と Scala3 のクラスファイルを同じ JVM クラスローダで読み込むことができる
   - Scala 2.13 と Scala3 の sjsir ファイルを Scala.js リンカでリンクすることができる
 - これにより、Scala 2.13 から Scala3 への移行は、ランタイムのクラッシュやパフォーマンスの面で非常に安全になった
+- Scala3 のランタイム動作は、一見すると Scala 2.13 と比較して良くも悪くもなっていないが、いくつかの新機能はプログラムを最適化するのに役立つ
+  - Opaque Type Aliases
+  - Inline Methods
+  - @threadUnsafe annotation
 
 ## Metaprogramming
 
-- Scala3 のマクロは、TASTy format をベースにしている
-- Scala3 のマクロは、Scala3 コンパイラの将来のバージョンとは互換性があるが、TASTy を完全にサポートしていない Scala 2.13 コンパイラとは互換性がない
-- Scala2 と Scala3 の両方で、共通のマクロAPIを公開するためには、両方の実装を提供する必要がある
+https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/metaprogramming.html
 
-## Examples
+- Scala 2.13 のマクロは、Scala 2.13 のコンパイラの内部と密接に結びついているため、Scala3 のコンパイラが Scala 2.13 のマクロを拡張することはできない
+- 対照的に、Scala3 のマクロは、Scala3 コンパイラの将来のバージョンと互換性がある
+- これは、Scala 2.13 のマクロの実装を一から書き直さなければならないことを意味する
+  - Scala2 と Scala3 の両方で、共通のマクロAPIを公開するためには、両方の実装を提供する必要がある
 
-ここからは、以下のリンク先の図やコードを一緒に見ていきましょう。
+### Macro Dependencies
 
-https://scalacenter.github.io/scala-3-migration-guide/docs/general/compatibility.html#examples
+#### A Scala 3 module cannot depend on a Scala 2.13 macro
 
-※以降は、sbt 1.5.0 以上が必須となります
-
-### Scala 3 モジュールは Scala 2.13 のアーティファクトに依存することができる
-
-- そもそも Scala 3 の Standard Library は Scala 2.13 ライブラリで、Scala 2.13 でコンパイルしたものをそのまま使用しているものすらある
-
-### Scala 2.13 モジュールは Scala 3 のアーティファクトに依存することができる
-
-- Scala 2.13.4 は、コンパイラオプションの `-Ytasty-reader` で TASTy reader を有効にすることで、Scala 3 ライブラリに依存することができる
-
-### Scala 3 モジュールは Scala 2.13 のマクロに依存できない
-
-- Scala 2.13 のマクロを使用しているアーティファクトに直接依存することはできない
+- Scala 3 モジュールは、Scala 2.13 のマクロを使用しているアーティファクトに直接依存することはできない
 - しかし、そのアーティファクトが依存している Scala 2.13 アーティファクトに関しては、マクロを使用していたとしても依存することができる
 - 言い換えると、コンパイル時に Scala 2.13 マクロの実行を伴う Scala 2.13 アーティファクト には依存できる
+- ここもガイドを直接見た方が良さそう
+  - https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/metaprogramming.html#a-scala-3-module-cannot-depend-on-a-scala-213-macro
 
-### Scala 2.13 モジュールは Scala 3 マクロに依存できない
+### A Scala 2.13 module cannot depend on a Scala 3 macro
 
-- Scala 3 のマクロを使用しているアーティファクトに直接依存することはできない
+- Scala 2.13 モジュールは、Scala 3 のマクロを使用しているアーティファクトに直接依存することはできない
 - しかし、そのアーティファクトが依存している Scala 3 アーティファクトに関しては、マクロを使用していたとしても依存することができる
 - 言い換えると、コンパイル時に Scala 3 マクロの実行を伴う Scala 3 アーティファクト には依存できる
+- ここもガイドを直接見た方が良さそう
+  - https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/metaprogramming.html#a-scala-213-module-cannot-depend-on-a-scala-3-macro
 
-### Scala 3 アーティファクトの共有マクロ API
+### Before Rewriting a Macro
 
-- Scala 3 のアーティファクトは、Scala 2.13 と Scala 3 のマクロを両方実装できる
-- Scala 2.13 のアーティファクトは、Scala 2.13 でコンパイルされている必要があるため、別のモジュールとして提供する必要がある
+マクロの再実装に取り掛かる前に、Scala3 の新機能でサポートされるかどうかを確認する必要がある
+- scala3 の新機能を使って、マクロのロジックをエンコードすることはできるか？
+- _match types_ を使って、マクロのインターフェースを再実装することはできるか？
+- `inline` や `scala.compiletime` のメタプログラミング機能を使って、ロジックを再実装することはできるか？
+- よりシンプルで安全な式ベースのマクロを使ってマクロを実装することはできるか？
+- Abstract Syntax Trees へのアクセスは本当に必要か？
+
+### Cross-building a Macro Library
+
+マクロライブラリを Scala 2.13 と Scala3 の両方で利用できるようにしたい場合、2つの異なるアプローチがある
+- Cross-Building a Macro Library
+- Mixing Scala 2.13 and Scala 3 Macros
