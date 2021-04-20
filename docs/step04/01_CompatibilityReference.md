@@ -162,5 +162,7 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/metapro
 ### Cross-building a Macro Library
 
 マクロライブラリを Scala 2.13 と Scala3 の両方で利用できるようにしたい場合、2つの異なるアプローチがある
-- Cross-Building a Macro Library
-- Mixing Scala 2.13 and Scala 3 Macros
+- [Cross-Building a Macro Library](https://scalacenter.github.io/scala-3-migration-guide/docs/tutorials/macro-cross-building.html)
+  - 既存の Scala 2.13 のマクロライブラリをクロスビルドして、Scala3 と Scala 2.13 の両方で利用できるようにする
+- [Mixing Scala 2.13 and Scala 3 Macros](https://scalacenter.github.io/scala-3-migration-guide/docs/tutorials/macro-mixing.html)
+  - Scala 2.13 と Scala3 のマクロを1つのアーティファクトに混在させる

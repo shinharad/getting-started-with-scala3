@@ -1,7 +1,5 @@
 # Scala 3.0 Migration Mode {ignore=true}
 
-:construction: Scala 3 Migration guideの更新を反映予定 :construction:
-
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -14,10 +12,9 @@
 
 <!-- /code_chunk_output -->
 
-
 ## 概要
 
-Scala 2.13 のコードベースを Scala 3.0 へ移行していく際の Migration Mode について確認しましょう。
+Scala3 コンパイラは、Scala 2.13 から Scala3 への移行を容易にするたの Migration Mode を提供しています。ここでは、この Migration Mode について確認しましょう。
 
 ## ドキュメント参照先
 
@@ -34,8 +31,9 @@ Scala 2.13 のコードベースを Scala 3.0 へ移行していく際の Migrat
 ## Automatic rewrites
 
 - Migration Mode の `-source:3.0-migration` と `-rewrite` オプションを指定してコンパイルすると、ほとんどすべての警告はコンパイラによって自動的に解決してくれる
-- `-rewrite` は、Step1 で確認したとおり、コードを自動的に書き換えてくれるコンパイラオプション
-- Migration Mode でコンパイルエラーになった場合は、`-rewrite` が適用されない
+- `-rewrite` は、Step1 で確認した通り、コードを自動的に書き換えてくれるコンパイラオプション
+- どのような警告に対して自動的に書き換えをしてくれるかは、 [Incompatibility Table](https://scalacenter.github.io/scala-3-migration-guide/docs/incompatibilities/incompatibility-table.html) を参照する
+- ただし、Migration Mode でコンパイルエラーになった場合は、`-rewrite` が適用されない
 
 ## Error explanations
 

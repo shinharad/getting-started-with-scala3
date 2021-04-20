@@ -1,7 +1,5 @@
 # Incompatibility Table {ignore=true}
 
-:construction: Scala 3 Migration guideの更新を反映予定 :construction:
-
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -25,7 +23,7 @@
 
 [Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide/) からこちらを参照します。
 
-- [Incompatibility Table](https://scalacenter.github.io/scala-3-migration-guide/docs/general/incompatibility-table.html)
+- [Incompatibility Table](https://scalacenter.github.io/scala-3-migration-guide/docs/incompatibilities/incompatibility-table.html)
 
 補足としてこちらも参照します。
 
@@ -35,7 +33,7 @@
 
 ## Incompatibility Table
 
-https://scalacenter.github.io/scala-3-migration-guide/docs/general/incompatibility-table.html
+https://scalacenter.github.io/scala-3-migration-guide/docs/incompatibilities/incompatibility-table.html
 
 Incompatibility Table は、Scala 2.13 と Scala 3 のそれぞれの非互換性について、どのような移行方法があるのかがまとめられています。
 
@@ -44,12 +42,6 @@ Incompatibility Table は、Scala 2.13 と Scala 3 のそれぞれの非互換�
 - Scala 2.13 コンパイラが deprecation または feature の警告メッセージを出力するか
 - それに対する Scala3 migration のルールの有無
 - それを修正するための Scalafix ルールの有無
-
-また、まれに Scala 2.13 と Scala 3.0 で実行時の非互換性が発生することもあるので注意が必要です。
-
-**:construction: かなり頻繁に変わってるので今後内容が変わる予定です :construction:**
-
----
 
 ここからは、Incompatibility Table をざっと眺めながら、Scala 3.0 Migration Mode の rewrite を実際に動かしてみたいと思います。
 
