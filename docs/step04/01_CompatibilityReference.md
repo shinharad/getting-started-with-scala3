@@ -101,7 +101,7 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/classpa
 
 ### Intercompatibility Overview
 
-- Scala 2.13.5 のモジュールが Scala 3.0.0-RC2 のモジュールに依存することもできるし、その逆も可能
+- Scala 2.13.5 のモジュールが Scala 3.0.0-RC3 のモジュールに依存することもできるし、その逆も可能
 - 後方互換性と前方互換性があるので、移行は徐々に行える
 - 依存関係にあるものが Scala3 に完全に移植されていなくても、アプリケーションは Scala3 に移行できる
 
