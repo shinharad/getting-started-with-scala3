@@ -1,4 +1,4 @@
-# Porting an sbt Project {ignore=true}
+# Project Prerequisites {ignore=true}
 
 :construction: Scala 3 Migration guideの更新を反映予定 :construction:
 
@@ -8,7 +8,7 @@
 
 - [概要](#概要)
 - [ドキュメント参照先](#ドキュメント参照先)
-- [Porting an sbt Project](#porting-an-sbt-project-1)
+- [Project Prerequisites](#project-prerequisites-1)
 
 <!-- /code_chunk_output -->
 
@@ -20,9 +20,9 @@
 
 [Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide/) からこちらを参照します。
 
-- [Porting an sbt Project](https://scalacenter.github.io/scala-3-migration-guide/docs/tutorials/sbt-migration.html)
+- [Project Prerequisites](https://scalacenter.github.io/scala-3-migration-guide/docs/tutorials/prerequisites.html)
 
 
-## Porting an sbt Project
+## Project Prerequisites
 
-https://scalacenter.github.io/scala-3-migration-guide/docs/tutorials/sbt-migration.html
+https://scalacenter.github.io/scala-3-migration-guide/docs/tutorials/prerequisites.html
