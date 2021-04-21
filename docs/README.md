@@ -22,7 +22,7 @@ Enums や Algebraic Data Types (ADTs) で新しいシンタックスが追加さ
 
 ### Step5
 
-Step1 では、序盤で見ておきたいものを抽出しましたが、まだ取り上げていないものがいくつか残っています。この Step では、今まで取り上げていない残りの部分について見ていきたいと思います。具体的には、Reference からは Imports、Export Clauses、Open Classes、Explicit Nulls。Migration Guide からは、Porting an sbt Project、Porting the scalacOptions。その他、TASTy についても触れたいと思います。
+Step1 では、序盤で見ておきたいものを抽出しましたが、まだ取り上げていないものがいくつか残っています。この Step では、今まで取り上げていない残りの部分について見ていきたいと思います。具体的には、Reference からは Imports、Export Clauses、Open Classes、Explicit Nulls。Migration Guide からは、Project Prerequisites、sbt Migration Tutorial。その他、TASTy についても触れたいと思います。
 
 ## Part 2
 
