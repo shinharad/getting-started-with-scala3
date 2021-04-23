@@ -35,7 +35,7 @@
 
 ## ドキュメント参照先
 
-[Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide/) からこちらを参照します。
+[Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide/) の Tooling からこちらを参照します。
 
 - [Scala 3 Migrate Plugin](https://scalacenter.github.io/scala-3-migration-guide/docs/tooling/scala-3-migrate-plugin.html)
 

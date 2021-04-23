@@ -1,4 +1,4 @@
-# Scala 3.0 Migration Mode {ignore=true}
+# Scala 3 Migration Mode {ignore=true}
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
@@ -18,7 +18,7 @@ Scala3 コンパイラは、Scala 2.13 から Scala3 への移行を容易にす
 
 ## ドキュメント参照先
 
-[Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide/) からこちらを参照します。
+[Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide/) の Tooling からこちらを参照します。
 
 - [Scala 3 Migration Mode](https://scalacenter.github.io/scala-3-migration-guide/docs/tooling/scala-3-migration-mode.html)
 

@@ -18,11 +18,11 @@ Enums や Algebraic Data Types (ADTs) で新しいシンタックスが追加さ
 
 ### Step4
 
-主に Scala2 と Scala3 の互換性・非互換性について取り上げます。ソースコードレベルやコンパイルタイム、ランタイム、メタプログラミング、モジュール間でどのような互換性・非互換性があるかを確認し、非互換性に対してどのようなツールを使用して Scala3 へ移行するのかを確認します。
+Scala 3 Migration guide より、Scala2 と Scala3 の互換性・非互換性について、Source Level、Classpath Level、Runtime、Metaprogramming の観点で確認した後、Scala3 へ移行するための前提条件や sbt のマイグレーション方法のチュートリアルを学びます。その後、移行をサポートするいくつかの便利なツール群を確認し、それぞれの非互換性に対してどのような移行方法があるかを整理します。
 
 ### Step5
 
-Step1 では、序盤で見ておきたいものを抽出しましたが、まだ取り上げていないものがいくつか残っています。この Step では、今まで取り上げていない残りの部分について見ていきたいと思います。具体的には、Reference からは Imports、Export Clauses、Open Classes、Explicit Nulls。Migration Guide からは、Project Prerequisites、sbt Migration Tutorial。その他、TASTy についても触れたいと思います。
+Step1 では、序盤で見ておきたいものを抽出しましたが、ここまででまだ取り上げていない Scala3 の新機能がいくつか残っています。具体的には、Imports、Export Clauses、Open Classes、Explicit Nulls ですが、このStepではまずそれらを見ていきたいと思います。そして最後に TASTy についても簡単に触れたいと思います。
 
 ## Part 2
 
