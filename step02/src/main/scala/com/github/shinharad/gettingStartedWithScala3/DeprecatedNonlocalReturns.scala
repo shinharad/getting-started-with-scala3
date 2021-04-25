@@ -27,7 +27,7 @@ import scala.util.chaining.*
   f(List(1, 2, 3)).tap(println)
 
 //---
-// Scala3 では、代替である scala.util.control.NonLocalReturns を使用する
+// Scala 3 では、代替である scala.util.control.NonLocalReturns を使用する
 
 import scala.util.control.NonLocalReturns.*
 

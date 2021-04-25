@@ -96,14 +96,14 @@ def no4(): Unit =
   f(new D)
 
 //---
-// Scala2 では、with を使って Compound Types （複合型）で表現していた
+// Scala 2 では、with を使って Compound Types （複合型）で表現していた
 // ただし、Compound Types は、Intersection Types とは異なり、
 // 同一メンバで異なる型が存在する場合は、Linearization のルールでどちらかの型に推論されてしまう
 
 def no5(): Unit =
 
   //---
-  // 以下は Scala2 での話
+  // 以下は Scala 2 での話
 
   trait A {
     def foo: String
@@ -123,9 +123,9 @@ def no5(): Unit =
   }
 
   //---
-  // ここから Scala3 の話
+  // ここから Scala 3 の話
 
-  // Scala3 では with を & に置き換えるので、
+  // Scala 3 では with を & に置き換えるので、
   // この場合は Intersection Types になる
 
   trait C:

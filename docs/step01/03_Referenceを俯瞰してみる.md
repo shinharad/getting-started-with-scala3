@@ -17,7 +17,7 @@
 
 ## 概要
 
-Scala3 の新しい仕様を確認していくのは、やはり [Reference](https://dotty.epfl.ch/docs/reference/overview.html) が良さそうです。
+Scala 3 の新しい仕様を確認していくのは、やはり [Reference](https://dotty.epfl.ch/docs/reference/overview.html) が良さそうです。
 ただ、結構なページ数があるのと、難易度がバラバラなので、上から順番に見ていくのはしんどいかもしれません。
 そこで、まずは序盤で見ておきたいものを抽出し、それらを順番に見ていきたいと思います。
 
@@ -73,7 +73,7 @@ https://dotty.epfl.ch/docs/Enums/
 
 https://dotty.epfl.ch/docs/Contextual%20Abstractions/
 
-Scala2 系では様々な役割を持っていた `implicit` が、Scala3 では機能毎に書き方が分かれました。
+Scala 2 では様々な役割を持っていた `implicit` が、Scala 3 では機能毎に書き方が分かれました。
 implicit parameter や型クラスの新しい書き方などは今後見るとして、最初は `Extension Methods` を見ていきましょう。
 
 ```plantuml

@@ -41,36 +41,36 @@ Scala 2.13 と Scala 3 の互換性について、Source Level、Classpath Level
 
 https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/source.html
 
-- Scala 2.13 の大部分は、Scala3 でも互換性があるが、すべてではない
+- Scala 2.13 の大部分は、Scala 3 でも互換性があるが、すべてではない
 - いくつかの構文は単純化されたり、制限されたり、完全に削除されたりしている
 - これらの決定は正当な理由があってなされたものであり、適切な回避策が可能であることを考慮されたもの
 - いずれにしても、すべての非互換性に対応したクロスコンパイルソリューションがあるため、移行は簡単かつスムーズに行える
   - 非互換性については、[Incompatibility Table](https://scalacenter.github.io/scala-3-migration-guide/docs/incompatibilities/incompatibility-table.html) を参照する
-- Scala 2.13 のソースコードは、Scala 3 Migration Mode や各種ツールを使うことで、Scala3 のソースコードへ変換することができる
+- Scala 2.13 のソースコードは、Scala 3 Migration Mode や各種ツールを使うことで、Scala 3 のソースコードへ変換することができる
 
 ## Classpath Level
 
 https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/classpath.html
 
-- コンパイラが、型やメソッドのシグネチャなどの情報をクラスファイルから読み取る際のフォーマットが、Scala2 と Scala3 で異なる
-  - Scala2 では、シグネチャは Pickle format と呼ばれる専用のフォーマットで格納されている
-  - Scala3 では、シグネチャのレイアウトよりもはるかに多くの情報を持つ TASTy format で格納されている
+- コンパイラが、型やメソッドのシグネチャなどの情報をクラスファイルから読み取る際のフォーマットが、Scala 2 と Scala 3 で異なる
+  - Scala 2 では、シグネチャは Pickle format と呼ばれる専用のフォーマットで格納されている
+  - Scala 3 では、シグネチャのレイアウトよりもはるかに多くの情報を持つ TASTy format で格納されている
 
 ### The Scala 3 Unpickler
 
-- Scala3 コンパイラは、Scala 2.13 の Pickle format と TASTy format の両方を読み取ることができる
+- Scala 3 コンパイラは、Scala 2.13 の Pickle format と TASTy format の両方を読み取ることができる
 
 #### Using a Scala 2.13 library in Scala 3
 
-- Scala3 モジュールは Scala 2.13 のアーティファクトに依存することができる
+- Scala 3 モジュールは Scala 2.13 のアーティファクトに依存することができる
 - これは、sbt 1.5.0 以上が必須となる
-- そもそも Scala3 の Standard Library は Scala 2.13 ライブラリを使用している
+- そもそも Scala 3 の Standard Library は Scala 2.13 ライブラリを使用している
 - ここはガイドを直接見た方が良さそう
   - https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/classpath.html#using-a-scala-213-library-in-scala-3
 
 ### The Scala 2.13 TASTy Reader
 
-- Scala 2.13.5 では、Scala3 ライブラリの利用を可能にする TASTy reader が同梱されていて、従来の機能に加え、以下の新機能もサポートしている
+- Scala 2.13.5 では、Scala 3 ライブラリの利用を可能にする TASTy reader が同梱されていて、従来の機能に加え、以下の新機能もサポートしている
   - Enumerations
   - Intersection types
   - Opaque type aliases
@@ -97,7 +97,7 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/classpa
 
 #### Using a Scala 3 library in a Scala 2.13
 
-- 2.13.5 以降の Scala 2.13 モジュールは、`-Ytasty-reader` オプションで Tasty reader を有効にすることで、Scala3 ライブラリに依存することができる
+- 2.13.5 以降の Scala 2.13 モジュールは、`-Ytasty-reader` オプションで Tasty reader を有効にすることで、Scala 3 ライブラリに依存することができる
 - ここもガイドを直接見た方が良さそう
   - https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/classpath.html#using-a-scala-3-module-in-a-scala-3
   - (ガイドのタイトルが間違えているのでリンクが変わる可能性がある)
@@ -105,24 +105,24 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/classpa
 ### Intercompatibility Overview
 
 - Scala 2.13.5 のモジュールが Scala 3.0.0-RC3 のモジュールに依存することもできるし、またその逆も可能
-  - ただし、Scala 2.13.5 の TASTy reader で読み込める Scala3 の機能には制限がある
+  - ただし、Scala 2.13.5 の TASTy reader で読み込める Scala 3 の機能には制限がある
 - 後方互換性と前方互換性があるので、移行は徐々に行える
-- 依存関係にあるものが Scala3 に完全に移植されていなくても、アプリケーションは Scala3 に移行できる
+- 依存関係にあるものが Scala 3 に完全に移植されていなくても、アプリケーションは Scala 3 に移行できる
 
 ## Runtime
 
 https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/runtime.html
 
-- Scala 2.13 と Scala3 は同じ ABI (Application Binary Interface) を共有する
+- Scala 2.13 と Scala 3 は同じ ABI (Application Binary Interface) を共有する
 - ABI は、Scala のコードをバイトコード、または Scala.js の IR (Intermediate Representation) で表現したもので、実行時の動作に大きく左右する
   - Scala.js の IR は、略して "SJSIR" と呼ぶ
   - 詳しくは [Scala.js IR](http://lampwww.epfl.ch/~doeraene/thesis/sjsir-semantics/) を参照
 - 推論された型と implicit の解決策が同じであれば、コードは同じバイトコードを生成し、最終的には実行時の動作も同じになる
 - ABI を共有することで、
-  - Scala 2.13 と Scala3 のクラスファイルを同じ JVM クラスローダで読み込むことができる
-  - Scala 2.13 と Scala3 の sjsir ファイルを Scala.js リンカでリンクすることができる
-- これにより、Scala 2.13 から Scala3 への移行は、ランタイムのクラッシュやパフォーマンス面で非常に安全になった
-- Scala3 のランタイム動作は、一見すると Scala 2.13 と比較して良くも悪くもなっていないが、いくつかの新機能はプログラムを最適化するのに役立つ
+  - Scala 2.13 と Scala 3 のクラスファイルを同じ JVM クラスローダで読み込むことができる
+  - Scala 2.13 と Scala 3 の sjsir ファイルを Scala.js リンカでリンクすることができる
+- これにより、Scala 2.13 から Scala 3 への移行は、ランタイムのクラッシュやパフォーマンス面で非常に安全になった
+- Scala 3 のランタイム動作は、一見すると Scala 2.13 と比較して良くも悪くもなっていないが、いくつかの新機能はプログラムを最適化するのに役立つ
   - Opaque Type Aliases
   - Inline Methods
   - @threadUnsafe annotation
@@ -131,10 +131,10 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/runtime
 
 https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/metaprogramming.html
 
-- Scala 2.13 のマクロは、Scala 2.13 のコンパイラの内部と密接に結びついているため、Scala3 のコンパイラが Scala 2.13 のマクロを拡張することはできない
-- 対照的に、Scala3 のマクロは、Scala3 コンパイラの将来のバージョンと互換性がある
+- Scala 2.13 のマクロは、Scala 2.13 のコンパイラの内部と密接に結びついているため、Scala 3 のコンパイラが Scala 2.13 のマクロを拡張することはできない
+- 対照的に、Scala 3 のマクロは、Scala 3 コンパイラの将来のバージョンと互換性がある
 - これは、Scala 2.13 のマクロの実装を一から書き直さなければならないことを意味する
-  - Scala2 と Scala3 の両方で、共通のマクロAPIを公開するためには、両方の実装を提供する必要がある
+  - Scala 2 と Scala 3 の両方で、共通のマクロAPIを公開するためには、両方の実装を提供する必要がある
 
 ### Macro Dependencies
 
@@ -156,9 +156,9 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/metapro
 
 ### Before Rewriting a Macro
 
-マクロの再実装に取り掛かる前に、Scala3 の新機能でサポートされるかどうかを確認する必要がある。
+マクロの再実装に取り掛かる前に、Scala 3 の新機能でサポートされるかどうかを確認する必要がある。
 
-- scala3 の新機能を使って、マクロのロジックをエンコードすることはできるか？
+- Scala 3 の新機能を使って、マクロのロジックをエンコードすることはできるか？
 - _match types_ を使って、マクロのインターフェースを再実装することはできるか？
 - `inline` や `scala.compiletime` のメタプログラミング機能を使って、ロジックを再実装することはできるか？
 - よりシンプルで安全な式ベースのマクロを使ってマクロを実装することはできるか？
@@ -174,8 +174,8 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/metapro
 
 ### Cross-building a Macro Library
 
-マクロライブラリを Scala 2.13 と Scala3 の両方で利用できるようにしたい場合、2つの異なるアプローチがある
+マクロライブラリを Scala 2.13 と Scala 3 の両方で利用できるようにしたい場合、2つの異なるアプローチがある
 - [Cross-Building a Macro Library](https://scalacenter.github.io/scala-3-migration-guide/docs/tutorials/macro-cross-building.html)
-  - 既存の Scala 2.13 のマクロライブラリをクロスビルドして、Scala3 と Scala 2.13 の両方で利用できるようにする
+  - 既存の Scala 2.13 のマクロライブラリをクロスビルドして、Scala 3 と Scala 2.13 の両方で利用できるようにする
 - [Mixing Scala 2.13 and Scala 3 Macros](https://scalacenter.github.io/scala-3-migration-guide/docs/tutorials/macro-mixing.html)
-  - Scala 2.13 と Scala3 のマクロを1つのアーティファクトに混在させる
+  - Scala 2.13 と Scala 3 のマクロを1つのアーティファクトに混在させる

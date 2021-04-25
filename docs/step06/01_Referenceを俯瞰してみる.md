@@ -17,7 +17,7 @@
 
 ## 概要
 
-ここまでで、[Reference](https://dotty.epfl.ch/docs/reference/overview.html) や [Migration guide](https://scalacenter.github.io/scala-3-migration-guide) などから、序盤で確認しておきたいものは一通り終えました。ここからは中盤ということで、Scala3 の更に深い部分について触れていきたいと思います。
+ここまでで、[Reference](https://dotty.epfl.ch/docs/reference/overview.html) や [Migration guide](https://scalacenter.github.io/scala-3-migration-guide) などから、序盤で確認しておきたいものは一通り終えました。ここからは中盤ということで、Scala 3 の更に深い部分について触れていきたいと思います。
 
 では、改めて [Reference](https://dotty.epfl.ch/docs/reference/overview.html) を俯瞰し、次に見ておきたいページを抽出したいと思います。
 

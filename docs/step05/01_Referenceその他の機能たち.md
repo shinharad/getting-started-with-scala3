@@ -37,11 +37,11 @@ Step1では、序盤で見ておきたいものを抽出しましたが、ここ
 
 https://dotty.epfl.ch/docs/reference/changed-features/imports.html
 
-- Scala3 の `import` 文のワイルドカードは、`_` から `*` に変わった
+- Scala 3 の `import` 文のワイルドカードは、`_` から `*` に変わった
   - 例) `import scala.annotation.*`
 - `import` のリネームは `=>` から `as` に変わった
   - 例) `import scala.annotation as ann`
-- Scala3.0 の時点ではまだ `_` や `=>` はサポートしているが、将来のバージョンで廃止される予定
+- Scala 3.0 の時点ではまだ `_` や `=>` はサポートしているが、将来のバージョンで廃止される予定
 
 :memo: [Imports.scala](/step05/import-export/src/main/scala/com/github/shinharad/gettingStartedWithScala3/Imports.scala)
 
@@ -67,7 +67,7 @@ https://dotty.epfl.ch/docs/reference/other-new-features/export.html
 
 https://dotty.epfl.ch/docs/reference/changed-features/pattern-bindings.html
 
-- Scala2 では、`val` や `for` 式の pattern bindings は型チェックが緩く、潜在的に失敗する場合でもコンパイルは通るが、実行時に影響を与える可能性があった
+- Scala 2 では、`val` や `for` 式の pattern bindings は型チェックが緩く、潜在的に失敗する場合でもコンパイルは通るが、実行時に影響を与える可能性があった
 - Scala 3.1 からは、型チェックのルールが強化され、右辺の型がパターンの型に適合しない場合は、コンパイル時に警告メッセージを出力するようになった
 - ただ、時にはパターンの型が不適合であっても pattern bindings したい場合がある。その場合は `@unchecked` を付けることで警告メッセージを回避できる
 - Scala 3.0 では、コンパイラオプション `-source future` を設定することで、警告メッセージが出力されるようになる
@@ -81,7 +81,7 @@ https://dotty.epfl.ch/docs/reference/other-new-features/open-classes.html
 
 - `class` に `open` を付けると、その `class` は別のファイルで定義した `class` から継承可能なことを明示できる
 - `open` ではない `class` を継承すると警告メッセージを表示する
-- Scala3.0 ではまだ使用できない機能なので、有効にするにはコンパイラオプションに `-source future` を設定する必要がある
+- Scala 3.0 ではまだ使用できない機能なので、有効にするにはコンパイラオプションに `-source future` を設定する必要がある
 - 一応 `trait` や `abstract class` にも `open` を付けることができるが、冗長だし意味が無い
 - `open` は、`final` または `sealed` と一緒に定義できない
 - `open` ではないクラスをアドホックに継承する方法が用意されている（テストダブルや既存クラスの一時的なパッチ適用など、限られた目的のために）
@@ -100,7 +100,7 @@ https://dotty.epfl.ch/docs/reference/changed-features/overload-resolution.html
 
 ### Looking Beyond the First Argument List
 
-- Scala3 のオーバーロードは、複数の引数リストが存在する場合、最初の引数リストだけでなく、すべての引数リストの型を考慮するようになった
+- Scala 3 のオーバーロードは、複数の引数リストが存在する場合、最初の引数リストだけでなく、すべての引数リストの型を考慮するようになった
   ```scala
   def f(x: Int)(y: String): Int = 0
   def f(x: Int)(y: Int): Int = 0
@@ -108,7 +108,7 @@ https://dotty.epfl.ch/docs/reference/changed-features/overload-resolution.html
 
 ### Parameter Types of Function Values
 
-- Scala3 では、オーバーロードされた最初の引数リストに、欠損したパラメータ型（missing parameter types）を持つ関数値を渡せるようになった
+- Scala 3 では、オーバーロードされた最初の引数リストに、欠損したパラメータ型（missing parameter types）を持つ関数値を渡せるようになった
   ```scala
   def f(x: Int, f2: Int => Int) = f2(x)
   def f(x: String, f2: String => String) = f2(x)
@@ -140,7 +140,7 @@ https://dotty.epfl.ch/docs/reference/other-new-features/explicit-nulls.html
   - Scala クラスが Java クラスをオーバーライドする場合、この機能を使うと Null 型のルールが緩和され、nullable でも non-null でも許容される
 - Flow Typing
   - nullable な変数が if 式などで non-null であると判定した場合、そのスコープ内では変数を non-null として扱える
-  - Scala3 の Flow Typing は、nullability に限定される
+  - Scala 3 の Flow Typing は、nullability に限定される
   - 参考) [Flow-sensitive typing](https://en.wikipedia.org/wiki/Flow-sensitive_typing)
 - UnsafeNulls
   - 多くの nullable な値を扱うのは時として困難になるので、language feature として `unsafeNulls` が提供されている

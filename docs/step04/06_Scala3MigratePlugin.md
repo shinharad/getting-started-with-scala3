@@ -30,7 +30,7 @@
 
 ## 概要
 
-- Scala 3 Migrate Plugin は、ビルド設定とコードを Scala3 へ移行するサポートを行うコンパイラプラグインです。ここでは、この Scala 3 Migrate Plugin がどのような段階を経て Scala3 へ移行するのかを確認しましょう。
+- Scala 3 Migrate Plugin は、ビルド設定とコードを Scala 3 へ移行するサポートを行うコンパイラプラグインです。ここでは、この Scala 3 Migrate Plugin がどのような段階を経て Scala 3 へ移行するのかを確認しましょう。
 
 
 ## ドキュメント参照先
@@ -46,7 +46,7 @@ Scala 3 Migrate Plugin による移行は、以下の独立したステップで
 - `migrate-libs` : `libraryDependencies` の更新をサポートする
 - `migrate-scalacOptions` : `scalacOptions` の更新をサポートする
 - `migrate-syntax` : Scala 2.13 のコードに含まれるいくつかの非互換なシンタックスを修正する
-- `migrate` : 必要最低限の inferred types（推論された型）と暗黙的な情報を追加することで、Scala3 でのコンパイルを試みる
+- `migrate` : 必要最低限の inferred types（推論された型）と暗黙的な情報を追加することで、Scala 3 でのコンパイルを試みる
 
 ### Requirements
 
@@ -82,14 +82,14 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/tooling/scala-3-migra
 
 #### Macro library
 
-- Scala 2.13 のマクロは、Scala3 のコンパイラでは実行できない。そのため、マクロライブラリに依存している場合は、このライブラリが Scala3 用に公開されるまで待つ必要がある
+- Scala 2.13 のマクロは、Scala 3 のコンパイラでは実行できない。そのため、マクロライブラリに依存している場合は、このライブラリが Scala 3 用に公開されるまで待つ必要がある
 
 #### Compiler plugins
 
-- Scala 2.13 のコンパイラプラグインは、Scala3 ではサポートしていない
-- もしも Scala3 でサポートしていないコンパイラプラグインが設定されていた場合、コンパイラプラグインなしでコンパイルできるようにコードを修正する必要がある
+- Scala 2.13 のコンパイラプラグインは、Scala 3 ではサポートしていない
+- もしも Scala 3 でサポートしていないコンパイラプラグインが設定されていた場合、コンパイラプラグインなしでコンパイルできるようにコードを修正する必要がある
 - 例
-  - `better-monadic-for` は、Scala3 ではサポートしていないので削除して、コンパイラプラグインなしでコンパイルできるようにコードを修正する
+  - `better-monadic-for` は、Scala 3 ではサポートしていないので削除して、コンパイラプラグインなしでコンパイルできるようにコードを修正する
   - `kind-projector` は、同等のコンパイラオプションがあるので、`scalacOptions` に追加する
 
 #### Libraries that can be updated
@@ -97,7 +97,7 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/tooling/scala-3-migra
 - Scala3-migrate が利用可能なバージョンを提案してくれる
 - 例
   - `cats-core` には、`3.0.0-RCx` 用に公開された利用可能なバージョンがあるため、そのバージョンを提案してくれる
-  - `scalafix-rules` は、Scala3 用の利用可能なバージョンはないが、ライブラリにはマクロが含まれていないため、2.13 バージョンを Scala3 でそのまま利用することができる。ただしその場合、Scala のバージョンを明示する必要がある
+  - `scalafix-rules` は、Scala 3 用の利用可能なバージョンはないが、ライブラリにはマクロが含まれていないため、2.13 バージョンを Scala 3 でそのまま利用することができる。ただしその場合、Scala のバージョンを明示する必要がある
     ```scala
     // 移行前
     "ch.epfl.scala" %% "scalafix-rules"      % "0.9.26" % "test"
@@ -139,12 +139,12 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/tooling/scala-3-migra
 
 #### Non-existing scalacOptions in Scala 3
 
-- Scala3 で存在しなくなった scalacOptions の移行
+- Scala 3 で存在しなくなった scalacOptions の移行
 - 例
 - `-Yrangepos`:
   - いくつかの `scalacOptions` はビルドファイルではなく、sbt プラグインによって提供されている
-  - 例えば scala3-migrate は Scala2 の semanticdb を有効にし、`-Yrangepos` を追加する
-  - ここでは sbt が Scala3 の semanticdb のオプションを適応するので、何もする必要はない
+  - 例えば scala3-migrate は Scala 2 の semanticdb を有効にし、`-Yrangepos` を追加する
+  - ここでは sbt が Scala 3 の semanticdb のオプションを適応するので、何もする必要はない
 - `-Wunused` :
   - この `scalacOption` は削除する必要がある
 
@@ -185,10 +185,10 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/tooling/scala-3-migra
   ```
   > migrate main
   ```
-- Scala3 は、新しい型推論アルゴリズムを使用しているため、Scala 3.0 のコンパイラは、Scala 2.13 で推論された型とは異なる型を推論することができる
+- Scala 3 は、新しい型推論アルゴリズムを使用しているため、Scala 3.0 のコンパイラは、Scala 2.13 で推論された型とは異なる型を推論することができる
 - このコマンドの目的は、コードをコンパイルするために必要な型を見つけること
 - なお、ライブラリが正しく移行されていない場合、 `migrage [projectId]` を実行しても問題のあるライブラリを報告することはできない
-- このツールは最後に Scala3 で `-rewrite` を使ってコンパイルする
+- このツールは最後に Scala 3 で `-rewrite` を使ってコンパイルする
 
 ### What to do next ?
 

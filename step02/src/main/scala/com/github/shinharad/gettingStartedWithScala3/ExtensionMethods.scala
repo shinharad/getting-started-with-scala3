@@ -69,7 +69,7 @@ def no3(): Unit =
 
   // context bound で型クラスを指定する場合
   extension [T: Numeric](x: T)
-    def + (y: T): T = summon[Numeric[T]].plus(x, y) // summon は Scala2 の implicitly に相当し、型クラスのインスタンスをsummon（召喚）している
+    def + (y: T): T = summon[Numeric[T]].plus(x, y) // summon は Scala 2 の implicitly に相当し、型クラスのインスタンスをsummon（召喚）している
 
   // extension methods の型パラメータは、メソッドの型パラメータと組み合わせて定義できる
   extension [T](xs: List[T])
@@ -88,7 +88,7 @@ def no3(): Unit =
   sumBy[String](List("a", "bb", "ccc"))[Int](_.length)
 
   // extension は、using 句を使用することもできる
-  // （using 句は、Scala2 の implicit parameter に相当する）
+  // （using 句は、Scala 2 の implicit parameter に相当する）
   extension [T](x: T)(using n: Numeric[T])
     def + (y: T): T = n.plus(x, y)
 

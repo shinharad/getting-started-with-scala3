@@ -1,4 +1,4 @@
-# Scala3で追加された地味に嬉しい系の機能追加 {ignore=true}
+# Scala 3で追加された地味に嬉しい系の機能追加 {ignore=true}
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
@@ -22,7 +22,7 @@
 
 ## 概要
 
-Scala3 で新しく追加された機能の中から「今まで冗長だった記述が短くなる！地味に嬉しい！」という機能を集めてみました。本リポジトリの対応するサンプルコードと併せて見ていきましょう。
+Scala 3 で新しく追加された機能の中から「今まで冗長だった記述が短くなる！地味に嬉しい！」という機能を集めてみました。本リポジトリの対応するサンプルコードと併せて見ていきましょう。
 
 
 ## ドキュメント参照先
@@ -47,7 +47,7 @@ https://dotty.epfl.ch/docs/reference/changed-features/main-functions.html
   - トップレベルでも `object` の中でも書くことができる
   - コンパイラは内部的に、`def main(args: Array[String]): Unit` を持つクラスに変換する
   - 任意の数のパラメータを持つことができる
--  Scala2 系みたいに `extends App` で書くこともできるが、 Scala3 的には `@main` を推奨している
+-  Scala 2 みたいに `extends App` で書くこともできるが、 Scala 3 的には `@main` を推奨している
 
 :memo: [MainMethods.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/MainMethods.scala)
 
@@ -76,7 +76,7 @@ https://dotty.epfl.ch/docs/reference/other-new-features/trait-parameters.html
 
 https://dotty.epfl.ch/docs/reference/other-new-features/creator-applications.html
 
-- 元々 `case class` はコンパニオンオブジェクトに `apply` メソッドが暗黙的に追加されるので、インスタンス生成時に `new` を書く必要はなかったが、Scala3 ではこのスキームをすべての具象クラスに一般化した
+- 元々 `case class` はコンパニオンオブジェクトに `apply` メソッドが暗黙的に追加されるので、インスタンス生成時に `new` を書く必要はなかったが、Scala 3 ではこのスキームをすべての具象クラスに一般化した
 - `class` を定義すると、コンパニオンオブジェクトに対して、コンストラクタに対応した `apply` メソッドが自動的に追加される（constructor proxy と呼ばれている）
   - その結果、`class` のインスタンス生成時でも `new` が不要になった
 - Javaのクラスも `new` を書かずにインスタンス生成できるようになった
@@ -94,7 +94,7 @@ https://dotty.epfl.ch/docs/reference/other-new-features/parameter-untupling.html
     (x, y) => x + y
   }
 
-  // Scala2 まではこう書いていた
+  // Scala 2 まではこう書いていた
   xs map {
     case (x, y) => x + y
   }
@@ -135,9 +135,9 @@ https://dotty.epfl.ch/docs/reference/changed-features/operators.html
     ++ " world"
     ++ "!"
   ```
-- Scala2 のセミコロンによる推論では、`++ " world"` や `++ "!"` は、別々のステートメントとして扱われていた
+- Scala 2 のセミコロンによる推論では、`++ " world"` や `++ "!"` は、別々のステートメントとして扱われていた
   ```scala
-  // Scala2 ではコンパイルエラー
+  // Scala 2 ではコンパイルエラー
   val str = "hello"
     ++ " world"
     ++ "!"

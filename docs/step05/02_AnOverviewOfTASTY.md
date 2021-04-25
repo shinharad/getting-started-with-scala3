@@ -17,7 +17,7 @@
 
 ## 概要
 
-Scala3 で sbt プロジェクトをコンパイルすると、_target/scala-3.0.0-RC3/classes_ 配下には、_.class_ ファイルの他に _.tasty_ ファイルが作成されていることが確認できます。この _.tasty_ ファイルには、Scala3 の型やメソッドのシグネチャなどの情報が、TASTy と呼ばれる format で格納されています。
+Scala 3 で sbt プロジェクトをコンパイルすると、_target/scala-3.0.0-RC3/classes_ 配下には、_.class_ ファイルの他に _.tasty_ ファイルが作成されていることが確認できます。この _.tasty_ ファイルには、Scala 3 の型やメソッドのシグネチャなどの情報が、TASTy と呼ばれる format で格納されています。
 
 ここでは、この TASTy が何を解決するためのものなのかを見ていきたいと思います。
 
@@ -35,10 +35,10 @@ https://docs.scala-lang.org/scala3/guides/tasty-overview.html
 ### What is TASTy?
 
 - TASTy は、Typed Abstract Syntax Trees の頭文字をとったもの
-- Scala3 の high-level interchange format
+- Scala 3 の high-level interchange format
 - _.tasty_ ファイルは、scalac コンパイラによって生成され、プログラムの構文構造、型、位置、さらにはドキュメントなど、ソースコードに関するすべての情報が含まれている
 - _.tasty_ ファイルは、JVM 上で実行するために生成される _.class_ ファイルよりもはるかに多くの情報を含んでいる
-- Scala3 のコンパイルプロセスはこのようになっていて、_.scala_ から _.tasty_ を生成したうえで、_.class_ が生成される
+- Scala 3 のコンパイルプロセスはこのようになっていて、_.scala_ から _.tasty_ を生成したうえで、_.class_ が生成される
   ```
            +-------------+    +-------------+    +-------------+
   $ scalac | Hello.scala | -> | Hello.tasty | -> | Hello.class |
@@ -85,12 +85,12 @@ val x = xs.get(0).asInstanceOf[Int]   // more Scala-like
 
 この問題を解決するためには、_.class_ ファイルよりも多くの情報が必要となる。
 
-また、ここでは、型消去の話題だけを取り上げているが、JVM が認識していない他のすべての Scala の構造にも同様の問題がある。これには、Union Types、Intersection Types、Trait parameters など、その他多くの Scala3 の機能が含まれている。
+また、ここでは、型消去の話題だけを取り上げているが、JVM が認識していない他のすべての Scala の構造にも同様の問題がある。これには、Union Types、Intersection Types、Trait parameters など、その他多くの Scala 3 の機能が含まれている。
 
 #### TASTy to the Rescue
 
 - TASTy format は、型チェック後の完全な abstract syntax tree (AST) を保存する
-- Scala3 では、この TASTy format を Scala 2.13 の "Pickle" format の代わりに使用する
+- Scala 3 では、この TASTy format を Scala 2.13 の "Pickle" format の代わりに使用する
   - "Pickle" format は、_.class_ ファイル内のオリジナルの型に関する情報を持たないか、public API のみを持つフォーマット
 - AST 全体を保存することには、多くの利点がある
   - 分割コンパイル
@@ -107,10 +107,10 @@ _.class_ ファイルの問題点を整理すると、
     - コンパイラが対象のコードを _.class_ ファイルに書き込むときは、`xs` は `List[Object]` として書き込むので、`xs` にアクセスするすべての場所にキャスト情報が追加される
     - その結果、実行時には、`xs` が `List[Int]` であることを JVM は知らないことになる
 
-Scala3 と TASTy では、コンパイル時に関するもう一つの重要な注意点がある。
+Scala 3 と TASTy では、コンパイル時に関するもう一つの重要な注意点がある。
 
-- 他の Scala3 ライブラリを使用する Scala3 コードを書いた場合、scalac はそれらの _.class_ ファイルを読む必要はなくて、代わりに _.tasty_ ファイルを読み込むことができる
-- これは、Scala 2.13 と Scala3 を別々にコンパイルして互換性を持たせるために重要
+- 他の Scala 3 ライブラリを使用する Scala 3 コードを書いた場合、scalac はそれらの _.class_ ファイルを読む必要はなくて、代わりに _.tasty_ ファイルを読み込むことができる
+- これは、Scala 2.13 と Scala 3 を別々にコンパイルして互換性を持たせるために重要
 
 ### Tasty benefits
 

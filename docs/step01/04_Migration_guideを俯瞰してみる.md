@@ -17,7 +17,7 @@
 
 ## 概要
 
-Scala3 のマイグレーションや Scala2 系との互換性を確認するために、[Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide/) の内容も俯瞰してみましょう。こちらも情報量が多いので、見るものを選別します。
+Scala 3 のマイグレーションや Scala 2 との互換性を確認するために、[Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide/) の内容も俯瞰してみましょう。こちらも情報量が多いので、見るものを選別します。
 
 まず、Migration guide はこのようなカテゴリに分かれています。
 

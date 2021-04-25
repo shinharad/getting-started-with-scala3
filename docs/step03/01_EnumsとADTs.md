@@ -13,7 +13,7 @@
 
 ## 概要
 
-Scala3 では、Enumerations や Algebraic Data Types (ADTs, 代数的データ型) を定義するための専用のシンタックスが追加されました。Step3 はまずそこから見ていきましょう。（本リポジトリの対応するサンプルコードも併せて参照してください）
+Scala 3 では、Enumerations や Algebraic Data Types (ADTs, 代数的データ型) を定義するための専用のシンタックスが追加されました。Step3 はまずそこから見ていきましょう。（本リポジトリの対応するサンプルコードも併せて参照してください）
 
 ## ドキュメント参照先
 
@@ -26,7 +26,7 @@ Scala3 では、Enumerations や Algebraic Data Types (ADTs, 代数的データ�
 
 https://dotty.epfl.ch/docs/reference/enums/enums.html
 
-- Scala3 では、`enum` で Enumerations（列挙型）を定義できるようになった
+- Scala 3 では、`enum` で Enumerations（列挙型）を定義できるようになった
   ```scala
   enum Color:
     case Red, Green, Blue

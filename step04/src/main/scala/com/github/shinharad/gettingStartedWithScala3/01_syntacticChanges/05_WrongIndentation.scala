@@ -2,8 +2,8 @@ package com.github.shinharad.gettingStartedWithScala3
 package `01_syntacticChange`
 package `05_wrongIndentation`
 
-// 以下のコメントアウトしているコードは、Scala2 ではコンパイルが通るが、
-// Scala3 ではインデントが間違ってるのでコンパイルが通らない
+// 以下のコメントアウトしているコードは、Scala 2 ではコンパイルが通るが、
+// Scala 3 ではインデントが間違ってるのでコンパイルが通らない
 // この場合は、scalafmt などでコードフォーマットする必要がある
 
 // val foo_wrong =

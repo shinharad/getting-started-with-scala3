@@ -13,7 +13,7 @@ def no1(): Unit =
   val sb1 = new StringBuilder1("abc")
   val sb2 = new StringBuilder1()
 
-  // Scala3 では、new が不要になった
+  // Scala 3 では、new が不要になった
   val sb3 = StringBuilder1("abc")
   val sb4 = StringBuilder1()
 
@@ -32,7 +32,7 @@ def no2(): Unit =
   val list1 = java.util.ArrayList[String]()
   val map1 = java.util.HashMap[String, String]()
 
-  // Scala2 ではこうだった
+  // Scala 2 ではこうだった
   val list2 = new java.util.ArrayList[String]()
   val map2 = new java.util.HashMap[String, String]()
 

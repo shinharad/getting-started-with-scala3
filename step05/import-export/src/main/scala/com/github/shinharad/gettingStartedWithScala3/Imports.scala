@@ -4,7 +4,7 @@ package imports
 //---
 // Wildcard Imports
 
-// Scala3 の import 文のワイルドカードは、`*` になった
+// Scala 3 の import 文のワイルドカードは、`*` になった
 // （今までのサンプルコードでも出てきたし、今更感がありますが...）
 import scala.util.chaining.*
 
@@ -47,7 +47,7 @@ object C:
 
   // 単一のリネームであれば `{ .. }` は不要
   import A.min as minimum1
-  import A.{ min => minimum2 }  // Scala2 ではこうだった
+  import A.{ min => minimum2 }  // Scala 2 ではこうだった
 
   // 両方使える
   minimum1.tap(println)

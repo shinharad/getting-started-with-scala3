@@ -4,15 +4,15 @@ package enumerations
 import scala.util.Try
 import scala.util.chaining.*
 
-// Scala2 まではこんな感じで定義していたけど、正直使いづらかった
+// Scala 2 まではこんな感じで定義していたけど、正直使いづらかった
 object ColorOld extends Enumeration {
   val Red, Green, Blue = Value
 }
 
 //---
-// Scala3 の列挙型
+// Scala 3 の列挙型
 
-// 上記のコードは、Scala3 ではこのように書けるようになった
+// 上記のコードは、Scala 3 ではこのように書けるようになった
 enum Color:
   case Red, Green, Blue
 

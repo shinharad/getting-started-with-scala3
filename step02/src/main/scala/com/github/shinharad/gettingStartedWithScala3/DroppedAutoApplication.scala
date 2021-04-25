@@ -4,8 +4,8 @@ package droppedAutoApplication
 type T = String
 
 //---
-// Scala2 系では、nullary method を引数なしで呼び出した場合、暗黙的に () が挿入されていたが、
-// Scala3 では厳密にチェックされるようになった
+// Scala 2 では、nullary method を引数なしで呼び出した場合、暗黙的に () が挿入されていたが、
+// Scala 3 では厳密にチェックされるようになった
 
 // 以下はコンパイルエラー
 // def no1_ng(): T =

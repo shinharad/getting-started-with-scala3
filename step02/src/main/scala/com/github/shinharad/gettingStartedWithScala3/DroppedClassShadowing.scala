@@ -2,8 +2,8 @@ package com.github.shinharad.gettingStartedWithScala3
 package droppedClassShadowing
 
 //----
-// Scala3 では、親クラスで定義されているクラスと同じ名前のクラスを子クラスで定義できなくなった
-// 以下は、Scala2 ではコンパイルが通るが、Scala3 ではコンパイルエラーになる
+// Scala 3 では、親クラスで定義されているクラスと同じ名前のクラスを子クラスで定義できなくなった
+// 以下は、Scala 2 ではコンパイルが通るが、Scala 3 ではコンパイルエラーになる
 
 class Base {
   class Ops { }

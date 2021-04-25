@@ -14,7 +14,7 @@
 
 ## 概要
 
-Scala3 コンパイラは、Scala 2.13 から Scala3 への移行を容易にするたの Migration Mode を提供しています。ここでは、この Migration Mode について確認しましょう。
+Scala 3 コンパイラは、Scala 2.13 から Scala 3 への移行を容易にするたの Migration Mode を提供しています。ここでは、この Migration Mode について確認しましょう。
 
 ## ドキュメント参照先
 
@@ -41,4 +41,4 @@ Scala3 コンパイラは、Scala 2.13 から Scala3 への移行を容易にす
 - その場合は、`-source:3.0-migration` を `-explain` や `-explain-types` と組み合わせて指定することで、エラーの詳細を知ることができる
   - `-explain` : エラーの詳細を表示する
   - `-explain-types` 型エラーを詳細に表示する
-- `-explain` や `-explain-types` は、移行モードに限定されるものではなくて、Scala3 の学習やコーディングを支援してくれるコンパイラオプション
+- `-explain` や `-explain-types` は、移行モードに限定されるものではなくて、Scala 3 の学習やコーディングを支援してくれるコンパイラオプション

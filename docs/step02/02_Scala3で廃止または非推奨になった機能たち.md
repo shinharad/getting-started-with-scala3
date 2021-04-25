@@ -1,4 +1,4 @@
-# Scala3で廃止または非推奨になった機能たち {ignore=ture}
+# Scala 3で廃止または非推奨になった機能たち {ignore=ture}
 
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
@@ -28,7 +28,7 @@
 
 ## 概要
 
-Scala3 で廃止または非推奨になった機能を見てみましょう。
+Scala 3 で廃止または非推奨になった機能を見てみましょう。
 
 
 ## ドキュメント参照先
@@ -70,8 +70,8 @@ https://dotty.epfl.ch/docs/reference/dropped-features/delayed-init.html
 
 https://dotty.epfl.ch/docs/reference/dropped-features/macros.html
 
-- Scala2 までの実験的なマクロシステムは廃止された
-- 詳細はここでは触れないが、Scala3 のマクロとは互換性が無いので注意が必要
+- Scala 2 までの実験的なマクロシステムは廃止された
+- 詳細はここでは触れないが、Scala 3 のマクロとは互換性が無いので注意が必要
 
 ## Dropped: Do-While
 
@@ -98,8 +98,8 @@ https://dotty.epfl.ch/docs/reference/dropped-features/procedure-syntax.html
 
 https://dotty.epfl.ch/docs/reference/dropped-features/package-objects.html
 
-- Scala3 では、あらゆる種類の定義をトップレベルで記述できるようになったため、Package objects は不要となった
-- Scala3.0 ではまだ利用可能だが、その後非推奨となり削除される予定
+- Scala 3 では、あらゆる種類の定義をトップレベルで記述できるようになったため、Package objects は不要となった
+- Scala 3.0 ではまだ利用可能だが、その後非推奨となり削除される予定
 
 :memo: [DroppedPackageObjects.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/DroppedPackageObjects.scala)
 
@@ -110,15 +110,15 @@ https://dotty.epfl.ch/docs/reference/dropped-features/early-initializers.html
 - Early Initializers は廃止された
   - `class C extends { ... } with SuperClass ...`
 - 今までは、 `trait` にはパラメータを設定できないという課題を解決するための書き方だったが、ほとんど使われていなかった
-- Scala3 で追加された `Trait Parameters` によって完全に不要となった
+- Scala 3 で追加された `Trait Parameters` によって完全に不要となった
 
 ## Dropped: Class Shadowing
 
 https://dotty.epfl.ch/docs/reference/dropped-features/class-shadowing.html
 
-- Scala2 では、親クラスで定義されているクラスと同じ名前のクラスを子クラスで定義することができた
-  - オーバーライドしているように見えるが、実際には Scala2 のクラスはオーバーライドできない
-- Scala3 では、内部操作を一貫させ物事をきれいに保つために、このような場合は別名を付ける必要がある。同じ名前はコンパイルエラー
+- Scala 2 では、親クラスで定義されているクラスと同じ名前のクラスを子クラスで定義することができた
+  - オーバーライドしているように見えるが、実際には Scala 2 のクラスはオーバーライドできない
+- Scala 3 では、内部操作を一貫させ物事をきれいに保つために、このような場合は別名を付ける必要がある。同じ名前はコンパイルエラー
 
 :memo: [DroppedClassShadowing.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/DroppedClassShadowing.scala)
 
@@ -157,16 +157,16 @@ https://dotty.epfl.ch/docs/reference/dropped-features/symlits.html
 https://dotty.epfl.ch/docs/reference/dropped-features/auto-apply.html
 
 - nullary method（例: `def next()`）の呼び出し方で、以下のように変更された
-  - Scala2 は、 `def next()` を `next` で呼び出すと、暗黙的に `()` が挿入されていた
-  - Scala3 は、 `def next()` は `next()` で呼び出す必要がある。`next` はコンパイルエラー
+  - Scala 2 は、 `def next()` を `next` で呼び出すと、暗黙的に `()` が挿入されていた
+  - Scala 3 は、 `def next()` は `next()` で呼び出す必要がある。`next` はコンパイルエラー
 - このルールは、nullary method をオーバーライドしたメソッドにも適用される
 - ただし、Java の場合はこのルールから除外されている。その理由は、
   - 例えば、`xs.toString().length()` を `xs.toString.length` と書くのは、uniform access principle に準拠しているため、Scalaのイディオムとなっている
   - uniform access principle は、平たく言うと、副作用の無いメソッドをまるでフィールドにアクセスしてるかのように `()` を省略できるようにすべきというもの
   - Scala では、副作用がある場合は `()` を付け、副作用が無いものは `()` を省略して書くことが推奨されているが、Java で定義されたメソッドは、このような区別はできない
   - そこで Scala では、これまでもパラメータの無い参照を許可することで、クライアント側の問題を解決していた
-  - Scala2 がすべてのメソッドの参照に対してこの自由を認めているのに対し、Scala3 では、Scala3 で定義されていない外部メソッドの参照に限定している
-  - 後方互換性を考慮して、Scala3 では、Scala2 で定義された nullary method に対して、オーバーライドしたメソッドも含めて `()` を自動的に挿入している
+  - Scala 2 がすべてのメソッドの参照に対してこの自由を認めているのに対し、Scala 3 では、Scala 3 で定義されていない外部メソッドの参照に限定している
+  - 後方互換性を考慮して、Scala 3 では、Scala 2 で定義された nullary method に対して、オーバーライドしたメソッドも含めて `()` を自動的に挿入している
 
 :memo: [DroppedAutoApplication.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/DroppedAutoApplication.scala)
 
@@ -176,9 +176,9 @@ https://dotty.epfl.ch/docs/reference/dropped-features/weak-conformance.html
 
 - Scala では、型の集合の least upper bound を計算するときに、weak conformance の関係を使うことがある
 - 例えば、`List(1.0, math.sqrt(3.0), 0, -3.3)` は、`(Double, Double, Int, Double)` という型の集合なので、`Int` が `Double` に変換され、`List[Double]` という型を持つようになる
-- Scala2 系では、この weak conformance は、すべての `numeric` 型（`Char` も含む）に適用され、式がリテラルであるかどうかに関係なく適用されていた
+- Scala 2 では、この weak conformance は、すべての `numeric` 型（`Char` も含む）に適用され、式がリテラルであるかどうかに関係なく適用されていた
   - 例えば、`Char` を含む `(Int, Char, Double)` が `List[Doube]` に型付けされていて、これは意図したものではなかった
-- そこで Scala3 では、weak conformance を `Int` リテラルに限定した
+- そこで Scala 3 では、weak conformance を `Int` リテラルに限定した
   - つまり、`(Double, Double, Int, Double)` は `List[Double]` になるのは変わらないが、 `(Int, Char, Double)` は、least upper bound である `AnyVal` に変換されるので、`List[AnyVal]` に型付けされる
 
 :memo: [DroppedWeakConformance.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/DroppedWeakConformance.scala)
@@ -200,14 +200,14 @@ https://dotty.epfl.ch/docs/reference/dropped-features/nonlocal-returns.html
 
 https://dotty.epfl.ch/docs/reference/dropped-features/this-qualifier.html
 
-- Scala3 では、`private[this]` および `protected[this]` アクセス修飾子は非推奨となり、段階的に廃止される
+- Scala 3 では、`private[this]` および `protected[this]` アクセス修飾子は非推奨となり、段階的に廃止される
 - 以前は、このような目的で付けられていた
   - `private[this]` を付けたフィールドへのアクセスは、JVMレベルでのフィールドへの直接アクセスになるため、若干高速になる（Java のフィールドと等価になる）
     - 細かいパフォーマンスチューニングをする際に意識的に付けられていた
   - getters と setters の生成を避ける
   - `private[this]` でオブジェクト非公開定義にすることで、変位指定チェックから除外する
-    - (Scala2 では `protected[this]` も除外しているが、これは不健全であることが判明したため削除された）
-- Scala3 では、
+    - (Scala 2 では `protected[this]` も除外しているが、これは不健全であることが判明したため削除された）
+- Scala 3 では、
   - コンパイラは、`private` メンバが `this` を介してのみアクセスするようになった
   - このようなメンバは、`private[this]` が宣言されていたかのように扱われる
   - `protected[this]` は代替機能が実装されることなく削除される
