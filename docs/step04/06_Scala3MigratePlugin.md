@@ -30,8 +30,9 @@
 
 ## 概要
 
-- Scala 3 Migrate Plugin は、ビルド設定とコードを Scala 3 へ移行するサポートを行うコンパイラプラグインです。ここでは、この Scala 3 Migrate Plugin がどのような段階を経て Scala 3 へ移行するのかを確認しましょう。
+Scala 3 Migrate Plugin は、ビルド設定とコードを Scala 3 へ移行する際のサポートをしてくれるコンパイラプラグインです。以前確認した sbt Migration Tutorial では、Scala 3 への移行プロセスを確認しましたが、このプラグインを使用することで、より移行が楽になりそうです。
 
+それでは、Scala 3 Migrate Plugin を使用した場合の移行プロセスを確認しましょう。
 
 ## ドキュメント参照先
 
