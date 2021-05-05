@@ -22,14 +22,18 @@ Scala 3 Migration guide より、Scala 2.13 と Scala 3 の互換性について
 
 ### Step5
 
-Step1 では、序盤で見ておきたいものを抽出しましたが、ここまででまだ取り上げていない Scala 3 の新機能がいくつか残っています。具体的には、Imports、Export Clauses、Open Classes、Explicit Nulls ですが、このStepではまずそれらを見ていきたいと思います。そして最後に TASTy についても簡単に触れたいと思います。
+Step1 では、この Part で見ておきたいものを抽出しましたが、ここまででまだ取り上げていない Scala 3 の新機能がいくつか残っています。具体的には、Imports、Export Clauses、Open Classes、Explicit Nulls ですが、このStepではまずそれらを見ていきたいと思います。そして最後に TASTy についても簡単に触れたいと思います。
 
 ## Part 2
 
 ### Step6
 
-まずは、中盤で確認する Scala 3 の機能について、改めて Reference を俯瞰して決めたいと思います。その後、Scala 2 の implicit の再定義である、Contextual Abstractions に触れたいと思います。（仮）
+最初に Scala 3 の機能について改めて Reference を俯瞰し、Part 2 で確認するものを決めたいと思います。その後、Scala 2 の implicit の再設計である Contextual Abstractions の概要と4つの基本的な変更点を確認し、それらを使用した型クラスの実装例を見ていきます。
 
 ### Step7
+
+前の Step では、Contextual Abstractions の前半部分を確認しました。この Step では、Contextual Abstractions の後半として、Type Class Derivation や Multiversal Equality などに触れ、最後に Scala 2 の implicit との関連性を確認します。（仮）
+
+### Step8
 
 :construction: 考え中 :construction:

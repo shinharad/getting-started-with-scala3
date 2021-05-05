@@ -15,7 +15,8 @@ lazy val root =
       step04,
       `step05-import-export`,
       `step05-open-class`,
-      `step05-explicit-nulls`
+      `step05-explicit-nulls`,
+      step06
     )
 
 lazy val step01 =
@@ -93,6 +94,17 @@ lazy val `step05-explicit-nulls` =
         "-Yexplicit-nulls",
         "-Ysafe-init",
         // "-language:unsafeNulls"
+      )
+    )
+
+lazy val step06 =
+  project
+    .in(file("step06"))
+    .settings(commonSettings)
+    .settings(
+      scalacOptions ++= Seq(
+        "-Ykind-projector",
+        "-explain"
       )
     )
 

@@ -17,23 +17,22 @@
 
 ## 概要
 
-ここまでで、[Reference](https://dotty.epfl.ch/docs/reference/overview.html) や [Migration guide](https://scalacenter.github.io/scala-3-migration-guide) などから、序盤で確認しておきたいものは一通り終えました。ここからは中盤ということで、Scala 3 の更に深い部分について触れていきたいと思います。
+ここまでで、[Reference](https://dotty.epfl.ch/docs/reference/overview.html) や [Migration guide](https://scalacenter.github.io/scala-3-migration-guide) などから、Part 1 で確認しておきたいものは一通り終えました。ここからは Part 2 ということで、Scala 3 の更に深い部分について触れていきたいと思います。
 
-では、改めて [Reference](https://dotty.epfl.ch/docs/reference/overview.html) を俯瞰し、次に見ておきたいページを抽出したいと思います。
+それでは、改めて [Reference](https://dotty.epfl.ch/docs/reference/overview.html) を俯瞰し、次に見ておきたいページを抽出したいと思います。
 
 なお、ここまでで確認済みのページに関しては除外してあります。
-
 
 ## New Types
 
 https://dotty.epfl.ch/docs/New%20Types/
 
-New Types の残りは終盤で見たいと思います。
+型クラスの実装で必要となる Type Lambdas を確認します。
 
 ```plantuml
 @startmindmap
 *[#fff] New Types
-**[#fff] Type Lambdas
+**[#38c0c4] Type Lambdas
 **[#fff] Match Types
 **[#fff] Dependent Function Types
 **[#fff] Polymorphic Function Types
@@ -57,7 +56,7 @@ https://dotty.epfl.ch/docs/Enums/
 
 https://dotty.epfl.ch/docs/Contextual%20Abstractions/
 
-Extension Methods は序盤で見たので、それ以外をやりましょう！
+Extension Methods は Part 1 で確認したので、それ以外をやりましょう！
 
 ```plantuml
 @startmindmap
@@ -81,7 +80,7 @@ Extension Methods は序盤で見たので、それ以外をやりましょう�
 
 https://dotty.epfl.ch/docs/Other%20New%20Features/
 
-`The @targetName annotation` は序盤で軽く触れたので、今回はこれ以上深堀りしなくても良さそう。
+`The @targetName annotation` は Part 1 で軽く触れたので、今回はこれ以上深堀りしなくても良さそう。
 
 :construction: どこまで中盤でやるか考え中 :construction:
 

@@ -19,7 +19,7 @@
 
 ## 概要
 
-Step1では、序盤で見ておきたいものを抽出しましたが、ここでは Reference でまだ取り上げていない、Imports、Export Clauses、Open Classes、Changes in Overload Resolution、Explicit Nulls について見ていきたいと思います。
+Step1 では、この Part で見ておきたいものを抽出しましたが、ここでは Reference でまだ取り上げていない、Imports、Export Clauses、Open Classes、Changes in Overload Resolution、Explicit Nulls について見ていきたいと思います。
 
 ## ドキュメント参照先
 
