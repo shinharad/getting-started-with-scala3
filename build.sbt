@@ -2,7 +2,9 @@ ThisBuild / scalaVersion := "3.0.0-RC3"
 ThisBuild / version      := "0.0.1-SNAPSHOT"
 
 ThisBuild / scalacOptions ++= Seq(
-  // TODO
+  "-encoding", "utf8",
+  "-deprecation",
+  "-unchecked"
 )
 
 lazy val root =
@@ -104,7 +106,10 @@ lazy val step06 =
     .settings(
       scalacOptions ++= Seq(
         "-Ykind-projector",
-        "-explain"
+        "-explain",
+        "-explain-types",
+        // "-Xprint:typer",
+        // "-Xprint:parser"
       )
     )
 

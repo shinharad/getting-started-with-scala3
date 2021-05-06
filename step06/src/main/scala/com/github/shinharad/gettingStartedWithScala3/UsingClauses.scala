@@ -2,7 +2,6 @@ package com.github.shinharad.gettingStartedWithScala3
 package usingClauses
 
 import givenInstances.Ord
-import givenInstances.given
 
 //---
 // Using Clauses
@@ -11,6 +10,8 @@ import givenInstances.given
 // メソッドに対して using 句を使用してコンテキストパラメータを暗黙的に指定する
 
 object no1:
+  import givenInstances.given
+
   def max[T](x: T, y: T)(using ord: Ord[T]): T =
     if ord.compare(x, y) < 0 then y else x
 
@@ -45,6 +46,7 @@ object no3:
 object no4:
   import no1.max
   import no2.maximum
+  import givenInstances.given
 
   val xs = List(1, 2, 3)
 
@@ -67,6 +69,8 @@ object no4:
 
 // Ord[List[Int]] の given instance はこのように取得する
 def no5(): Unit =
+  import givenInstances.given
+
   summon[Ord[List[Int]]]
 
   summon[Ord[List[Int]]]
@@ -78,6 +82,7 @@ def no5(): Unit =
 
 //---
 // 複数のコンテキストパラメータを指定する場合
+
 def no6(): Unit =
   trait C1[T]
   trait C2[T]
@@ -119,6 +124,8 @@ def no8(): Unit =
 
 // given instance を Scala 2 の implicit parameter に渡すことができる
 def no9(): Unit =
+  import givenInstances.given
+
   def max[T](x: T, y: T)(implicit ord: Ord[T]): T =
     if ord.compare(x, y) < 0 then y else x
 

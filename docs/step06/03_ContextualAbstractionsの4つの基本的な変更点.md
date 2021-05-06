@@ -132,7 +132,7 @@ https://dotty.epfl.ch/docs/reference/contextual/given-imports.html
 
 https://dotty.epfl.ch/docs/reference/contextual/conversions.html
 
-- Scala 3 から、暗黙の型変換は、`scala.Conversion` クラスの givens として定義する
+- Scala 3 では暗黙の型変換は、`scala.Conversion` クラスの givens として定義する
   ```scala
   // 例えば、String から Token への暗黙の型変換を定義する場合
   given Conversion[String, Token] with
