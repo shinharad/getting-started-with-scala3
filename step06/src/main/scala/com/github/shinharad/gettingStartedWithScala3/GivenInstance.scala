@@ -110,7 +110,7 @@ def no5(): Unit =
     given fooNotTagged[A](using NotGiven[Tagged[A]]): Foo[A] = Foo(false)
 
   given Tagged[Int] with {}
-  // given Tagged[Int]() // ドキュメントにはこう書いてあるがダメっぽい
+  // given Tagged[Int]() // TODO 今後こういう書き方ができるようになるっぽい
 
   println(summon[Foo[Int]].value)
   println(summon[Foo[String]].value)

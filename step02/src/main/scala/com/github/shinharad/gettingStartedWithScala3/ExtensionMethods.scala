@@ -176,6 +176,7 @@ trait SafeDiv:
 // 2. 参照先のスコープ内で型クラスのインスタンスが定義されている
 def no6_2(): Unit =
   given ops1: IntOps with {} // given ... with は、型クラスのインスタンスを定義している
+  // given ops1: IntOps() // TODO 今後こういう書き方ができるようになるっぽい
 
   1.safeMod(2)
 

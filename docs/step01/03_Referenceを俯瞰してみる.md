@@ -104,7 +104,9 @@ Metaprogramming は、必要に応じて見れば良いので、今回は除外�
 ```plantuml
 @startmindmap
 *[#999] Metaprogramming
+**[#999] Overview
 **[#999] Inline
+**[#999] Compile-time operations
 **[#999] Macros
 **[#999] Runtime Multi-Stage Programming
 **[#999] Reflection

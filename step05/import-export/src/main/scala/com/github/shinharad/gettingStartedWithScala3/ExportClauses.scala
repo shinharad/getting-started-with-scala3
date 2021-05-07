@@ -63,9 +63,6 @@ class Scanner:
     export scanUnit.*
     export printUnit.print
 
-    // ドキュメントの通りに書くとワイルドカードは `_` だけど、Imports と合わせるなら `*` だと思う
-    // export scanUnit._
-
     // 上記はこのような export aliases を生成する
     // final def scan(): BitMap            = scanUnit.scan()
     // final def status: List[String]      = scanUnit.status
@@ -129,9 +126,6 @@ class Scanner:
 
     export scanUnit.scan
     export printUnit.{ status as _, * } // status 以外をexport
-
-    // ドキュメントではこう書いてあるけど、Importsと合わせるなら上の書き方だと思う
-    // export printUnit.{ status => _, _ }
 
     // 上記はこのような export aliases を生成する
     // final def scan(): BitMap            = scanUnit.scan()
