@@ -35,7 +35,7 @@ def no3(): Unit =
   xs.toString.length
 
   // Java で定義されたメソッドは、この区別がつかないため、ルールから除外されている
-  val sb = java.lang.StringBuilder()
+  val sb = new java.lang.StringBuilder()
   sb.length()
   sb.length
 

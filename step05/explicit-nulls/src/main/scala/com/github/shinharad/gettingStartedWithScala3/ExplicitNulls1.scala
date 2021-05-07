@@ -50,7 +50,7 @@ def no3(): Unit =
   //   val f: String = foo(f) // Access non-initialized field f. Calling trace
   //   def foo(f2: String): String = f2
 
-  // val c = C()
+  // val c = new C()
   // c.f == "field is null"
   ()
 
