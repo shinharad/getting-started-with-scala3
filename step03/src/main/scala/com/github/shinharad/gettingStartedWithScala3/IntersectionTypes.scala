@@ -21,34 +21,34 @@ def f(x: Resettable & Growable[String]) =
     override def reset(): Unit = println("reset")
     override def add(t: String): Unit = println(s"add: $t")
 
-  f(new A)
+  f(A())
 
   // & 演算子は可換的なので、逆にしてもOK
   class B extends Growable[String], Resettable:
     override def reset(): Unit = println("reset")
     override def add(t: String): Unit = println(s"add: $t")
 
-  f(new B)
+  f(B())
 
   // メソッドの引数の型を逆にしてもOK
   def g(x: Growable[String] & Resettable) =
     x.reset()
     x.add("first")
 
-  g(new A)
-  g(new B)
+  g(A())
+  g(B())
 
   // 両方を満たしていない場合はコンパイルエラー
   // class C extends Resettable:
   //   override def reset(): Unit = println("reset")
 
-  // f(new C)
+  // f(C())
 
   // これもエラー
   // class D extends Growable[String]:
   //   override def add(t: String): Unit = println(s"add: $t")
 
-  // f(new D)
+  // f(D())
 
 //---
 // A と B に同一のメンバが存在する場合、
@@ -79,7 +79,7 @@ def no3(): Unit =
   class C extends A, B:
     override def children: List[A & B] = ???
 
-  val x: A & B = new C
+  val x: A & B = C()
   val ys: List[A & B] = x.children
 
 //---
@@ -93,7 +93,7 @@ def no4(): Unit =
   def f(x: A & B & C): Unit = ???
 
   class D extends A, B, C
-  f(new D)
+  f(D())
 
 //---
 // Scala 2 では、with を使って Compound Types （複合型）で表現していた

@@ -131,4 +131,4 @@ def no7() : Unit =
   class C extends A, B
 
   // Int または、 A であり B でもある型
-  val ys: List[Int | A & B] = List(1, new C, 2, 3)
+  val ys: List[Int | A & B] = List(1, C(), 2, 3)
