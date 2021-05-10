@@ -45,6 +45,10 @@ import scala.util.chaining.*
   val a: Any = tuple.productElement(0)
   val b: Any = tuple.productElement(22)
 
+  // これはできない
+  // tuple._1
+  // tuple._23
+
   // 23以上はTupleXXL
   val tupleB = scala.runtime.TupleXXL(
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
