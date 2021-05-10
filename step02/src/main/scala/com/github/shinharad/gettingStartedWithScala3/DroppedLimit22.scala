@@ -1,6 +1,8 @@
 package com.github.shinharad.gettingStartedWithScala3
 package droppedLimit22
 
+import scala.util.chaining.*
+
 // 22の制限は廃止された！
 
 val function23 = (
@@ -19,3 +21,13 @@ val tuple23 =
   (1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
   11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
   21, 22, 23)
+
+@main def no1(): Unit =
+  println("-" * 50)
+
+  function23(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23)
+    .tap(println)
+
+  println(tuple23)
+
+  println("-" * 50)

@@ -58,8 +58,8 @@ Scala 3 で廃止または非推奨になった機能を見てみましょう。
 https://dotty.epfl.ch/docs/reference/dropped-features/delayed-init.html
 
 - `DelayedInit` は、オブジェクトの初期化を実行時まで遅延させるもので、メイン処理を簡潔に書くための `App` はこの `DelayedInit` を継承している
-  - [DelayedInit.scala](https://github.com/scala/scala/blob/2.13.x/src/library/scala/DelayedInit.scala)
   - [App.scala](https://github.com/scala/scala/blob/2.13.x/src/library/scala/App.scala)
+  - [DelayedInit.scala](https://github.com/scala/scala/blob/2.13.x/src/library/scala/DelayedInit.scala)
 - `DelayedInit` の初期化処理 `delayedInit()` は特別扱いされていて、通常はユーザコードから呼び出すのではなく、`DelayedInit` を継承した `class` や `object` に対して、コンパイラが生成したコードとして呼び出される
 - ただし `trait` は例外で、`DelayedInit` を継承し `trait` のボディに初期化処理を書いたとしても、コンパイラは `delayedInit()` を呼び出すコードを生成しない。このように予想外の挙動をすることがあったため、この特別な処理は廃止されることになった
 - その結果、`App` は部分的に壊れたため、一部の JVM 言語では、初期化処理が正常に動作しなくなった
@@ -99,7 +99,7 @@ https://dotty.epfl.ch/docs/reference/dropped-features/procedure-syntax.html
 https://dotty.epfl.ch/docs/reference/dropped-features/package-objects.html
 
 - Scala 3 では、あらゆる種類の定義をトップレベルで記述できるようになったため、Package objects は不要となった
-- Scala 3.0 ではまだ利用可能だが、その後非推奨となり削除される予定
+- Scala 3.0 ではまだ利用可能だが、今後は非推奨となり削除される予定
 
 :memo: [DroppedPackageObjects.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/DroppedPackageObjects.scala)
 
@@ -127,8 +127,8 @@ https://dotty.epfl.ch/docs/reference/dropped-features/class-shadowing.html
 https://dotty.epfl.ch/docs/reference/dropped-features/limit22.html
 
 - Function のパラメータと、Tuple のフィールドの最大数の制限値 22 が廃止された
-- Function は、任意のパラメータを持てるようになり、`Function22` を超える場合は、新しい `scala.FunctionXXL` に置き換わる
-- Tuple は、任意の数のフィールドを持てるようになり、`Tuple22` を超える場合は、新しい `scala.TupleXXL` に置き換わる
+- Function は、任意のパラメータを持てるようになり、`Function22` を超える場合は、新しい `scala.runtime.FunctionXXL` に置き換わる
+- Tuple は、任意の数のフィールドを持てるようになり、`Tuple22` を超える場合は、新しい `scala.runtime.TupleXXL` に置き換わる
 - どちらも配列を使って実装されている
   - [FunctionXXL.scala](https://github.com/lampepfl/dotty/blob/master/library/src/scala/runtime/FunctionXXL.scala)
   - [TupleXXL.scala](https://github.com/lampepfl/dotty/blob/master/library/src/scala/runtime/TupleXXL.scala)
@@ -139,7 +139,7 @@ https://dotty.epfl.ch/docs/reference/dropped-features/limit22.html
 
 https://dotty.epfl.ch/docs/reference/dropped-features/xml.html
 
-- XML リテラルはまだサポートされているが、近い将来には削除され、XML string interpolation に置き換えられる予定
+- XML リテラルはまだサポートされているが、近い将来には削除され、[XML string interpolation](https://github.com/lampepfl/xml-interpolator) に置き換えられる予定
   - `xml""" ... """`
 - `import dotty.xml.interpolator.*` を使用するということだが、詳細はまだ不明
 
@@ -160,6 +160,13 @@ https://dotty.epfl.ch/docs/reference/dropped-features/auto-apply.html
   - Scala 2 は、 `def next()` を `next` で呼び出すと、暗黙的に `()` が挿入されていた
   - Scala 3 は、 `def next()` は `next()` で呼び出す必要がある。`next` はコンパイルエラー
 - このルールは、nullary method をオーバーライドしたメソッドにも適用される
+  ```scala
+  class A:
+    def next(): Int
+
+  class B extends A:
+    def next: Int // overriding error: incompatible type
+  ```
 - ただし、Java の場合はこのルールから除外されている。その理由は、
   - 例えば、`xs.toString().length()` を `xs.toString.length` と書くのは、uniform access principle に準拠しているため、Scalaのイディオムとなっている
   - uniform access principle は、平たく言うと、副作用の無いメソッドをまるでフィールドにアクセスしてるかのように `()` を省略できるようにすべきというもの
@@ -192,7 +199,7 @@ https://dotty.epfl.ch/docs/reference/dropped-features/nonlocal-returns.html
   - プログラマが意図したものであることはほとんどない
   - `Exception` を `throw` したり `catch` したりすることで隠れたパフォーマンスコストが問題になることがある
   - Exception Handler がすべての `Exception` を `catch` していると、`NonLocalReturnException` を傍受できてしまう
-- 代替は、`scala.util.control.NonLocalReturns` で提供されている
+- 代替機能は、`scala.util.control.NonLocalReturns` で提供されている
 
 :memo: [DeprecatedNonlocalReturns.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/DeprecatedNonlocalReturns.scala)
 

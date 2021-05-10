@@ -17,9 +17,8 @@
 
 ## 概要
 
-Scala 3 の新しい仕様を確認していくのは、やはり [Reference](https://dotty.epfl.ch/docs/reference/overview.html) が良さそうです。
-ただ、結構なページ数があるのと、難易度がバラバラなので、上から順番に見ていくのはしんどいかもしれません。
-そこで、まずはこの Part で見ておきたいものを抽出し、それらを順番に見ていきたいと思います。
+Scala 3 の新しい機能を確認していくのは、やはり [Reference](https://dotty.epfl.ch/docs/reference/overview.html) が良さそうです。
+ただ、結構なページ数があるのと、難易度がバラバラなので、上から順番に見ていくのはしんどいかもしれません。そこで、まずはこの Part で見ておきたいものをあらかじめ抽出しておいて、それらを順番に見ていきたいと思います。
 
 まず、Reference はこのようなカテゴリに分かれています。
 
@@ -36,8 +35,8 @@ Scala 3 の新しい仕様を確認していくのは、やはり [Reference](ht
 @endmindmap
 ```
 
-それぞれのカテゴリには、様々な言語仕様についてのページがありますが、
-カテゴリごとにこの Part で見ておきたいページに色付けしてみましょう。
+それぞれのカテゴリには、Scala 3 の様々な機能についてのページがありますが、
+取りあえずカテゴリごとにこの Part で見ておきたいページに色付けしてみましょう。
 
 
 ## New Types
@@ -73,8 +72,7 @@ https://dotty.epfl.ch/docs/Enums/
 
 https://dotty.epfl.ch/docs/Contextual%20Abstractions/
 
-Scala 2 では様々な役割を持っていた `implicit` が、Scala 3 では機能毎に書き方が分かれました。
-implicit parameter や型クラスの新しい書き方などは今後見るとして、最初は `Extension Methods` を見ていきましょう。
+Scala 2 では様々な役割を持っていた `implicit` が、Scala 3 では機能毎に書き方が分かれました。implicit parameter や型クラスの新しい書き方などは今後見るとして、最初は `Extension Methods` を見ていきましょう。
 
 ```plantuml
 @startmindmap
@@ -99,7 +97,7 @@ implicit parameter や型クラスの新しい書き方などは今後見ると�
 
 https://dotty.epfl.ch/docs/Metaprogramming/
 
-Metaprogramming は、必要に応じて見れば良いので、今回は除外します。
+Metaprogramming は必要に応じて見れば良いので、今回は除外します。
 
 ```plantuml
 @startmindmap

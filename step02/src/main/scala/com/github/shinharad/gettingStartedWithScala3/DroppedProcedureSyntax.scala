@@ -3,7 +3,7 @@ package droppedProcedureSyntax
 
 // Procedure Syntax はコンパイルエラー
 // def f1() {
-//
+
 // }
 
 // = を必ず書く

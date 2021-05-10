@@ -17,7 +17,7 @@
 
 ## 概要
 
-Scala 3 のマイグレーションや Scala 2 との互換性を確認するために、[Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide/) の内容も俯瞰してみましょう。こちらも情報量が多いので、見るものを選別します。
+Scala 3 のマイグレーションや Scala 2 との互換性、非互換性を確認するために、[Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide/) の内容も俯瞰してみましょう。こちらも情報量が多いので、見るものを選別します。
 
 まず、Migration guide はこのようなカテゴリに分かれています。
 
@@ -71,8 +71,8 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/tutorials/prerequisit
 *[#fff] Tutorials
 **[#38c0c4] Project Prerequisites
 **[#38c0c4] sbt Migration Tutorial
-**[#38c0c4] Cross-Building a Macro Library
-**[#38c0c4] Mixing Scala 2.13 and Scala 3 Macros
+**[#fff] Cross-Building a Macro Library
+**[#fff] Mixing Scala 2.13 and Scala 3 Macros
 @endmindmap
 ```
 
@@ -88,6 +88,8 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/incompatibilities/inc
 **[#38c0c4] Dropped Features
 **[#fff] Contextual Abstractions
 **[#38c0c4] Other Changed Features
+**[#fff] Type Checker
+**[#fff] Type Inference
 @endmindmap
 ```
 
