@@ -104,7 +104,7 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/classpa
 
 ### Intercompatibility Overview
 
-- Scala 2.13.5 のモジュールが Scala 3.0.0-RC3 のモジュールに依存することもできるし、またその逆も可能
+- Scala 2.13.5 のモジュールが Scala 3.0.0 のモジュールに依存することもできるし、またその逆も可能
   - ただし、Scala 2.13.5 の TASTy reader で読み込める Scala 3 の機能には制限がある
 - 後方互換性と前方互換性があるので、移行は徐々に行える
 - 依存関係にあるものが Scala 3 に完全に移植されていなくても、アプリケーションは Scala 3 に移行できる
