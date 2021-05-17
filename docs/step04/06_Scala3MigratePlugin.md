@@ -51,7 +51,7 @@ Scala 3 Migrate Plugin による移行は、以下の独立したステップで
 
 ### Requirements
 
-- Scala 2.13（望ましいのは Scala 2.13.5）
+- Scala 2.13（望ましいのは Scala 2.13.6）
 - sbt 1.4 以上
 - 免責事項: マクロを含むライブラリを移行することはできない
 - 現在、すべてのコマンドは Compile configuration で動作する

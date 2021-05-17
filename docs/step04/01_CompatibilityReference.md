@@ -70,7 +70,7 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/classpa
 
 ### The Scala 2.13 TASTy Reader
 
-- Scala 2.13.5 では、Scala 3 ライブラリの利用を可能にする TASTy reader が同梱されていて、従来の機能に加え、以下の新機能もサポートしている
+- Scala 2.13.6 では、Scala 3 ライブラリの利用を可能にする TASTy reader が同梱されていて、従来の機能に加え、以下の新機能もサポートしている
   - Enumerations
   - Intersection types
   - Opaque type aliases
@@ -104,8 +104,8 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/compatibility/classpa
 
 ### Intercompatibility Overview
 
-- Scala 2.13.5 のモジュールが Scala 3.0.0 のモジュールに依存することもできるし、またその逆も可能
-  - ただし、Scala 2.13.5 の TASTy reader で読み込める Scala 3 の機能には制限がある
+- Scala 2.13.6 のモジュールが Scala 3.0.0 のモジュールに依存することもできるし、またその逆も可能
+  - ただし、Scala 2.13.6 の TASTy reader で読み込める Scala 3 の機能には制限がある
 - 後方互換性と前方互換性があるので、移行は徐々に行える
 - 依存関係にあるものが Scala 3 に完全に移植されていなくても、アプリケーションは Scala 3 に移行できる
 
