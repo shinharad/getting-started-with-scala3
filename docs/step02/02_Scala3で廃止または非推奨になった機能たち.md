@@ -223,8 +223,8 @@ https://dotty.epfl.ch/docs/reference/dropped-features/this-qualifier.html
 
 https://dotty.epfl.ch/docs/reference/dropped-features/wildcard-init.html
 
-- `_` は、初期化されていないフィールドを示すために使用されていたが、削除された
-- その代わりに `scala.compiletime.uninitialized` を使う
+- 初期化されていないフィールドを示すために使用されていた `_` が削除された
+- 代わりに `scala.compiletime.uninitialized` を使う
   - 例) `var x: String = uninitialized`
 
 :memo: [DroppedWildcardInitializer.scala](/step02/src/main/scala/com/github/shinharad/gettingStartedWithScala3/DroppedWildcardInitializer.scala)
