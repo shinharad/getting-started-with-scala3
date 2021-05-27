@@ -49,7 +49,7 @@ def lookupEmail(email: String): Unit = println("call lookupEmail")
   help(result2) // call lookupName
 
 //---
-// | 演算子は可換的なので、逆にしてもOK
+// | 演算子は可換的なので逆にしてもOK
 
 def no3(): Unit =
   val name = UserName("Eve")

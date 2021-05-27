@@ -42,4 +42,4 @@ https://dotty.epfl.ch/docs/reference/new-types/union-types.html
 - `A | B` は、`A` 型か `B` 型のどちらかという意味になる
 - `|` 演算子は可換的で、`A | B` と `B | A` は等価
 
-:memo: [UnionTypes.scala](/step03/src/main/scala/com/github/shinharad/gettingStartedWithScala3/UnionTypes.scala)
+:memo: [UnionTypes.scala](/step03/src/main/scala/com/github/shinharad/gettingStartedWithScala3/UnionTypes.scala) / [UnionTypes2.scala](/step03/src/main/scala/com/github/shinharad/gettingStartedWithScala3/UnionTypes2.scala)
