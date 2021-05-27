@@ -45,8 +45,8 @@ package unionTypes2
 
   println("-" * 50)
 
-  type ValidAnd[A] = A | 1 | 2 | 3
-  def passStrict3(n: ValidAnd[4]) = println(n)
+  type ValidOr[A] = A | 1 | 2 | 3
+  def passStrict3(n: ValidOr[4]) = println(n)
   passStrict3(1) // ok
   passStrict3(2) // ok
   passStrict3(3) // ok
