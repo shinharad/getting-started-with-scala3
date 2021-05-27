@@ -1,75 +1,40 @@
 package com.github.shinharad.gettingStartedWithScala3
 package unionTypes2
 
-//---
-// Literal-based singleton types
-// https://docs.scala-lang.org/sips/42.type.html
-// (since Scala 2.13)
-
-@main def no1(): Unit =
-  println("-" * 50)
-
-  val intValue = 10
-  val ten: 10 = 10
-
-  def printInt(n: Int) = println(n)
-  printInt(50)
-  printInt(ten)
-
-  def printStrict(n: 10) = println(n)
-  printStrict(ten)
-  // printTen(50) // compile error
-
-  println("-" * 50)
+import com.github.shinharad.gettingStartedWithScala3.unionTypes2.UsernameOrPassword
 
 //---
-// Literal-based singleton types と Union Types を組み合わせる
+// Scala 3 Book より
+// https://docs.scala-lang.org/scala3/book/types-union.html
 
-@main def no2(): Unit =
-  println("-" * 50)
+trait Hash
 
-  def passStrict(n: 1 | 2 | 3) = println(n)
-  passStrict(1) // ok
-  passStrict(2) // ok
-  passStrict(3) // ok
-  // passStrict(4) // compile error
-
-  println("-" * 50)
-
-  type Valid = 1 | 2 | 3
-  def passStrict2(n: Valid) = println(n)
-  passStrict2(1) // ok
-  passStrict2(2) // ok
-  passStrict2(3) // ok
-  // passStrict2(4) // compile error
-
-  println("-" * 50)
-
-  type ValidOr[A] = A | 1 | 2 | 3
-  def passStrict3(n: ValidOr[4]) = println(n)
-  passStrict3(1) // ok
-  passStrict3(2) // ok
-  passStrict3(3) // ok
-  passStrict3(4) // ok
-  // passStrict3(5) // compile error
-
-  println("-" * 50)
+// Alternative to Union Types
+// Union Types は、複数の異なる型の代替品を表現するために使用することができる
 
 //---
-// Errorの文脈を表現
+// PRE-PLANNING THE CLASS HIERARCHY
+// 今までは、次のようにクラス階層を事前に決める必要があった
+trait UsernameOrPassword
+case class Username(name: String) extends UsernameOrPassword
+case class Password(hash: Hash) extends UsernameOrPassword
+def help(id: UsernameOrPassword) = ???
 
-@main def no3(): Unit =
-  println("-" * 50)
+// 例えば、APIのクライアントの要求は予測できないかもしれないので、事前に計画を立ててもあまりうまくいかない。
+// また、UsernameOrPassword のようなマーカートレイトで型階層を乱雑にすると、コードが読みにくくなる。
 
-  type ErrorOr[A] = A | "error"
+//---
+// TAGGED UNIONS
+// もう一つの方法は、次のように別の列挙型を定義すること
+enum UsernameOrPassword2:
+  case IsUsername(u: Username)
+  case IsPassword(p: Password)
 
-  def handle(value: ErrorOr[Int]): Unit =
-    value match
-      case _: "error" => println("error")
-      case x: Int => println(s"value: $value")
+// 列挙型の UsernameOrPassword は、Username と Passwordの tagged union を表しています。
+// しかし、このような方法で Union をモデル化するには、明示的なラッピングとアンラッピングが必要であり、
+// たとえば、Username は UsernameOrPassword のサブタイプではありません。
 
-  handle(10)
-  handle("error")
-  // handle("errorerror") // compile error
-
-  println("-" * 50)
+//---
+// Union Types
+// そこで、Union Types で表現する
+type UsernameOrPassword3 = Username | Password

@@ -22,6 +22,11 @@
 - [Intersection Types](https://dotty.epfl.ch/docs/reference/new-types/intersection-types.html)
 - [Union Types](https://dotty.epfl.ch/docs/reference/new-types/union-types.html)
 
+また、[Documentation for Scala 3](https://docs.scala-lang.org/scala3) の [Scala 3 book](https://docs.scala-lang.org/scala3/book/introduction.html) より、こちらも補足的に参照します。
+
+- [Union Types](https://docs.scala-lang.org/scala3/book/types-union.html)
+
+
 ## Intersection Types
 
 https://dotty.epfl.ch/docs/reference/new-types/intersection-types.html
@@ -42,4 +47,4 @@ https://dotty.epfl.ch/docs/reference/new-types/union-types.html
 - `A | B` は、`A` 型か `B` 型のどちらかという意味になる
 - `|` 演算子は可換的で、`A | B` と `B | A` は等価
 
-:memo: [UnionTypes.scala](/step03/src/main/scala/com/github/shinharad/gettingStartedWithScala3/UnionTypes.scala) / [UnionTypes2.scala](/step03/src/main/scala/com/github/shinharad/gettingStartedWithScala3/UnionTypes2.scala)
+:memo: [UnionTypes.scala](/step03/src/main/scala/com/github/shinharad/gettingStartedWithScala3/UnionTypes.scala) / [UnionTypes2.scala](/step03/src/main/scala/com/github/shinharad/gettingStartedWithScala3/UnionTypes2.scala) / [UnionTypes3.scala](/step03/src/main/scala/com/github/shinharad/gettingStartedWithScala3/UnionTypes3.scala)

@@ -2,8 +2,12 @@ package com.github.shinharad.gettingStartedWithScala3
 package unionTypes
 
 case class UserName(value: String)
-
 case class Email(value: String)
+
+case class User(name: UserName)
+
+def lookupName(name: String): Unit = println("call lookupName")
+def lookupEmail(email: String): Unit = println("call lookupEmail")
 
 //---
 // Union Types をメソッドの引数に使用する
@@ -13,11 +17,6 @@ def help(id: UserName | Email): Unit =
   id match
     case UserName(value) => lookupName(value)
     case Email(value) => lookupEmail(value)
-
-case class User(name: UserName)
-
-def lookupName(name: String): Unit = println("call lookupName")
-def lookupEmail(email: String): Unit = println("call lookupEmail")
 
 //---
 // どちらの型でも渡すことができる
