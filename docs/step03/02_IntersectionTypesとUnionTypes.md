@@ -22,7 +22,7 @@
 - [Intersection Types](https://dotty.epfl.ch/docs/reference/new-types/intersection-types.html)
 - [Union Types](https://dotty.epfl.ch/docs/reference/new-types/union-types.html)
 
-また、[Documentation for Scala 3](https://docs.scala-lang.org/scala3) の [Scala 3 book](https://docs.scala-lang.org/scala3/book/introduction.html) より、こちらも補足的に参照します。
+また、[Documentation for Scala 3](https://docs.scala-lang.org/scala3) の [Scala 3 Book](https://docs.scala-lang.org/scala3/book/introduction.html) より、こちらも補足的に参照します。
 
 - [Union Types](https://docs.scala-lang.org/scala3/book/types-union.html)
 

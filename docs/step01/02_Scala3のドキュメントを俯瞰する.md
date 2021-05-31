@@ -46,10 +46,10 @@ https://docs.scala-lang.org/scala3
 
 - [New in Scala 3](https://docs.scala-lang.org/scala3/new-in-scala3.html)
 - [Getting started](https://docs.scala-lang.org/scala3/getting-started.html)
-- [Scala 3 book](https://docs.scala-lang.org/scala3/book/introduction.html)
+- [Scala 3 Book](https://docs.scala-lang.org/scala3/book/introduction.html)
 - [Macros Tutorial](https://docs.scala-lang.org/scala3/guides/macros/)
 - [An Overview of TASTy](https://docs.scala-lang.org/scala3/guides/tasty-overview.html)
 
-[Scala 3 book](https://docs.scala-lang.org/scala3/book/introduction.html) は、これから Scala の言語仕様を Scala 3 で学びたい場合に読むと良さそうです。また、TASTy について知りたい方は、[An Overview of TASTy](https://docs.scala-lang.org/scala3/guides/tasty-overview.html) を読むと良さそう。
+[Scala 3 Book](https://docs.scala-lang.org/scala3/book/introduction.html) は、これから Scala の言語仕様を Scala 3 で学びたい場合に読むと良さそうです。また、TASTy について知りたい方は、[An Overview of TASTy](https://docs.scala-lang.org/scala3/guides/tasty-overview.html) を読むと良さそう。
 
 こちらは、公式サイトと内容が重複する部分があったり、内容が詳細すぎるので補助的に見ていこうかなと思ってます。
