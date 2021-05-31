@@ -5,7 +5,7 @@ package opaqueTypeAliases2
 // Domain Modeling Made Functional - Chapter 4 Understanding Types の
 // Building a Domain Model by Composing Types を Scala 3で表現すると
 
-object ValueObjects:
+object domain:
 
   // スコープの外からは実態が隠されている
   opaque type CheckNumber = Int
@@ -44,7 +44,7 @@ object ValueObjects:
   )
 
 def no1(): Unit =
-  import ValueObjects.*
+  import domain.*
 
   Payment(
     PaymentAmount(10.0f),
@@ -59,5 +59,5 @@ def no1(): Unit =
   // 外のスコープからは公開されたメソッドにしかアクセスできない
   CheckNumber(1234).hoge
 
-  // 公開されていないメソッドは呼び出すことはできない
+  // 公開されていないメソッドを呼び出すことはできない（実態である Int の toDouble とか）
   // CheckNumber(1234).toDouble
