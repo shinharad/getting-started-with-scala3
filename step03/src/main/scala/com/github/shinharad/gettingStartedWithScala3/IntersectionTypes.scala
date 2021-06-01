@@ -50,26 +50,42 @@ def f(x: Resettable & Growable[String]) =
 
   // f(new D)
 
+// インスタンスを生成するときにミックスインした場合
+def no2(): Unit =
+
+  class C extends Growable[String]:
+    override def add(t: String): Unit = println(s"add: $t")
+
+  val c = new C with Resettable:
+    override def reset(): Unit = println("reset")
+
+  f(c)
+
 //---
 // A と B に同一のメンバが存在する場合、
 // A と B を継承したメンバの型は、それぞれのメンバの型の Intersection Types になる
 
-def no2(): Unit =
+def no3(): Unit =
+  trait X
+  trait Y
+
   trait A:
-    def foo: String
+    def foo: X
 
   trait B:
-    def foo: Int
+    def foo: Y
 
-  // メンバの型が String と Int なので、String & Int になる
-  trait C extends A, B:
-    override def foo: String & Int
+  class C extends A, B:
+    override def foo: X & Y = new X with Y {}
+
+  val c: A & B = new C
+  val r: X & Y = c.foo
 
 // List の場合は、List[A] & List[B] となるが、
 // List は、covariant（共変）なので、これらをさらに単純化して
 // List[A & B] とすることができる
 
-def no3(): Unit =
+def no4(): Unit =
   trait A:
     def children: List[A]
 
@@ -85,7 +101,7 @@ def no3(): Unit =
 //---
 // 3種類以上の型でも Intersection Types を作れる
 
-def no4(): Unit = 
+def no5(): Unit =
   trait A
   trait B
   trait C
@@ -100,26 +116,30 @@ def no4(): Unit =
 // ただし、Compound Types は、Intersection Types とは異なり、
 // 同一メンバで異なる型が存在する場合は、Linearization のルールでどちらかの型に推論されてしまう
 
-def no5(): Unit =
+def no6(): Unit =
+  trait X
+  trait Y
 
   //---
   // 以下は Scala 2 での話
 
   trait A {
-    def foo: String
+    def foo: X
   }
   trait B {
-    def foo: Int
+    def foo: Y
   }
 
   def f(x: A with B): Unit = {
-    // Linearization のルールで Int 型になる（String with Int とはならない）
-    val a: Int = x.foo
+    // Linearization のルールで Y 型になる（X with Y とはならない）
+    // （型アノテーションで無理矢理 Y にしている。Scala 3の場合は X でもコンパイルが通る）
+    val a: Y = x.foo
   }
 
   def g(x: B with A): Unit = {
-    // Linearization のルールで String 型になる（Int with String とはならない）
-    val a: String = x.foo
+    // Linearization のルールで X 型になる（Y with X とはならない）
+    // （型アノテーションで無理矢理 X にしている。Scala 3の場合は Y でもコンパイルが通る）
+    val a: X = x.foo
   }
 
   //---
@@ -129,28 +149,28 @@ def no5(): Unit =
   // この場合は Intersection Types になる
 
   trait C:
-    def foo: String
+    def foo: X
   trait D:
-    def foo: Int
+    def foo: Y
 
   def ff(x: C with D): Unit =
-    val a: String with Int = x.foo
-    val b: Int with String = x.foo // 可換的なのでこれもOK
+    val a: X with Y = x.foo
+    val b: Y with X = x.foo // 可換的なのでこれもOK
 
-    val c: String & Int = x.foo
-    val d: Int & String = x.foo
+    val c: X & Y = x.foo
+    val d: Y & X = x.foo
 
   def gg(x: D with C): Unit =
-    val a: Int with String = x.foo
-    val b: String with Int = x.foo // 可換的なのでこれもOK
+    val a: Y with X = x.foo
+    val b: X with Y = x.foo // 可換的なのでこれもOK
 
-    val c: Int & String = x.foo
-    val d: String & Int = x.foo
+    val c: Y & X = x.foo
+    val d: X & Y = x.foo
 
 //---
 // Stackable Modifications としての with は今まで通り Linearization のルールに従う
 
-@main def no6(): Unit =
+@main def no7(): Unit =
   class Animal:
     def action(ball: String) = println("Action : " + ball)
 
