@@ -22,11 +22,31 @@ enum ColorWithParameter(val rgb: Int):
   case Green extends ColorWithParameter(0x00FF00)
   case Blue  extends ColorWithParameter(0x0000FF)
 
+// 使う場合はこうにする
 @main def no1(): Unit =
   println("-" * 50)
 
   val red: Color = Color.Red
     .tap(println)
+
+  // パターンマッチで使う
+  red match
+    case Color.Red =>
+    case Color.Green =>
+    case Color.Blue =>
+
+  // 網羅できていない場合はコンパイラが警告メッセージを表示
+  // red match
+  //   case Color.Red =>
+  //   case Color.Green =>
+
+  /*
+  [warn] 39 |  red match
+  [warn]    |  ^^^
+  [warn]    |  match may not be exhaustive.
+  [warn]    |
+  [warn]    |  It would fail on pattern case: Blue
+  */
 
   println("-" * 50)
 
