@@ -1,5 +1,7 @@
 # Scala 3 Migration Mode {ignore=true}
 
+**:construction: Scala 3 Migration guide が docs.scala-lang.org/scala3 へ統合されたため、このページは変更する予定です :construction:**
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->

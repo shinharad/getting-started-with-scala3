@@ -1,5 +1,7 @@
 # Scala 3 のドキュメントを俯瞰する {ignore=true}
 
+**:construction: Scala 3 Migration guide が docs.scala-lang.org/scala3 へ統合されたため、このページは変更する予定です :construction:**
+
 それでは、Scala 3 の公式サイトや関連サイトを俯瞰してみましょう。
 
 参照するのは主にこの3つ。
