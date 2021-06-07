@@ -6,7 +6,23 @@
 
 このリポジトリは、Scala 3 の公式ドキュメントを散策しながら Scala 3 への理解を少しずつ深めていくことを目的としています。
 
-基本的に、自分が誰かに Scala 3 の良さを伝えたり、議論のネタとして利用するために作成しています。
+基本的に、自分が誰かに Scala 3 の良さを伝えたり、議論の材料として利用するために作成しています。
+
+## 今後の更新について
+
+Scala 3 が正式リリースされたこともあり、[Documentation for Scala 3](https://docs.scala-lang.org/scala3) の整備が進んでいます。一応、このリポジトリは細々と更新は続けますが、今後はそちらを見るのが良さそうです。
+
+以前は Scala 3 のドキュメントが、下記のような状況だったため、それらをガイドする位置づけとしてこのリポジトリを作成していました。
+
+- [Documentation for Scala 3](https://docs.scala-lang.org/scala3) は整備されていないページが多かった
+- [Documentation for Scala 3](https://docs.scala-lang.org/scala3) と [Scala 3 の公式サイト](https://dotty.epfl.ch)、[Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide) は、相互にリンクが張られていたものの、それぞれが独立して更新されていたため、内容の重複が多かった
+
+しかし、今はこのように整備が進んでいるため、[Documentation for Scala 3](https://docs.scala-lang.org/scala3) がドキュメントの入り口として良さそうです。
+
+- [Documentation for Scala 3](https://docs.scala-lang.org/scala3) の整備が進んでいる
+- [Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide) が [Documentation for Scala 3](https://docs.scala-lang.org/scala3) に統合された
+
+このリポジトリとしては、Scala 3 の各機能について、日本語で要約していることと、サンプルコードを手元の環境ですぐに試すことができるという点では、まだまだ利用価値がありそうなので、細々と更新を続けます。
 
 ## 対象者
 
