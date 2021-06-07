@@ -18,7 +18,7 @@ Enums や Algebraic Data Types (ADTs) で新しいシンタックスが追加さ
 
 ### Step4
 
-Scala 3 Migration guide より、Scala 2.13 と Scala 3 の互換性について触れた後、Scala 3 へ移行するための前提条件や各種ツール、移行チュートリアルを確認します。そして最後に、Scala 2.13 と Scala 3 の非互換性についても確認します。
+Migration guide より、Scala 2.13 と Scala 3 の互換性について触れた後、Scala 3 へ移行するための前提条件や各種ツール、移行チュートリアルを確認します。そして最後に、Scala 2.13 と Scala 3 の非互換性についても確認します。
 
 ### Step5
 
