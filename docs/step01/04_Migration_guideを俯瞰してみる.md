@@ -13,7 +13,6 @@
 - [Incompatibility Table](#incompatibility-table)
 - [Compiler Options](#compiler-options)
 - [Compiler Plugins](#compiler-plugins)
-- [Resources](#resources)
 
 <!-- /code_chunk_output -->
 
@@ -140,17 +139,5 @@ https://docs.scala-lang.org/scala3/guides/migration/plugin-intro.html
 *[#fff] Compiler Plugins
 **[#fff] External Resources
 **[#fff] Kind Projector Migration
-@endmindmap
-```
-
-## Resources
-
-https://scalacenter.github.io/scala-3-migration-guide/docs/macros/macro-libraries.html
-
-```plantuml
-@startmindmap
-*[#fff] Resources
-**[#38c0c4] Scala Macro Libraries
-**[#fff] Moving from Scala 2 to Scala 3
 @endmindmap
 ```
