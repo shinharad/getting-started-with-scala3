@@ -1,6 +1,4 @@
-# Project Prerequisites {ignore=true}
-
-**:construction: Scala 3 Migration guide が docs.scala-lang.org/scala3 へ統合されたため、このページは変更する予定です :construction:**
+# Prerequisites {ignore=true}
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
@@ -8,7 +6,7 @@
 
 - [概要](#概要)
 - [ドキュメント参照先](#ドキュメント参照先)
-- [Project Prerequisites](#project-prerequisites-1)
+- [Prerequisites](#prerequisites-1)
   - [Macro dependencies](#macro-dependencies)
   - [Compiler plugins](#compiler-plugins)
     - [SemanticDB](#semanticdb)
@@ -25,16 +23,16 @@
 
 ## ドキュメント参照先
 
-[Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide/) の Tutorials からこちらを参照します。
+[Migration Guide](https://docs.scala-lang.org/scala3/guides/migration/compatibility-intro.html) の Migration Tutorial からこちらを参照します。
 
-- [Project Prerequisites](https://scalacenter.github.io/scala-3-migration-guide/docs/tutorials/prerequisites.html)
+- [Prerequisites](https://docs.scala-lang.org/scala3/guides/migration/tutorial-prerequisites.html)
 
 
-## Project Prerequisites
+## Prerequisites
 
-https://scalacenter.github.io/scala-3-migration-guide/docs/tutorials/prerequisites.html
+https://docs.scala-lang.org/scala3/guides/migration/tutorial-prerequisites.html
 
-Scala 2.13 のプロジェクトを Scala 3 へ移行する前に満たさなければならない前提条件は以下の通りです。
+Scala 2.13 と Scala 3 の間には相互運用性があるので、Scala 3 への移行は容易です。しかし、Scala 2.13 のプロジェクトを Scala 3 へ移行する前に満たさなければならない前提条件がいくつかあります。
 
 - Scala 3 をまだサポートしていないマクロライブラリに依存してはいけない
   - マクロライブラリとは、マクロを使用したメソッドを公開している Scala ライブラリのことを指す
@@ -46,7 +44,8 @@ Scala 2.13 のプロジェクトを Scala 3 へ移行する前に満たさなけ
 
 ### Macro dependencies
 
-- Scala 2 と Scala 3 のマクロは互換性がないため、自分のプロジェクトがまだ移行されていないマクロライブラリに依存していないかどうかを確認する必要がある
+- Scala 3 のコンパイラは、Scala 2.13 のマクロを展開することができない
+- そのため、自分のプロジェクトがまだ Scala 3 へ移行していないマクロライブラリに依存していないかどうかを確認する必要がある
 - 多くのマクロライブラリの移行状況は、[Scala Macro Libraries](https://scalacenter.github.io/scala-3-migration-guide/docs/macros/macro-libraries.html) で確認ができる
 - 自分のプロジェクトが依存しているマクロライブラリのそれぞれが、クロスビルドバージョン（Scala 2.13 と Scala 3 の両方で利用可能なバージョン）へアップデートする必要がある
 - 例えば、scalatest の場合
@@ -111,10 +110,11 @@ Scala 3 コンパイラに SemanticDB のサポートが追加されたので、
   - Type Lambdas
   - Polymorphic Functions
   - Kind Polymorphism
+- Kind Projector の移行については、[Kind Projector Migration](https://docs.scala-lang.org/scala3/guides/migration/plugin-kind-projector.html) で詳しく解説されている
 
 ### Run-time reflection
 
-- `scala-reflect` は、Scala 3 には存在しない Scala 2 コンパイラの内部構造を公開しているため、Scala 3 には移植されない
+- `scala-reflect` は、Scala 3 には存在しない Scala 2 コンパイラの内部構造を公開しているため、Scala 3 には移行できない
 - 自分のプロジェクトが、`scala-reflect` に依存していたり、`Manifest` クラスのインスタンスを使用している場合は、Scala 3 コンパイラではコンパイルできない
 - 代替手段としては、Java のリフレクションや Scala 3 のメタプログラミング機能を使って、対象のコードを再実装する必要がある
 - `scala-reflect` がクラスパスに一時的に追加されている場合は、恐らくそれをもたらす依存関係をアップグレードする必要がある

@@ -1,4 +1,4 @@
-# sbt Migration Tutorial {ignore=true}
+# Porting an sbt Project {ignore=true}
 
 **:construction: Scala 3 Migration guide が docs.scala-lang.org/scala3 へ統合されたため、このページは変更する予定です :construction:**
 
@@ -8,7 +8,7 @@
 
 - [概要](#概要)
 - [ドキュメント参照先](#ドキュメント参照先)
-- [sbt Migration Tutorial](#sbt-migration-tutorial-1)
+- [sbt Migration Tutorial](#sbt-migration-tutorial)
   - [1. Check the project prerequisites](#1-check-the-project-prerequisites)
   - [2. Choose a module](#2-choose-a-module)
   - [3. Set up cross-building](#3-set-up-cross-building)
