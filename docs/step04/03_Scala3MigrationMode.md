@@ -1,7 +1,5 @@
 # Scala 3 Migration Mode {ignore=true}
 
-**:construction: Scala 3 Migration guide が docs.scala-lang.org/scala3 へ統合されたため、このページは変更する予定です :construction:**
-
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -20,27 +18,30 @@ Scala 3 コンパイラは、Scala 2.13 から Scala 3 への移行を容易に�
 
 ## ドキュメント参照先
 
-[Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide/) の Tooling からこちらを参照します。
+[Migration Guide](https://docs.scala-lang.org/scala3/guides/migration/compatibility-intro.html) からこちらを参照します。
 
-- [Scala 3 Migration Mode](https://scalacenter.github.io/scala-3-migration-guide/docs/tooling/scala-3-migration-mode.html)
+- [Scala 3 Migration Mode](https://docs.scala-lang.org/scala3/guides/migration/tooling-migration-mode.html)
 
 
 ## Migration mode
 
-- コンパイラオプションの `source:3.0-migration` は、エラーの代わりに警告を表示することで、Scala 2.13 の非推奨や削除された機能を使っていたとしてもコンパイラは寛容になってくれる
-- これを、Scala 3 Migration Mode と呼んでいる
+- Scala 3 でコンパイラオプションの `source:3.0-migration` を指定すると、コンパイラは Scala 3 で廃止された機能のほとんどに寛容になり、エラーの代わりに警告を表示するようになる
+- それぞれの警告は、Scala 3 で廃止されたコードをクロスコンパイル対応のコードに安全に書き換える能力があることを示している
+- これを、Scala 3 migration compilation と呼んでいる
 
 ## Automatic rewrites
 
-- Migration Mode の `-source:3.0-migration` と `-rewrite` オプションを指定してコンパイルすると、ほとんどすべての警告はコンパイラによって自動的に解決してくれる
-- `-rewrite` は、Step1 で確認した通り、コードを自動的に書き換えてくれるコンパイラオプション
-- どのような警告に対して自動的に書き換えをしてくれるかは、 [Incompatibility Table](https://scalacenter.github.io/scala-3-migration-guide/docs/incompatibilities/incompatibility-table.html) を参照する
-- ただし、Migration Mode でコンパイルエラーになった場合は、`-rewrite` が適用されない
+- Migration Mode でコードをコンパイルすると、ほとんどすべての警告はコンパイラ自身によって自動的に解決してくれる
+- そのためには、`-source:3.0-migration` の他に `-rewrite` オプションを指定して再度コンパイルする必要がある
+  - `-rewrite` は、本リポジトリの Step1 で確認した通り、コードを自動的に書き換えてくれるコンパイラオプション
+- コンパイラによる自動書き換えの注意点
+  - コードを書き換えてしまうので、書き換え前のコードをコミットしておき、コンパイラが適用した差分が分かるようにしておく
+  - コンパイルエラーの場合は書き換えが適用されない
+  - どのルールで書き換えを行うかは選択できないので、すべてのルールに対して実行される
+- どのような警告に対して自動的に書き換えをしてくれるかは、 [Incompatibility Table](https://docs.scala-lang.org/scala3/guides/migration/incompatibility-table.html) を参照する
 
 ## Error explanations
 
-- Migration Modeの `-source:3.0-migration` は、すべての機能を処理できるわけではなくて、場合によっては、 Scala 2.13 と Scala 3.0 の非互換性のためにエラーが残ることもある
-- その場合は、`-source:3.0-migration` を `-explain` や `-explain-types` と組み合わせて指定することで、エラーの詳細を知ることができる
-  - `-explain` : エラーの詳細を表示する
-  - `-explain-types` 型エラーを詳細に表示する
-- `-explain` や `-explain-types` は、移行モードに限定されるものではなくて、Scala 3 の学習やコーディングを支援してくれるコンパイラオプション
+- `-source:3.0-migration` モードでは、すべての機能を処理できるわけではなくて、場合によっては Scala 2.13 と Scala 3.0 の非互換性のためにエラーが残ることもある
+- `-explain` または `-explain-types` オプションを指定すると、残りのエラーについての詳細を表示する
+- `-explain` と `-explain-types` オプションは、Migration Mode に限定されるものではなくて、Scala 3 の学習やコーディングを支援してくれるコンパイラオプション
