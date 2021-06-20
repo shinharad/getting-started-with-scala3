@@ -124,6 +124,7 @@ def no6() : Unit =
 
 def no7() : Unit = 
   val xs: List[Int | String] = List("a", 1, "b", 2)
+  // val xs2: List[Matchable] = List("a", 1, "b", 2)
 
   trait A
   trait B
