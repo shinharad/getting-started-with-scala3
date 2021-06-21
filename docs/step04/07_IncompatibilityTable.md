@@ -1,7 +1,5 @@
 # Incompatibility Table {ignore=true}
 
-**:construction: Scala 3 Migration guide が docs.scala-lang.org/scala3 へ統合されたため、このページは変更する予定です :construction:**
-
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -17,32 +15,32 @@
 
 ## 概要
 
-最後に Scala 2.13 と Scala 3.0 との非互換性について確認しましょう。
+最後に Scala 2.13 と Scala 3.0 の非互換性について確認しましょう。
 
-ここで言う非互換性とは、Scala 2.13 ではコンパイルできても Scala 3 ではコンパイルできないコードのことを指します。コードベースを Scala 2.13 から Scala 3 へ移行するには、ソースコードの非互換性をすべて見つけ出して修正する必要があります。
+Scala 2.13 と Scala 3.0 の非互換性とは、Scala 2.13 ではコンパイルできても Scala 3 ではコンパイルできないコードのことを指します。コードベースを Scala 2.13 から Scala 3 へ移行するには、ソースコードの非互換性をすべて見つけ出して修正する必要があります。
 
 ## ドキュメント参照先
 
-[Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide/) の Tooling からこちらを参照します。
+[Migration Guide](https://docs.scala-lang.org/scala3/guides/migration/compatibility-intro.html) からこちらを参照します。
 
-- [Incompatibility Table](https://scalacenter.github.io/scala-3-migration-guide/docs/incompatibilities/incompatibility-table.html)
+- [Incompatibility Table](https://docs.scala-lang.org/scala3/guides/migration/incompatibility-table.html)
 
 補足としてこちらも参照します。
 
-- [Syntactic Changes](https://scalacenter.github.io/scala-3-migration-guide/docs/incompatibilities/syntactic-changes.html)
-- [Dropped Features](https://scalacenter.github.io/scala-3-migration-guide/docs/incompatibilities/dropped-features.html)
-- [Other Changed Features](https://scalacenter.github.io/scala-3-migration-guide/docs/incompatibilities/other-changed-features.html)
+- [Syntactic Changes](https://docs.scala-lang.org/scala3/guides/migration/incompat-syntactic.html)
+- [Dropped Features](https://docs.scala-lang.org/scala3/guides/migration/incompat-dropped-features.html)
+- [Other Changed Features](https://docs.scala-lang.org/scala3/guides/migration/incompat-other-changes.html)
 
 ## Incompatibility Table
 
-https://scalacenter.github.io/scala-3-migration-guide/docs/incompatibilities/incompatibility-table.html
+https://docs.scala-lang.org/scala3/guides/migration/incompatibility-table.html
 
-Incompatibility Table は、Scala 2.13 と Scala 3 のそれぞれの非互換性について、どのような移行方法があるのかがまとめられています。
+Incompatibility Table は、Scala 2.13 と Scala 3 の既知の非互換性について、それぞれどのような移行方法があるのかがまとめられています。
 
 観点としては、
 
 - Scala 2.13 コンパイラが deprecation または feature の警告メッセージを出力するか
-- それに対する Scala3 migration のルールの有無
+- それに対する [Scala3 migration](https://docs.scala-lang.org/scala3/guides/migration/tooling-migration-mode.html) のルールの有無
 - それを修正するための Scalafix ルールの有無
 
 ここからは、Incompatibility Table をざっと眺めながら、Scala 3.0 Migration Mode の rewrite を実際に動かしてみたいと思います。

@@ -1,7 +1,5 @@
 # Scala 3 Migrate Plugin {ignore=true}
 
-**:construction: Scala 3 Migration guide が docs.scala-lang.org/scala3 へ統合されたため、このページは変更する予定です :construction:**
-
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -196,5 +194,5 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/tooling/scala-3-migra
 ### What to do next ?
 
 - 別のモジュール MODULE2 に対して、Scala3-migrate で移行を行う
-- MODULE2 が最後に移行したモジュールに依存している場合は、MODULE2 の `scalacOptions` に `-Ytasty-reader` を追加するか、`MODULE-MIGRATED/scalaVersion := "2.13.5" ` を設定する必要がある
+- MODULE2 が最後に移行したモジュールに依存している場合は、MODULE2 の `scalacOptions` に `-Ytasty-reader` を追加するか、`MODULE-MIGRATED/scalaVersion := "2.13.6" ` を設定する必要がある
 - 移行が完了したら、プラグインから `scala3-migrate` を削除する
