@@ -7,7 +7,7 @@ package opaqueTypeAliases2
 
 object domain:
 
-  // スコープの外からは実態が隠されている
+  // スコープの外からは実体が隠されている
   opaque type CheckNumber = Int
   object CheckNumber:
     def apply(n: Int): CheckNumber = n
@@ -59,5 +59,5 @@ def no1(): Unit =
   // 外のスコープからは公開されたメソッドにしかアクセスできない
   CheckNumber(1234).hoge
 
-  // 公開されていないメソッドを呼び出すことはできない（実態である Int の toDouble とか）
+  // 公開されていないメソッドを呼び出すことはできない（実体である Int の toDouble とか）
   // CheckNumber(1234).toDouble

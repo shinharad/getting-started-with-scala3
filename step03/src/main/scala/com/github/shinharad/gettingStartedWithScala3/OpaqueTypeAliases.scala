@@ -6,11 +6,11 @@ import scala.util.chaining.*
 //---
 // 実装例その1
 
-// - 以下は、Logarithm（対数）を抽象化したもので、実態は Double
+// - 以下は、Logarithm（対数）を抽象化したもので、実体は Double
 // - Double であるという事実は、MyMath のスコープ内でのみ知られている
 // - スコープ内では Logarithm は型エイリアスとして扱われるが、
 //   スコープ外からは opaque（不透明）なので、Logarithm は抽象型として見られ、
-//   実態が Double であることを認識することはできない
+//   実体が Double であることを認識することはできない
 object MyMath:
 
   // 必ず何らかのスコープ内で定義する
@@ -213,7 +213,7 @@ object CaseClassOpaque:
   println("-" * 50)
 
 //---
-// ちなみにトップレベルで定義してしまうと、実態がダダ漏れなので注意
+// ちなみにトップレベルで定義してしまうと、実体がダダ漏れなので注意
 
 opaque type Logarithm2 = Double
 
