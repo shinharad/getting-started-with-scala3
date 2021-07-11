@@ -71,7 +71,7 @@ https://docs.scala-lang.org/scala3/guides/migration/compatibility-classpath.html
 - sbt マルチプロジェクトの場合は、このようにできる
   ```scala
   lazy val foo = project.in(file("foo"))
-    .settings(scalaVersion := "3.0.0")
+    .settings(scalaVersion := "3.0.1")
     .dependsOn(bar)
 
   lazy val bar = project.in(file("bar"))
@@ -81,7 +81,7 @@ https://docs.scala-lang.org/scala3/guides/migration/compatibility-classpath.html
   ```scala
   lazy val foo = project.in(file("foo"))
     .settings(
-      scalaVersion := "3.0.0",
+      scalaVersion := "3.0.1",
       libraryDependencies += ("org.bar" %% "bar" % "1.0.0").cross(CrossVersion.for3Use2_13)
       // or
       // libraryDependencies += "org.bar" % "bar_2.13" % "1.0.0"
@@ -92,7 +92,7 @@ https://docs.scala-lang.org/scala3/guides/migration/compatibility-classpath.html
 
 - Scala 2.13 から Scala 3 に依存させることができる、TASTy reader が Scala 2.13.4 から同梱されている
 - TASTy reader は、コンパイラオプションの `-Ytasty-reader` を有効にすることで利用できる
-- ただし、Scala 2.13 から Scala 3.0.0 に依存させるには、tasty の互換性の問題で、Scala 2.13.6 以上が必要
+- ただし、Scala 2.13 から Scala 3.0.1 に依存させるには、tasty の互換性の問題で、Scala 2.13.6 以上が必要
   - [Scala 2.13.6 planning](https://contributors.scala-lang.org/t/scala-2-13-6-planning/4975)
 - TASTy reader は、Scala 3 の以下の機能をサポートしている（すべてではない）
   - Enumerations
@@ -130,7 +130,7 @@ https://docs.scala-lang.org/scala3/guides/migration/compatibility-classpath.html
     .dependsOn(bar)
 
   lazy val bar = project.in(file("bar"))
-    .settings(scalaVersion := "3.0.0")
+    .settings(scalaVersion := "3.0.1")
   ```
 - または、Scala 3 ライブラリの場合は `CrossVersion.for2_13Use3` を使用する
   ```scala

@@ -97,7 +97,7 @@ https://scalacenter.github.io/scala-3-migration-guide/docs/tooling/scala-3-migra
 
 - Scala3-migrate が利用可能なバージョンを提案してくれる
 - 例
-  - `cats-core` には、`3.0.0` 用に公開された利用可能なバージョンがあるため、そのバージョンを提案してくれる
+  - `cats-core` には、`3.0.x` 用に公開された利用可能なバージョンがあるため、そのバージョンを提案してくれる
   - `scalafix-rules` は、Scala 3 用の利用可能なバージョンはないが、ライブラリにはマクロが含まれていないため、2.13 バージョンを Scala 3 でそのまま利用することができる。ただしその場合、Scala のバージョンを明示する必要がある
     ```scala
     // 移行前

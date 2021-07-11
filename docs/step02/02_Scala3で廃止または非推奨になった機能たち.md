@@ -224,7 +224,7 @@ https://dotty.epfl.ch/docs/reference/dropped-features/this-qualifier.html
 https://dotty.epfl.ch/docs/reference/dropped-features/wildcard-init.html
 
 - 初期化されていないフィールドを示すために使用されていた `_` は、将来の Scala 3 のバージョンで廃止される予定
-- Scala 3.0.0 の時点では、クロスコンパイルを可能にするために `_` はまだサポートしている
+- Scala 3.0.x の時点では、クロスコンパイルを可能にするために `_` はまだサポートしている
 - 今後は、`scala.compiletime.uninitialized` を使う
   - 例) `var x: String = uninitialized`
 
