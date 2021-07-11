@@ -5,7 +5,7 @@ package opaqueTypeAliases2
 // Domain Modeling Made Functional - Chapter 4 Understanding Types の
 // Building a Domain Model by Composing Types を Scala 3で表現すると
 
-object domain:
+object Purchase:
 
   // スコープの外からは実体が隠されている
   opaque type CheckNumber = Int
@@ -44,7 +44,7 @@ object domain:
   )
 
 def no1(): Unit =
-  import domain.*
+  import Purchase.*
 
   Payment(
     PaymentAmount(10.0f),
