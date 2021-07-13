@@ -24,8 +24,8 @@
 
 https://dotty.epfl.ch/docs/reference/other-new-features/opaques.html
 
-- Opaque types aliases は、実体となる型を限定されたスコープ内でのみ型エイリアスとして参照できるようにして、スコープの外からは opaque（不透明）とすることで、型の抽象化を行うもの
-- スコープの外からは、公開されたフィールドやメソッドからしかアクセスすることができない
+- Opaque types aliases は、実体となる型を限定されたスコープの中でのみメンバ型エイリアスとして参照できるようにして、スコープの外からは opaque（不透明）とすることで、型の抽象化を行うもの
+- スコープの外からは公開したメソッドからのみアクセスが可能
 - コンパイルすると実体の型に変換されるのでオーバーヘッドを気にしなくても良い
 - Scala 2 では、このような実装を [Value classes](https://docs.scala-lang.org/ja/overviews/core/value-classes.html) で実現していたが、[制約が多かった](https://docs.scala-lang.org/ja/overviews/core/value-classes.html)
 - Value classes は削除されることはなくて、[project Valhalla](https://openjdk.java.net/projects/valhalla/) で計画されているような JVM でネイティブにサポートされるようになれば、状況が変わるかもしれない
