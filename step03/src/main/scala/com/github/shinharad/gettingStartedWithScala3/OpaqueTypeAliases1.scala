@@ -1,5 +1,5 @@
 package com.github.shinharad.gettingStartedWithScala3
-package opaqueTypeAliases
+package opaqueTypeAliases1
 
 import scala.util.chaining.*
 
