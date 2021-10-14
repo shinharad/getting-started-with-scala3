@@ -15,7 +15,7 @@ Scala 3 が正式リリースされたこともあり、[Documentation for Scala
 以前は Scala 3 のドキュメントが、下記のような状況だったため、それらをガイドする位置づけとしてこのリポジトリを作成していました。
 
 - [Documentation for Scala 3](https://docs.scala-lang.org/scala3) は整備されていないページが多かった
-- [Documentation for Scala 3](https://docs.scala-lang.org/scala3) と [Scala 3 の公式サイト](https://dotty.epfl.ch)、[Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide) は、相互にリンクが張られていたものの、それぞれが独立して更新されていたため、内容の重複が多かった
+- [Documentation for Scala 3](https://docs.scala-lang.org/scala3) と [EPFLのドキュメント](https://dotty.epfl.ch)、[Scala 3 Migration guide](https://scalacenter.github.io/scala-3-migration-guide) は、相互にリンクが張られていたものの、それぞれが独立して更新されていたため、内容の重複が多かった
 
 しかし、今はこのように整備が進んでいるため、[Documentation for Scala 3](https://docs.scala-lang.org/scala3) がドキュメントの入り口として良さそうです。
 
@@ -30,7 +30,7 @@ Scala 3 が正式リリースされたこともあり、[Documentation for Scala
 
 ## Scalaのバージョン
 
-`3.0.1` を対象としています。
+`3.0.2` を対象としています。
 
 ## 環境
 

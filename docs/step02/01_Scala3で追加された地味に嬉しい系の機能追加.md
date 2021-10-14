@@ -1,5 +1,7 @@
 # Scala 3で追加された地味に嬉しい系の機能追加 {ignore=true}
 
+**:construction: EPFLのドキュメントは、docs.scala-lang.org/scala3 に統合されたためこの内容は古くなっています。 :construction:**
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
